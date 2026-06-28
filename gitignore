@@ -1,0 +1,12 @@
+pro_alpaca.json
+pro_trades.json
+pro_posstate.json
+pro_favorites.json
+pro_lastscan.json
+alpaca_config.json
+auto_trades.json
+position_state.json
+favorites.json
+custom_stocks.json
+*.log
+__pycache__/
