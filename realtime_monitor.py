@@ -75,18 +75,31 @@ class RealtimeExitMonitor:
 
     # ── الاتصال ──
     def _run_forever(self):
+        backoff = 5  # ثواني — يتصاعد لو الفشل تكرر، يرجع للأساس بعد اتصال ناجح
         while self.running:
+            hit_conn_limit = False
             try:
-                self._connect_and_listen()
+                hit_conn_limit = self._connect_and_listen()
             except Exception as e:
                 self._last_error = str(e)
                 self._log(f"⚠️ خطأ اتصال: {e}")
                 traceback.print_exc()
             self.connected = False
-            if self.running:
-                time.sleep(5)  # إعادة محاولة بعد 5 ثواني
+            if not self.running:
+                break
+            if hit_conn_limit:
+                # ── تجاوز حد الاتصالات: نعطي وقت أطول عشان الاتصال القديم يتنظف من عند Alpaca ──
+                wait = min(backoff * 3, 60)
+                self._log(f"⏳ تجاوز حد الاتصالات — ننتظر {wait} ثانية قبل إعادة المحاولة")
+                time.sleep(wait)
+                backoff = min(backoff * 2, 60)
+            else:
+                time.sleep(backoff)
+                backoff = 5  # نجح لفترة → نرجع للتأخير الأساسي
 
     def _connect_and_listen(self):
+        """يرجع True لو سبب الانقطاع كان تجاوز حد الاتصالات (عشان نطبّق تأخير أطول)."""
+        self._hit_conn_limit = False
         self.ws = websocket.WebSocketApp(
             STREAM_URL_IEX,
             on_open=self._on_open,
@@ -95,6 +108,7 @@ class RealtimeExitMonitor:
             on_close=self._on_close,
         )
         self.ws.run_forever(ping_interval=20, ping_timeout=10)
+        return self._hit_conn_limit
 
     def _on_open(self, ws):
         self._log("🔌 اتصال WebSocket فُتح — جاري المصادقة...")
@@ -116,6 +130,9 @@ class RealtimeExitMonitor:
             elif t == "error":
                 self._last_error = str(msg)
                 self._log(f"⚠️ خطأ من Alpaca: {msg}")
+                if msg.get("code") == 406 or "connection limit" in str(msg.get("msg","")).lower():
+                    self._hit_conn_limit = True
+                    ws.close()
             elif t == "t":  # صفقة لحظية (trade tick)
                 sym = msg.get("S")
                 price = msg.get("p")
