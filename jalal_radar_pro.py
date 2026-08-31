@@ -112,6 +112,7 @@ def load_cfg():
         "tp2_pct": 5.0,             # (v3.4) كان 4.0
         "trail_pct": 1.5,           # وقف متحرك للباقي
         "disable_tier1": True,      # (v3.4) Tier 1 لوحده خسر 8981$ من 11752$ إجمالي الخسارة بالاختبار التاريخي
+        "disable_tier3": True,      # (v3.4) بعد تعطيل Tier1: Tier 3 خسر 639$ بينما Tier 2 ربح 312$ — نعطّله ونركّز على الرابح
     }
     if os.path.exists(ALPACA_CONFIG_FILE):
         try:
@@ -868,6 +869,8 @@ def safe_buy(signal, source="auto"):
     # لوحده مسؤول عن -8981$ من إجمالي -11752$ خسارة، رغم إنه المفروض "أقوى إشارة"
     if e_tier == 1 and cfg.get("disable_tier1", True):
         return {"ok": False, "msg": "Tier 1 معطّل مؤقتاً (نتائج الاختبار التاريخي كانت سلبية له تحديداً)"}
+    if e_tier == 3 and cfg.get("disable_tier3", True):
+        return {"ok": False, "msg": "Tier 3 معطّل مؤقتاً (نتائج الاختبار التاريخي كانت سلبية له تحديداً)"}
 
     tier_pct = {1: cfg.get("tier1_pct", 2.0), 2: cfg.get("tier2_pct", 1.2), 3: cfg.get("tier3_pct", 0.5)}.get(e_tier, 2.0)
 

@@ -149,7 +149,8 @@ TIER_PCT = {1: 0.02, 2: 0.012, 3: 0.005}  # نفس نسب risk_manager.py
 
 
 def backtest_symbol(df, symbol, capital=100000.0,
-                     tp1_pct=3.0, tp2_pct=5.0, trail_pct=1.5, disable_tier1=True):
+                     tp1_pct=3.0, tp2_pct=5.0, trail_pct=1.5,
+                     disable_tier1=True, disable_tier3=True):
     """
     يشغّل محاكاة كاملة (دخول + خروج) على سهم واحد عبر كل تاريخه المتاح.
     يرجع قائمة صفقات مقفولة، كل وحدة فيها: entry_tier, entry_price,
@@ -206,6 +207,8 @@ def backtest_symbol(df, symbol, capital=100000.0,
                 tier = sig["entry_tier"]
                 if tier == 1 and disable_tier1:
                     continue  # (v3.4) Tier 1 معطّل — نفس قرار البوت الحي
+                if tier == 3 and disable_tier3:
+                    continue  # (v3.4) Tier 3 معطّل — كان يخسر بعد ما شلنا Tier 1
                 alloc = capital * TIER_PCT[tier]
                 qty = alloc / close_i
                 pos = {"tier": tier, "entry_price": close_i, "entry_idx": i,
