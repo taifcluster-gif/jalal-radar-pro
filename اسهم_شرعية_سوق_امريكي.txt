@@ -1,0 +1,3369 @@
+الرقم
+الرمز
+الاسم
+السعر
+التغير %
+التطهير
+التغير
+الحجم
+1	
+ARTL	Artelo Biosciences Inc	7.31	+50.72%	0.000000	+2.46	58.44M
+2	
+ZYBT	Zhengye Biotechnology Holding Limited	0.9799	+36.10%	0.000000	+0.2599	341.73K
+3	
+VEEE	Twin Vee PowerCats Co.	0.4400	+34.64%	0.022000	+0.1132	32.43M
+4	
+ENSC	Ensysce Biosciences, Inc.	0.6313	+32.91%	0.000000	+0.1563	6.68M
+5	
+CGTL	Creative Global Technology Holdings Limited Class A	1.01	+30.42%	0.000000	+0.235599	8.82M
+6	
+TLYS	Tilly's, Inc. Class A	3.57	+23.53%	0.000000	+0.68	1.94M
+7	
+MNDR	Mobile-health Network Solutions Class A	1.03	+22.07%	0.000000	+0.1862	668.41K
+8	
+SVCO	Silvaco Group, Inc.	6.06	+21.93%	0.014000	+1.09	1.48M
+9	
+FBGL	FBS Global Limited	0.7770	+20.92%	0.000000	+0.1344	1.23M
+10	
+DVLT	Datavault AI	0.9298	+19.67%	0.000000	+0.1528	153.55M
+11	
+YYGH	YY Group Holding Limited Class A	0.0445	+17.11%	0.000000	+0.0065	690.80M
+12	
+AGH	Aureus Greenway Holdings, Inc.	5.08	+15.19%	0.000000	+0.67	1.34M
+13	
+RGC	Regencell Bioscience Holdings Ltd.	26.38	+14.85%	0.000000	+3.41	583.30K
+14	
+OVID	Ovid Therapeutics Inc.	2.30	+14.43%	0.000000	+0.29	40.60M
+15	
+CSTE	Caesarstone Ltd.	0.7426	+13.81%	0.000000	+0.0901	3.05M
+16	
+FOXX	Foxx Development Holdings	4.55	+13.75%	0.000000	+0.55	12.87K
+17	
+ANNA	AleAnna, Inc. Class A	3.66	+13.31%	0.000000	+0.43	599.62K
+18	
+HTFL	HeartFlow, Inc.	25.47	+13.10%	0.008000	+2.95	3.03M
+19	
+CABR	Caring Brands Incorporation	0.9737	+12.93%	0.000000	+0.1115	105.63K
+20	
+BURU	Nuburu, Inc.	0.1900	+12.36%	0.000000	+0.0209	152.69M
+21	
+JEM	707 Cayman Holdings	0.0898	+12.11%	0.000000	+0.0097	76.93M
+22	
+FSLY	Fastly, Inc.	26.88	+11.17%	0.021000	+2.70	15.40M
+23	
+CURX	Curanex Pharmaceuticals Inc.	0.4500	+10.43%	0.000000	+0.0425	280.62K
+24	
+NAMI	Jinxin Technology Holding Company ADR	0.5500	+10.00%	0.000000	+0.05	15.42K
+25	
+ANPA	Rich Sparkle	9.36	+9.99%	0.000000	+0.85	33.00K
+26	
+AXTI	AXT, Inc.	48.76	+9.92%	0.000000	+4.40	9.09M
+27	
+EDSA	Edesa Biotech, Inc.	7.69	+9.86%	0.000000	+0.69	1.57M
+28	
+KSCP	Knightscope, Inc. Class A	4.15	+9.79%	0.000000	+0.37	660.55K
+29	
+LNKS	Linkers Industries Limited Class A	0.5814	+9.74%	0.000000	+0.0516	32.83M
+30	
+SUPX	SuperX AI Technology	8.68	+9.73%	0.000000	+0.77	711.83K
+31	
+SEV	Aptera Motors	2.94	+9.51%	0.000000	+0.255	1.10M
+32	
+BLIV	BeLive Holdings	2.68	+8.94%	0.000000	+0.22	1.65K
+33	
+TOPP	Toppoint Holdings Inc.	0.7780	+8.81%	0.006000	+0.063	12.30K
+34	
+SEI	SOLARIS ENERGY INFRASTRUCTUR	68.56	+8.50%	0.000000	+5.37	6.22M
+35	
+NN	NextNav Inc.	18.28	+8.36%	0.000000	+1.41	5.01M
+36	
+VRA	Vera Bradley, Inc.	3.53	+7.95%	0.000000	+0.26	390.79K
+37	
+LITE	Lumentum Holdings, Inc.	700.81	+7.89%	0.122000	+51.25	9.57M
+38	
+INDO	Indonesia Energy Corp Ltd.	4.40	+7.58%	0.000000	+0.31	2.72M
+39	
+ONMD	OneMedNet Corp Class A	0.8190	+7.52%	0.000000	+0.0573	309.20K
+40	
+ZTO	ZTO Express (Cayman) Inc. Sponsored ADR Class A	25.51	+7.50%	0.032000	+1.78	4.44M
+41	
+CIIT	Tianci International Inc	0.2540	+7.35%	0.000000	+0.0174	727.88K
+42	
+AAOI	Applied Optoelectronics, Inc.	92.63	+7.30%	0.009000	+6.30	15.23M
+43	
+BNAI	Brand Engagement Network Inc.	43.47	+7.25%	0.000000	+2.94	920.64K
+44	
+SSII	SS Innovations International, Inc	5.09	+7.16%	0.001000	+0.34	83.04K
+45	
+FORTY	Formula Systems (1985) Ltd. Sponsored ADR	134.88	+7.05%	0.000000	+8.89	236
+46	
+ACXP	Acurx Pharmaceuticals, Inc.	5.21	+6.76%	0.000000	+0.33	968.75K
+47	
+ORIS	Oriental Rise Holdings Ltd.	0.4301	+6.70%	0.000000	+0.0270	6.85M
+48	
+BRN	Barnwell Industries, Inc.	1.13	+6.60%	0.000000	+0.07	190.51K
+49	
+HKPD	Hong Kong Pharma Digital Technology Holdings Ltd. Ordinary Shares	0.6595	+6.39%	0.000000	+0.039599	24.53K
+50	
+SND	Smart Sand, Inc.	4.34	+6.37%	0.000000	+0.26	548.36K
+51	
+RHLD	Resolute Holdings Management	154.32	+5.96%	0.181000	+8.68	287.20K
+52	
+PLRZ	Polyrizon Ltd.	14.41	+5.96%	0.000000	+0.81	25.19K
+53	
+SOWG	Sow Good Inc.	0.4350	+5.84%	0.000000	+0.024	122.14K
+54	
+OFAL	OFA Group Class A	0.4381	+5.72%	0.000000	+0.0237	66.30K
+55	
+TPET	Trio Petroleum Corp.	1.11	+5.71%	0.000000	+0.06	49.02M
+56	
+DLXY	Delixy Holdings Limited	0.7240	+5.69%	0.000000	+0.039	377.24K
+57	
+FOFO	Hang Feng Technology Innovation Co., Ltd.	5.40	+5.58%	0.000000	+0.285	17.94K
+58	
+BANL	CBL International Limited Class B	0.6500	+5.50%	0.000000	+0.0339	494.76K
+59	
+COHU	Cohu, Inc.	30.46	+5.47%	0.027000	+1.58	933.59K
+60	
+CCEL	Cryo-Cell International, Inc.	3.10	+5.44%	0.000000	+0.16	38.95K
+61	
+ETS	Elite Express Holding Inc. Class A	0.5650	+5.41%	0.000000	+0.029	352.82K
+62	
+VNRX	VolitionRX Ltd	0.2000	+5.26%	0.000000	+0.01	353.84M
+63	
+VIAV	Viavi Solutions Inc	32.44	+5.19%	0.000000	+1.60	7.52M
+64	
+OSS	One Stop Systems, Inc.	11.24	+5.14%	0.002000	+0.55	5.82M
+65	
+ATLN	Atlantic International Corp	4.50	+5.14%	0.000000	+0.22	133.63K
+66	
+FTRK	Fast Track Group	0.6200	+5.08%	0.000000	+0.03	52.19K
+67	
+TNON	Tenon Medical, Inc.	0.8300	+5.08%	0.000000	+0.0401	185.80K
+68	
+MTEX	Mannatech, Incorporated	6.57	+4.95%	0.000000	+0.31	5.47K
+69	
+INSG	Inseego Corp.	12.62	+4.90%	0.006000	+0.59	246.04K
+70	
+NVT	نفينت إلكتريك	120.27	+4.85%	0.000000	+5.56	4.83M
+71	
+KAPA	Kairos Pharma, Ltd.	0.6080	+4.83%	0.000000	+0.028	150.63K
+72	
+TCRT	Alaunos Therapeutics, Inc.	3.27	+4.81%	0.000000	+0.15	11.62K
+73	
+IOBT	IO Biotech, Inc.	0.1834	+4.80%	0.000000	+0.0084	1.43M
+74	
+DNOW	DNOW Inc.	11.65	+4.77%	0.000000	+0.53	4.02M
+75	
+MIMI	Mint	0.3143	+4.77%	0.000000	+0.0143	517.54K
+76	
+MOLN	Molecular Partners AG Sponsored ADR	4.55	+4.72%	0.000000	+0.205	6.48K
+77	
+SEDG	SolarEdge Technologies, Inc.	44.88	+4.66%	0.052000	+2.00	4.12M
+78	
+MXC	Mexco Energy Corporation	11.48	+4.65%	0.009000	+0.51	34.39K
+79	
+SNDK	Sandisk Corporation	753.69	+4.65%	0.109000	+33.52	19.74M
+80	
+COHR	كوهيرنت	257.21	+4.64%	0.000000	+11.41	9.59M
+81	
+LSF	Laird Superfood, Inc.	2.53	+4.55%	0.000000	+0.11	68.19K
+82	
+ATPC	Agape ATP Corp.	2.78	+4.51%	0.000000	+0.12	173.04K
+83	
+ELSE	Electro-Sensors, Inc.	4.54	+4.37%	0.026000	+0.19	483
+84	
+OCC	Optical Cable Corporation	6.97	+4.34%	0.000000	+0.29	103.27K
+85	
+NCSM	NCS Multistage Holdings, Inc.	72.00	+4.26%	0.000000	+2.94	28.57K
+86	
+CIEN	Ciena Corporation	385.26	+4.11%	0.112000	+15.21	4.11M
+87	
+STAA	STAAR Surgical Company	18.58	+4.09%	0.000000	+0.73	1.72M
+88	
+UUU	Universal Safety Products, Inc.	6.40	+4.07%	0.000000	+0.25	59.62K
+89	
+GASS	StealthGas Inc.	9.30	+4.03%	0.019000	+0.36	278.96K
+90	
+VBIX	ViewBix Inc.	1.82	+4.00%	0.000000	+0.07	3.35K
+91	
+OMH	Ohmyhome Limited Class A	1.31	+3.97%	0.000000	+0.05	35.63K
+92	
+NXPL	NextPlat Corp	0.4990	+3.96%	0.003000	+0.019	272.88K
+93	
+INUV	Inuvo, Inc.	2.63	+3.95%	0.000000	+0.10	221.19K
+94	
+SVRE	SaverOne 2014 Ltd. ADR	3.17	+3.93%	0.000000	+0.12	47.75K
+95	
+CAMT	Camtek Ltd	166.70	+3.93%	0.000000	+6.31	332.52K
+96	
+PATH	UiPath, Inc. Class A	12.45	+3.92%	0.020000	+0.47	31.75M
+97	
+JOB	GEE Group, Inc.	0.2614	+3.90%	0.001000	+0.0098	405.71K
+98	
+UAVS	AgEagle Aerial Systems, Inc.	1.07	+3.88%	0.000000	+0.04	3.73M
+99	
+LOOP	Loop Industries, Inc.	1.35	+3.85%	0.000000	+0.05	154.24K
+100	
+LULU	lululemon athletica inc.	165.39	+3.84%	0.000000	+6.12	7.31M
+101	
+SLAI	SOLAI Limited Sponsored ADR Class A	0.8200	+3.80%	0.000000	+0.03	140.77K
+102	
+AIRS	Airsculpt Technologies, Inc.	2.79	+3.72%	0.000000	+0.10	2.74M
+103	
+GIFT	Giftify, Inc.	0.9125	+3.69%	0.000000	+0.0325	125.72K
+104	
+DHT	DHT Holdings, Inc.	17.50	+3.61%	0.006000	+0.61	8.44M
+105	
+SGLY	Singularity Future Technology Ltd.	0.4088	+3.52%	0.000000	+0.0139	13.64K
+106	
+TLN	تالين للطاقة	338.60	+3.50%	0.000000	+11.46	706.13K
+107	
+GNK	Genco Shipping & Trading Ltd	22.77	+3.45%	0.009000	+0.76	785.59K
+108	
+FEMY	Femasys, Inc.	0.6000	+3.45%	0.001000	+0.02	425.52K
+109	
+JDZG	Jiade Limited Class A	0.0940	+3.41%	0.000000	+0.0031	7.22M
+110	
+STNG	Scorpio Tankers Inc.	68.56	+3.41%	0.073000	+2.26	1.79M
+111	
+TACT	TransAct Technologies Incorporated	3.42	+3.32%	0.000000	+0.11	98.62K
+112	
+LINK	Interlink Electronics, Inc.	3.12	+3.31%	0.000000	+0.10	18.33K
+113	
+ALZN	Alzamend Neuro, Inc.	1.92	+3.23%	0.000000	+0.06	74.40K
+114	
+TZOO	Travelzoo	6.43	+3.21%	0.000000	+0.20	202.57K
+115	
+TNK	Teekay Tankers Ltd Class A	65.94	+3.16%	0.213000	+2.02	699.57K
+116	
+PRT	PERMROCK ROYALTY TRUST	3.31	+3.12%	0.001000	+0.10	73.28K
+117	
+CEG	Constellation Energy Corporation	317.22	+3.10%	0.000000	+9.53	2.62M
+118	
+TVGN	Tevogen Bio Holdings Inc.	5.33	+3.09%	0.000000	+0.16	38.01K
+119	
+MGNI	Magnite, Inc.	12.72	+3.08%	0.000000	+0.38	2.68M
+120	
+EVI	EVI Industries, Inc.	21.17	+3.07%	0.000000	+0.63	58.73K
+121	
+APUS	Apimeds Pharmaceuticals US, Inc.	1.71	+3.01%	0.000000	+0.05	116.18K
+122	
+YAAS	Youxin Technology Limited Class A	1.03	+3.00%	0.000000	+0.03	90.30K
+123	
+TSEM	Tower Semiconductor Ltd	141.96	+2.97%	0.091000	+4.10	2.87M
+124	
+RXO	RXO, Inc. Common Stock	13.38	+2.92%	0.000000	+0.38	2.16M
+125	
+SNOA	Sonoma Pharmaceuticals	2.47	+2.92%	0.000000	+0.07	38.81K
+126	
+MGN	Megan Holdings Limited Class A	3.89	+2.91%	0.000000	+0.11	922.21K
+127	
+BMRA	Biomerica, Inc.	2.14	+2.88%	0.000000	+0.06	103.11K
+128	
+DOCU	DOCUSIGN INC	48.90	+2.86%	0.059000	+1.36	12.68M
+129	
+TASK	TaskUs, Inc. Class A	10.80	+2.86%	0.000000	+0.3	533.02K
+130	
+HTCO	High-Trend International Group Class A	9.00	+2.86%	0.002000	+0.25	21.45K
+131	
+CNR	Core Natural Resources Inc. Ordinary Shares	101.54	+2.79%	0.256000	+2.76	1.17M
+132	
+CF	سي إف إندستريز هولدينغز	126.73	+2.79%	0.150000	+3.44	7.45M
+133	
+CHRD	Chord Energy Corporation	130.58	+2.76%	0.000000	+3.51	1.40M
+134	
+NVMI	Nova Ltd.	457.80	+2.76%	0.312000	+12.28	313.53K
+135	
+AMR	Alpha Metallurgical	196.08	+2.73%	0.174000	+5.21	198.41K
+136	
+XMTR	Xometry, Inc. Class A	39.84	+2.72%	0.042000	+1.06	824.62K
+137	
+STI	Solidion Technology	5.28	+2.72%	0.000000	+0.14	51.90K
+138	
+GRI	GRI Bio	2.65	+2.71%	0.000000	+0.07	48.43K
+139	
+NDRA	ENDRA Life Sciences Inc.	3.41	+2.71%	0.000000	+0.09	27.32K
+140	
+AVO	Mission Produce, Inc.	12.49	+2.71%	0.003000	+0.33	1.62M
+141	
+ONTO	شركة أونتو إنوفيشن	201.88	+2.68%	0.181000	+5.27	786.19K
+142	
+WORX	SCWorx Corp	0.1380	+2.68%	0.000000	+0.0036	6.52M
+143	
+MARPS	Marine Petroleum Trust	5.20	+2.67%	0.002000	+0.135	74.70K
+144	
+KXIN	KAIXIN AUTO HOLDINGS	4.66	+2.64%	0.000000	+0.12	32.44K
+145	
+RYOJ	rYojbaba Co., Ltd.	2.37	+2.60%	0.000000	+0.06	27.70K
+146	
+EXFY	Expensify, Inc. Class A	0.7665	+2.60%	0.000000	+0.0194	1.23M
+147	
+NRGV	Energy Vault	3.59	+2.57%	0.001000	+0.09	12.68M
+148	
+DINO	HF Sinclair Corporation	59.92	+2.55%	0.049000	+1.49	2.12M
+149	
+TLS	TELOS CORPORATION	4.02	+2.55%	0.000000	+0.10	1.14M
+150	
+PNRG	PrimeEnergy Resources Corporation	218.07	+2.50%	0.452000	+5.32	49.50K
+151	
+ACON	Aclarion, Inc.	3.32	+2.47%	0.000000	+0.08	118.07K
+152	
+BTU	Peabody Energy Corporation	36.26	+2.43%	0.072000	+0.86	3.34M
+153	
+AMBA	Ambarella, Inc.	53.96	+2.41%	0.000000	+1.27	1.68M
+154	
+NRT	North European Oil Royalty Trust	8.96	+2.40%	0.003000	+0.21	53.92K
+155	
+INSW	International Seaways, Inc.	69.34	+2.38%	0.000000	+1.61	741.63K
+156	
+XLO	Xilio Therapeutics Inc	7.60	+2.29%	0.000000	+0.17	30.14K
+157	
+SDHC	Smith Douglas Homes Corp. Class A	13.39	+2.29%	0.000000	+0.30	287.65K
+158	
+FLOC	Flowco Holdings Inc Class A	23.64	+2.29%	0.000000	+0.53	414.75K
+159	
+INSP	Inspire Medical Systems, Inc.	56.40	+2.27%	0.131000	+1.25	1.34M
+160	
+RAIN	Rain Enhancement Technologies Holdco, Inc Class A	3.62	+2.26%	0.000000	+0.08	9.57K
+161	
+ANET	Arista Networks, Inc.	136.07	+2.25%	0.076000	+3.00	5.25M
+162	
+CRL	Charles River Laboratories International, Inc.	157.11	+2.21%	0.028000	+3.40	804.83K
+163	
+MOD	Modine Manufacturing Company	200.42	+2.21%	0.009000	+4.33	943.83K
+164	
+PASW	Ping An Biomedical Co., Ltd.	0.1483	+2.21%	0.000000	+0.0032	65.57K
+165	
+INTC	إنتل	45.03	+2.20%	0.052000	+0.97	77.30M
+166	
+PCLA	PicoCELA, Inc. ADR	2.35	+2.17%	0.000000	+0.05	5.59K
+167	
+LSCC	Lattice Semiconductor Corporation	94.16	+2.17%	0.000000	+2.00	1.80M
+168	
+BLLN	BillionToOne	71.27	+2.16%	0.000000	+1.51	249.44K
+169	
+PH	باركر هانيفين كورب	912.40	+2.14%	0.028000	+19.09	1.00M
+170	
+CTKB	Cytek Biosciences, Inc.	4.34	+2.12%	0.004000	+0.09	665.00K
+171	
+ASC	Ardmore Shipping Corp.	14.45	+2.12%	0.004000	+0.30	926.33K
+172	
+PLAB	Photronics, Inc.	35.41	+2.10%	0.076000	+0.73	712.07K
+173	
+DOGZ	Dogness (International) Corporation	1.49	+2.05%	0.000000	+0.03	29.86K
+174	
+RES	RPC, Inc.	7.00	+2.04%	0.008000	+0.14	3.54M
+175	
+CVRX	CVRx, Inc.	8.50	+2.04%	0.000000	+0.17	203.39K
+176	
+VNOM	Viper Energy, Inc.	47.14	+2.03%	0.000000	+0.94	3.75M
+177	
+REBN	Reborn Coffee, Inc.	2.04	+2.00%	0.000000	+0.04	36.03K
+178	
+QUIK	QuickLogic Corporation	9.25	+1.98%	0.001000	+0.18	218.16K
+179	
+WRBY	Warby Parker, Inc. Class A	24.05	+1.95%	0.000000	+0.46	2.53M
+180	
+RGP	Resources Connection, Inc.	3.70	+1.93%	0.000000	+0.07	311.00K
+181	
+NBIS	Nebius Group N.V. Class A	118.56	+1.92%	0.016000	+2.23	35.63M
+182	
+SELX	Semilux International Ltd.	0.4600	+1.91%	0.000000	+0.0086	57.16K
+183	
+KRMD	KORU Medical Systems, Inc.	4.35	+1.87%	0.001000	+0.08	275.21K
+184	
+DDOG	Datadog	131.26	+1.85%	0.127000	+2.39	3.45M
+185	
+TOYO	TOYO Co., Ltd	8.85	+1.84%	0.000000	+0.16	106.13K
+186	
+NEPH	Nephros, Inc.	3.06	+1.83%	0.004000	+0.055	67.47K
+187	
+LEXX	Lexaria Bioscience Corp.	0.7450	+1.83%	0.000000	+0.0134	120.96K
+188	
+IBTA	Ibotta, Inc. Class A	26.27	+1.82%	0.000000	+0.47	406.37K
+189	
+COCP	Cocrystal Pharma Inc	1.13	+1.80%	0.000000	+0.02	61.65K
+190	
+CTXR	Citius Pharmaceuticals Inc	0.8256	+1.80%	0.000000	+0.0146	633.48K
+191	
+PUMP	ProPetro Holding	14.91	+1.77%	0.000000	+0.26	2.91M
+192	
+BKTI	BK Technologies Corp.	79.81	+1.76%	0.000000	+1.38	75.20K
+193	
+PMI	Picard Medical, Inc.	1.16	+1.75%	0.000000	+0.02	37.68K
+194	
+ILMN	إليومينا	122.95	+1.75%	0.044000	+2.11	1.20M
+195	
+GEV	GE Vernova Inc.	858.47	+1.71%	0.484000	+14.42	2.19M
+196	
+ASO	Academy Sports and Outdoors, Inc.	50.75	+1.70%	0.000000	+0.85	2.73M
+197	
+LGVN	لونجيفيرون	0.9762	+1.69%	0.000000	+0.0162	2.18M
+198	
+LOMA	Loma Negra Compania Industrial Argentina SA Sponsored ADR	10.24	+1.69%	0.002000	+0.17	427.56K
+199	
+SOBR	SOBR Safe, Inc.	0.9649	+1.68%	0.000000	+0.0159	137.08K
+200	
+CLGN	CollPlant Biotechnologies Ltd	0.6100	+1.67%	0.000000	+0.01	39.47K
+201	
+HCC	Warrior Met Coal, Inc.	87.63	+1.66%	0.081000	+1.43	679.85K
+202	
+SCNX	Scienture Holdings, Inc.	0.4850	+1.66%	0.000000	+0.0079	703.30K
+203	
+TGS	Transportadora de Gas del Sur SA Sponsored ADR Class B RegS	32.26	+1.64%	0.006000	+0.52	145.61K
+204	
+QLYS	Qualys, Inc.	96.64	+1.64%	0.166000	+1.56	455.55K
+205	
+CARG	CarGurus, Inc. Class A	33.96	+1.62%	0.022000	+0.54	1.53M
+206	
+CVE	سينوفوس إنرجي إنك	23.93	+1.61%	0.011000	+0.38	8.86M
+207	
+NABL	N-able, Inc.	5.04	+1.61%	0.000000	+0.08	1.13M
+208	
+LBRT	Liberty Energy, Inc. Class A	31.64	+1.61%	0.000000	+0.50	3.48M
+209	
+AMD	أدفانسد مايكرو ديفايسز	199.46	+1.60%	0.000000	+3.15	28.22M
+210	
+CRS	Carpenter Technology Corporation	387.47	+1.58%	0.038000	+6.01	515.72K
+211	
+OMSE	OMS Energy Technologies Inc.	4.56	+1.56%	0.000000	+0.07	25.64K
+212	
+OGEN	Oragenics, Inc.	0.7880	+1.56%	0.000000	+0.0121	116.28K
+213	
+FORM	FormFactor, Inc.	96.18	+1.55%	0.000000	+1.47	1.06M
+214	
+ERNA	Eterna Therapeutics	0.2940	+1.55%	0.000000	+0.0045	517.50K
+215	
+SLNG	Stabilis Solutions, Inc.	3.27	+1.55%	0.000000	+0.05	16.16K
+216	
+CRT	Cross Timbers Royalty Trust	9.89	+1.54%	0.002000	+0.15	20.26K
+217	
+INTA	Intapp, Inc.	25.65	+1.50%	0.013000	+0.38	853.22K
+218	
+PSTG	شركة بيور ستوراج	64.39	+1.50%	0.047000	+0.95	2.12M
+219	
+WKSP	Worksport Ltd	1.35	+1.50%	0.007000	+0.02	166.79K
+220	
+NTCL	NetClass Technology Inc Class A	0.2904	+1.47%	0.000000	+0.0042	559.25K
+221	
+WWD	وودوارد	372.62	+1.46%	0.011000	+5.37	952.49K
+222	
+CTRA	Coterra Energy	33.47	+1.45%	0.010000	+0.48	12.92M
+223	
+JL	J-Long Group Limited	5.13	+1.38%	0.000000	+0.07	23.31K
+224	
+CMT	Core Molding Technologies, Inc.	20.74	+1.37%	0.000000	+0.28	30.06K
+225	
+PEGA	Pegasystems Inc.	43.06	+1.37%	0.015000	+0.58	2.46M
+226	
+MCHX	Marchex, Inc. Class B	1.51	+1.34%	0.000000	+0.02	20.52K
+227	
+BMGL	Basel Medical Group Ltd	0.6030	+1.34%	0.000000	+0.008	25.44K
+228	
+HUBB	Hubbell Incorporated	477.47	+1.33%	0.000000	+6.25	1.08M
+229	
+TK	Teekay Corporation Ltd	11.43	+1.33%	0.196000	+0.15	608.75K
+230	
+EOG	إي أوه جي ريسورسز	137.52	+1.33%	0.000000	+1.80	4.69M
+231	
+ECOR	ELECTROCORE, LLC	6.90	+1.32%	0.009000	+0.09	48.99K
+232	
+AMIX	أوتونوميكس ميديكال	0.4590	+1.32%	0.000000	+0.006	64.78K
+233	
+XPEL	XPEL, Inc.	37.97	+1.31%	0.000000	+0.49	382.79K
+234	
+XOMA	XOMA Royalty Corporation	27.35	+1.30%	0.000000	+0.35	122.83K
+235	
+ARCB	ArcBest Corporation	87.08	+1.30%	0.045000	+1.12	320.98K
+236	
+YEXT	Yext, Inc.	5.60	+1.27%	0.008000	+0.07	7.62M
+237	
+PBT	Permian Basin Royalty Trust	20.83	+1.26%	0.000000	+0.26	81.33K
+238	
+EME	مجموعة إمكور	737.66	+1.25%	0.000000	+9.11	394.93K
+239	
+OKYO	OKYO Pharma Limited	1.62	+1.25%	0.000000	+0.02	157.07K
+240	
+PDFS	PDF Solutions, Inc.	33.54	+1.21%	0.000000	+0.40	296.79K
+241	
+VRME	VerifyMe, Inc.	0.9136	+1.19%	0.000000	+0.0107	176.00K
+242	
+GILT	Gilat Satellite Networks Ltd.	17.00	+1.19%	0.000000	+0.2	481.67K
+243	
+DT	Dynatrace Holdings	40.24	+1.18%	0.000000	+0.47	7.78M
+244	
+ZGM	Zenta Group	1.72	+1.18%	0.000000	+0.02	1.82K
+245	
+AEIS	Advanced Energy Industries, Inc.	319.63	+1.18%	0.172000	+3.72	710.54K
+246	
+COYA	Coya Therapeutics, Inc.	4.45	+1.14%	0.000000	+0.05	248.97K
+247	
+AMKR	Amkor Technology, Inc.	46.87	+1.14%	0.058000	+0.53	3.52M
+248	
+PINS	Pinterest	18.77	+1.13%	0.000000	+0.21	16.98M
+249	
+CARR	كارير	57.61	+1.11%	0.020000	+0.63	6.80M
+250	
+SPHL	Springview Holdings Ltd. Class A	2.74	+1.11%	0.002000	+0.03	11.48K
+251	
+MTUS	Metallus Inc.	14.90	+1.09%	0.035000	+0.16	454.94K
+252	
+GIII	G-III Apparel Group, Ltd.	26.05	+1.09%	0.000000	+0.28	653.05K
+253	
+SU	سنكور للطاقة	61.98	+1.08%	0.000000	+0.66	4.03M
+254	
+TLX	Telix Pharmaceuticals Limited Sponsored ADR	8.41	+1.08%	0.011000	+0.09	331.92K
+255	
+VLO	فاليرو إنرجي كورب	238.46	+1.06%	0.000000	+2.50	3.51M
+256	
+WSM	ويليامز سونوما	184.10	+1.06%	0.000000	+1.93	3.11M
+257	
+BL	BlackLine, Inc.	38.59	+1.05%	0.125000	+0.40	1.11M
+258	
+NMTC	NeuroOne Medical Technologies Corporation	0.7396	+1.05%	0.000000	+0.0077	83.71K
+259	
+PLPC	Preformed Line Products Company	256.19	+1.04%	0.098000	+2.64	60.67K
+260	
+SUNC	SunocoCorp LLC	61.54	+1.02%	0.000000	+0.62	749.84K
+261	
+WIX	ويكس دوت كوم	90.43	+1.02%	0.224000	+0.91	1.85M
+262	
+EXPD	إكسبيديتورز إنتل أوف واشينطن	144.62	+1.02%	0.061000	+1.46	855.05K
+263	
+PD	PagerDuty	6.97	+1.01%	0.064000	+0.07	3.56M
+264	
+EDTK	Skillful Craftsman Education Technology Ltd.	1.01	+1.00%	0.000000	+0.01	645
+265	
+ATEN	A10 Networks, Inc.	21.48	+0.99%	0.036000	+0.21	904.35K
+266	
+USEG	U.S. Energy Corp.	1.02	+0.99%	0.000000	+0.01	6.81M
+267	
+GDTC	CytoMed Therapeutics Limited	1.05	+0.97%	0.000000	+0.0101	11.66K
+268	
+FCN	FTI Consulting, Inc.	164.99	+0.96%	0.048000	+1.57	331.52K
+269	
+IPGP	IPG Photonics Corporation	116.61	+0.96%	0.000000	+1.11	403.51K
+270	
+PTHS	Pelthos Therapeutics Inc.	24.08	+0.96%	0.000000	+0.23	4.72K
+271	
+PED	PEDEVCO Corp.	16.97	+0.95%	0.001000	+0.16	63.63K
+272	
+MIR	Mirion Technologies, Inc. Class A	19.44	+0.93%	0.010000	+0.18	4.71M
+273	
+JCI	جونسون كونترولز إنك	133.76	+0.91%	0.017000	+1.20	3.02M
+274	
+KNRX	Knorex Ltd. Class A	1.11	+0.91%	0.000000	+0.01	42.27K
+275	
+YOU	Clear Secure, Inc. Class A	48.54	+0.91%	0.000000	+0.44	1.21M
+276	
+AR	Antero Resources Corporation	41.50	+0.90%	0.000000	+0.37	5.99M
+277	
+AEMD	Aethlon Medical, Inc.	2.24	+0.90%	0.000000	+0.02	45.98K
+278	
+INHD	Inno Holdings, Inc.	1.15	+0.88%	0.000000	+0.01	93.86K
+279	
+BRKR	Bruker Corporation	34.03	+0.86%	0.024000	+0.29	2.00M
+280	
+CVGW	Calavo Growers, Inc.	24.57	+0.86%	0.049000	+0.21	341.28K
+281	
+APVO	Aptevo Therapeutics, Inc.	4.67	+0.86%	0.000000	+0.04	27.16K
+282	
+PLSE	Pulse Biosciences, Inc.	22.51	+0.85%	0.000000	+0.19	362.74K
+283	
+BKR	Baker Hughes Company Class A	57.48	+0.84%	0.000000	+0.48	7.48M
+284	
+DGXX	Digi Power X Inc.	2.41	+0.84%	0.001000	+0.02	1.53M
+285	
+RBLX	روبلوكس	58.27	+0.83%	0.075000	+0.48	11.06M
+286	
+REVB	Revelation Biosciences	1.22	+0.83%	0.000000	+0.01	49.59K
+287	
+ARM	إيه آر إم القابضة	128.36	+0.82%	0.025000	+1.05	4.08M
+288	
+DMLP	Dorchester Minerals, L.P.	27.27	+0.81%	0.000000	+0.22	98.54K
+289	
+MPWR	Monolithic Power Systems, Inc.	1075.29	+0.81%	0.173000	+8.63	581.44K
+290	
+XWIN	XMAX, Inc.	6.24	+0.81%	0.000000	+0.05	934.95K
+291	
+TRNS	Transcat, Inc.	73.71	+0.81%	0.001000	+0.59	301.13K
+292	
+PLNT	Planet Fitness, Inc. Class A	74.65	+0.81%	0.069000	+0.60	1.43M
+293	
+CRVL	CorVel Corporation	54.39	+0.80%	0.000000	+0.43	277.78K
+294	
+VECO	Veeco Instruments Inc.	31.00	+0.78%	0.060000	+0.24	979.97K
+295	
+WFCF	Where Food Comes From, Inc.	11.71	+0.77%	0.001000	+0.09	652
+296	
+GAP	Gap, Inc.	24.03	+0.75%	0.000000	+0.18	7.74M
+297	
+TGHL	The Growhub	0.3747	+0.75%	0.000000	+0.0028	46.24K
+298	
+ULS	معامل التأمين	86.43	+0.75%	0.005000	+0.64	1.17M
+299	
+ESTA	ESTABLISHMENT LABS HOLDINGS INC.	65.50	+0.75%	0.002000	+0.49	557.54K
+300	
+BOX	Box, Inc. Class A	24.64	+0.74%	0.045000	+0.18	1.65M
+301	
+SARO	StandardAero, Inc.	27.16	+0.74%	0.000000	+0.20	3.74M
+302	
+XPO	XPO, Inc.	189.72	+0.73%	0.000000	+1.37	1.15M
+303	
+POCI	Precision Optics Corporation, Inc.	4.18	+0.72%	0.000000	+0.03	10.09K
+304	
+BIVI	BioVie Inc. Class A	1.41	+0.71%	0.000000	+0.01	75.88K
+305	
+SCNI	Scinai Immunotherapeutics Ltd. Sponsored ADR	0.7100	+0.71%	0.000000	+0.005	16.44K
+306	
+ARLO	ARLO TECHNOLOGIES, INC.	14.19	+0.71%	0.000000	+0.10	2.35M
+307	
+HWM	Howmet Aerospace Inc.	241.93	+0.70%	0.012000	+1.69	2.50M
+308	
+PNTG	Pennant Group Inc	33.26	+0.70%	0.000000	+0.23	326.55K
+309	
+CTS	CTS Corporation	46.63	+0.69%	0.009000	+0.32	210.79K
+310	
+VPG	Vishay Precision Group, Inc.	41.10	+0.69%	0.034000	+0.28	235.04K
+311	
+ACLS	Axcelis Technologies, Inc.	85.74	+0.69%	0.164000	+0.59	679.33K
+312	
+COCH	Envoy Medical, Inc. Class A	0.8361	+0.69%	0.000000	+0.0057	408.32K
+313	
+MGY	Magnolia Oil & Gas Corp. Class A	30.16	+0.67%	0.000000	+0.20	3.00M
+314	
+SI	Shoulder Innovations	15.22	+0.66%	0.000000	+0.10	114.75K
+315	
+KYIV	Kyivstar Group Ltd.	10.72	+0.66%	0.077000	+0.07	997.13K
+316	
+ESTC	إلاستيك	55.76	+0.65%	0.000000	+0.36	1.73M
+317	
+COP	كونوكو فيليبس	123.65	+0.63%	0.000000	+0.78	9.42M
+318	
+LIVN	LivaNova Plc	62.82	+0.62%	0.071000	+0.39	872.46K
+319	
+NWTG	Newton Golf Company, Inc.	1.65	+0.61%	2.007000	+0.01	21.36K
+320	
+HNGE	Hinge Health, Inc. Class A	44.38	+0.61%	0.000000	+0.27	779.46K
+321	
+GSL	Global Ship Lease, Inc. Class A	38.37	+0.60%	0.149000	+0.23	299.80K
+322	
+RBC	شركة آر بي سي بيرينغز	547.81	+0.60%	0.000000	+3.26	173.49K
+323	
+CRWD	كراود سترايك القابضة	435.81	+0.60%	0.197000	+2.61	2.79M
+324	
+MATX	Matson, Inc.	156.09	+0.60%	0.229000	+0.93	408.63K
+325	
+PEPG	PepGen Inc.	5.12	+0.59%	0.000000	+0.03	302.75K
+326	
+AIP	Arteris, Inc.	15.55	+0.58%	0.000000	+0.09	311.31K
+327	
+DDS	Dillard's, Inc. Class A	583.96	+0.56%	0.000000	+3.27	150.29K
+328	
+IMO	أمبريال أويل	125.59	+0.55%	0.000000	+0.69	571.12K
+329	
+UTMD	Utah Medical Products, Inc.	64.40	+0.55%	0.000000	+0.35	19.10K
+330	
+ALG	Alamo Group Inc.	167.70	+0.55%	0.125000	+0.91	149.10K
+331	
+CWCO	Consolidated Water Co. Ltd.	31.52	+0.54%	0.039000	+0.17	453.34K
+332	
+ETON	Eton Pharmaceuticals, Inc.	19.02	+0.53%	0.000000	+0.10	220.56K
+333	
+ARQ	Arq, Inc.	1.90	+0.53%	0.000000	+0.01	1.39M
+334	
+CVLT	Commvault Systems, Inc.	80.55	+0.52%	0.070000	+0.42	1.25M
+335	
+MYO	Myomo, Inc.	0.7249	+0.51%	0.000000	+0.0037	385.08K
+336	
+DXCM	ديكسكوم	67.66	+0.51%	0.078000	+0.34	3.79M
+337	
+NTRB	Nutriband, Inc.	3.93	+0.51%	0.001000	+0.02	5.80K
+338	
+MYRG	MYR Group Inc.	266.69	+0.50%	0.012000	+1.32	215.35K
+339	
+ENVB	Enveric Biosciences, Inc.	2.01	+0.50%	0.000000	+0.01	17.72K
+340	
+OMAB	Grupo Aeroportuario del Centro Norte SAB de CV Sponsored ADR Class B	108.49	+0.49%	0.008000	+0.53	58.18K
+341	
+ODD	ODDITY Tech Ltd. Class A	14.35	+0.49%	0.106000	+0.07	1.76M
+342	
+TENB	TENABLE HOLDINGS, INC.	20.34	+0.49%	0.029000	+0.10	1.30M
+343	
+TWIN	Twin Disc, incorporated	15.12	+0.47%	0.000000	+0.07	31.63K
+344	
+SPPL	Simpple Ltd.	2.21	+0.45%	0.000000	+0.01	5.20K
+345	
+MRAM	Everspin Technologies, Inc.	9.34	+0.43%	0.019000	+0.04	310.84K
+346	
+SKYH	Sky Harbour Group Corp. Class A	9.59	+0.42%	0.000000	+0.04	189.16K
+347	
+BBY	بست باي كو	62.87	+0.40%	0.000000	+0.25	3.14M
+348	
+MDCX	Medicus Pharma Ltd	0.5000	+0.40%	0.000000	+0.002	1.77M
+349	
+CRCL	Circle	132.84	+0.40%	0.060000	+0.53	16.68M
+350	
+CURR	Currenc Group Inc.	2.48	+0.40%	0.002000	+0.01	50.24K
+351	
+CRC	California Resources Corp	64.20	+0.39%	0.000000	+0.25	1.82M
+352	
+BNR	Burning Rock Biotech Ltd.	18.62	+0.38%	0.003000	+0.07	11.41K
+353	
+GLBE	جلوبال إي أون لاين المحدودة	34.02	+0.38%	0.000000	+0.13	695.08K
+354	
+EVLV	Evolv Technologies Holdings, Inc.	5.33	+0.38%	0.003000	+0.02	3.75M
+355	
+CUPR	Cuprina Holdings (Cayman) Limited Class A	0.3414	+0.38%	0.000000	+0.0013	59.68K
+356	
+Q	Qnity Electronics	113.98	+0.36%	0.000000	+0.41	1.30M
+357	
+AXON	Axovant Sciences Ltd	508.41	+0.36%	0.239000	+1.84	519.14K
+358	
+OS	Onestream, Inc. Class A	23.75	+0.34%	0.000000	+0.08	1.97M
+359	
+JRSH	Jerash Holdings (US), Inc.	3.05	+0.33%	0.000000	+0.01	47.61K
+360	
+CVX	شيفرون	198.61	+0.32%	0.026000	+0.64	13.05M
+361	
+LB	LandBridge	77.66	+0.32%	0.000000	+0.25	517.56K
+362	
+TT	انجرسول راند	426.70	+0.32%	0.005000	+1.34	966.15K
+363	
+OSIS	OSI Systems, Inc.	269.95	+0.32%	0.000000	+0.87	271.18K
+364	
+ACM	إيكوم تكنولوجي كوربوريشن	90.15	+0.32%	0.133000	+0.29	1.26M
+365	
+FICO	فيكو	1203.70	+0.31%	0.000000	+3.77	272.50K
+366	
+VRSK	فرسيك أناليتكس	204.39	+0.29%	0.000000	+0.60	1.46M
+367	
+PFAI	Pinnacle Food Group Limited Class A	2.51	+0.29%	0.000000	+0.0072	2.45K
+368	
+CANF	Can-Fite BioPharma Ltd. Sponsored ADR	3.44	+0.29%	0.000000	+0.01	50.99K
+369	
+ARLP	Alliance Resource Partners, L.P.	27.38	+0.29%	0.005000	+0.08	168.27K
+370	
+FTNT	فورتينت	83.39	+0.28%	0.052000	+0.23	4.34M
+371	
+RRC	Range Resources Corporation	43.48	+0.28%	0.000000	+0.12	3.06M
+372	
+TOI	Oncology Institute, Inc.	3.60	+0.28%	0.000000	+0.01	1.84M
+373	
+WFF	WF Holding Limited	0.4253	+0.28%	0.000000	+0.0012	16.07K
+374	
+GKOS	Glaukos Corp	103.22	+0.28%	0.044000	+0.29	562.18K
+375	
+ARHS	Arhaus, Inc. Class A	7.12	+0.28%	0.015000	+0.02	1.72M
+376	
+MLR	Miller Industries, Inc.	43.79	+0.27%	0.000000	+0.12	113.65K
+377	
+DSP	Viant Technology, Inc. Class A	11.78	+0.26%	0.085000	+0.03	315.44K
+378	
+RHI	روبرت هاف إنترناشونال إنك	22.74	+0.26%	0.000000	+0.06	2.59M
+379	
+RMCO	Royalty Management Holding Corporation Class A	3.90	+0.26%	0.003000	+0.01	6.89K
+380	
+AACG	ATA CREATIVITY GLOBAL SPON ADS EACH REP 2 ORD SHS	0.9999	+0.26%	0.000000	+0.0026	3.03K
+381	
+DFIN	Donnelley Financial Solutions, Inc.	46.12	+0.26%	0.008000	+0.12	270.06K
+382	
+DIOD	Diodes Incorporated	66.75	+0.24%	0.149000	+0.16	444.88K
+383	
+CNQ	كانيديان ناتشورال ريسورسز	49.10	+0.24%	0.000000	+0.12	10.78M
+384	
+MSGY	Masonglory Limited	0.4310	+0.23%	0.000000	+0.001	80.89K
+385	
+RSKD	Riskified Ltd. Class A	4.31	+0.23%	0.016000	+0.01	1.35M
+386	
+TER	تيراداين إنك	300.07	+0.22%	0.020000	+0.67	2.65M
+387	
+HQY	HealthEquity Inc	79.57	+0.21%	0.038000	+0.17	1.84M
+388	
+NYT	New York Times Company Class A	80.40	+0.21%	0.064000	+0.17	1.75M
+389	
+BFAM	Bright Horizons Family Solutions, Inc.	76.55	+0.20%	0.000000	+0.15	799.26K
+390	
+IDCC	InterDigital, Inc.	352.03	+0.20%	0.000000	+0.70	231.28K
+391	
+SELF	Global Self Storage, Inc.	5.08	+0.20%	0.000000	+0.01	17.12K
+392	
+MCHP	ميكروشيب تيكنولوجي	64.71	+0.19%	0.006000	+0.12	9.53M
+393	
+FSI	Flexible Solutions International Inc	5.56	+0.18%	0.005000	+0.01	8.91K
+394	
+TPL	تكساس باسيفيك لاند كورب	530.08	+0.17%	0.000000	+0.90	396.94K
+395	
+EXPI	eXp World Holdings, Inc.	6.20	+0.16%	0.000000	+0.01	1.11M
+396	
+CLH	Clean Harbors, Inc.	291.00	+0.15%	0.121000	+0.45	594.04K
+397	
+DSGX	مجموعة ديكارت سيستمز	71.16	+0.14%	0.000000	+0.10	382.08K
+398	
+HOLX	Hologic, Inc.	75.15	+0.13%	0.061000	+0.10	3.79M
+399	
+FRSH	Freshworks, Inc. Class A	8.02	+0.12%	0.028000	+0.01	3.50M
+400	
+CGNT	Cognyte Software Ltd.	8.37	+0.12%	0.007000	+0.01	274.27K
+401	
+BSX	بوسطن ساينتيفيك كورب	71.28	+0.11%	0.000000	+0.08	8.99M
+402	
+CEVA	CEVA, Inc.	18.52	+0.11%	0.054000	+0.02	223.04K
+403	
+FROG	JFrog Ltd.	43.87	+0.09%	0.056000	+0.04	1.40M
+404	
+PHR	Phreesia	11.20	+0.09%	0.016000	+0.01	2.06M
+405	
+FN	Fabrinet	500.43	+0.08%	0.235000	+0.41	601.61K
+406	
+SIBN	SI-BONE	12.85	+0.08%	0.035000	+0.01	512.13K
+407	
+BHE	Benchmark Electronics, Inc.	54.42	+0.07%	0.055000	+0.04	403.19K
+408	
+PEN	شركة بينومبرا	338.24	+0.07%	0.111000	+0.24	404.93K
+409	
+KLAC	كاي ال ايه - تينكور كورب	1482.36	+0.07%	0.000000	+1.01	881.55K
+410	
+ATMU	Atmus Filtration Technologies, Inc.	56.69	+0.07%	0.000000	+0.04	594.27K
+411	
+PWR	كوانتا سيرفيسز	572.00	+0.06%	0.022000	+0.36	692.31K
+412	
+RBRK	شركة روبريك	52.09	+0.06%	0.062000	+0.03	5.18M
+413	
+MASI	Masimo Corporation	176.07	+0.06%	0.010000	+0.10	2.60M
+414	
+ADUS	Addus HomeCare Corporation	101.55	+0.03%	0.042000	+0.03	207.59K
+415	
+MU	ميكرون تيكنولوجي	461.73	+0.01%	0.114000	+0.04	53.30M
+416	
+FEBO	Fenbo Holdings Ltd.	1.19	+0.01%	0.000000	+0.0001	3.68K
+417	
+K	كلوقز	83.44	0.00%	0.000000	0.00	0
+418	
+BKV	BKV Corporation	28.85	0.00%	0.003000	0.00	1.32M
+419	
+XBIO	Xenetic Biosciences, Inc.	3.12	0.00%	0.019000	0.00	21.74K
+420	
+SUGP	SU Group Holdings	5.01	0.00%	0.000000	0.00	1.12K
+421	
+CCC	CCC Intelligent Solutions Holdings Inc	6.17	0.00%	0.002000	0.00	16.57M
+422	
+FOLD	Amicus Therapeutics, Inc.	14.37	0.00%	0.003000	0.00	3.52M
+423	
+HUSA	Houston American Energy Corp.	2.16	0.00%	0.008000	0.00	0
+424	
+CMI	كمينز	543.29	0.00%	0.131000	+0.02	624.73K
+425	
+COE	51Talk Online Education Group	19.30	0.00%	0.000000	0.0000	1.34K
+426	
+CVR	Chicago Rivet & Machine Co.	14.25	0.00%	0.000000	0.00	308
+427	
+MCTA	Charming Medical Limited	29.36	0.00%	0.000000	0.000	0
+428	
+DAY	دايفورس	69.86	0.00%	0.032000	0.00	0
+429	
+PC	Premium Catering (Holdings) Limited	9.40	0.00%	0.000000	0.0	0
+430	
+BEDU	Bright Scholar Education Holdings Limited Sponsored ADR Class A	2.25	0.00%	0.000000	0.00	0
+431	
+FRGE	Forge Global	45.00	0.00%	0.000000	0.00	0
+432	
+MGIC	Magic Software Enterprises Ltd.	17.38	0.00%	0.000000	0.00	0
+433	
+HWH	HWH International Inc.	1.36	0.00%	0.000000	0.00	4.68K
+434	
+BHST	BioHarvest Sciences, Inc.	4.36	0.00%	0.000000	0.00	19.13K
+435	
+NAK	Northern Dynasty Minerals	1.29	0.00%	0.000000	0.00	7.08M
+436	
+MNMD	Mind Medicine (MindMed), Inc.	15.02	0.00%	0.000000	0.00	0
+437	
+TBLA	Taboola.com Ltd.	3.10	0.00%	0.001000	0.0	1.36M
+438	
+ODP	Office Depot, Inc.	28.00	0.00%	0.043000	0.00	0
+439	
+TCGL	TechCreate Group Ltd. Class A	172.84	0.00%	0.000000	0.00	0
+440	
+PRO	PROS Holdings, Inc.	23.25	0.00%	0.005000	0.00	0
+441	
+OWLS	OBOOK Holdings	6.00	0.00%	0.000000	0.00	15.31K
+442	
+BRFH	Barfresh Food Group Inc.	2.61	0.00%	0.000000	0.00	1.70K
+443	
+MRSN	Mersana Therapeutics, Inc.	29.08	0.00%	0.107000	0.00	0
+444	
+MRUS	Merus N.V.	90.00	0.00%	0.000000	0.00	0
+445	
+KLTO	Klotho Neurosciences, Inc.	0.5242	0.00%	0.000000	0.0000	0
+446	
+SCS	Steelcase Inc. Class A	16.14	0.00%	0.000000	0.00	0
+447	
+SDM	Smart Digital Group	1.85	0.00%	0.000000	0.00	0
+448	
+SGN	Signing Day Sports, Inc.	0.5401	0.00%	0.000000	0.0000	0
+449	
+SIM	Grupo Simec SAB de CV Sponsored ADR Class B	30.80	0.00%	0.037000	0.0	17
+450	
+SNT	Senstar Technologies Corporation	3.04	0.00%	0.000000	0.00	9.46K
+451	
+RAPT	RAPT Therapeutics	58.02	0.00%	0.000000	0.00	0
+452	
+THAR	Tharimmune, Inc.	4.74	0.00%	0.000000	0.00	0
+453	
+VNTG	Vantage Corp. Class A	0.8800	0.00%	0.000000	0.00	22.99K
+454	
+MURA	Mural Oncology plc	2.04	0.00%	0.000000	0.00	0
+455	
+REFR	Research Frontiers Incorporated	1.00	0.00%	0.000000	0.00	22.15K
+456	
+XCH	XCHG Limited ADR	1.41	0.00%	0.000000	0.00	13.71K
+457	
+VRAR	Glimpse Group, Inc.	0.6800	0.00%	0.003000	0.00	0
+458	
+REVG	REV Group, Inc.	63.90	0.00%	0.000000	0.0	0
+459	
+BYSI	BeyondSpring Inc.	1.79	0.00%	0.000000	0.00	44.71K
+460	
+TNGX	Tango Therapeutics, Inc.	18.68	0.00%	0.010000	0.00	2.51M
+461	
+INTJ	Intelligent Group Limited	7.39	0.00%	0.000000	0.00	83
+462	
+GIFI	Gulf Island Fabrication, Inc.	12.00	0.00%	0.000000	0.00	0
+463	
+PCSA	Processa Pharmaceuticals, Inc.	3.16	0.00%	0.000000	0.00	16.33K
+464	
+IRIX	IRIDEX Corporation	1.33	0.00%	0.000000	0.00	12.96K
+465	
+TRUE	TrueCar, Inc.	2.54	0.00%	0.011000	0.00	0
+466	
+GLTO	Galecto, Inc.	28.69	0.00%	0.000000	0.00	0
+467	
+GLXG	Galaxy Payroll Group Limited Class A	2.36	0.00%	0.000000	0.00	17.22K
+468	
+EFTY	Etoiles Capital Group Co., Ltd. Class A	15.02	0.00%	0.000000	0.00	0
+469	
+GNSS	Genasys, Inc.	1.89	0.00%	0.000000	0.00	104.89K
+470	
+NBIX	نيوروكرين بيوساينسز	130.71	0.00%	0.000000	0.00	753.77K
+471	
+NCEW	New Century Logistics (BVI) Limited	9.20	0.00%	0.000000	0.0	1.27K
+472	
+CDTX	Cidara Therapeutics, Inc.	221.38	0.00%	0.000000	0.00	0
+473	
+CELZ	Creative Medical Technology Holdings, Inc.	1.88	0.00%	0.000000	0.00	16.92K
+474	
+CERS	Cerus Corporation	1.80	0.00%	0.000000	0.0	3.74M
+475	
+CFLT	Confluent, Inc. Class A	30.99	0.00%	0.000000	0.00	0
+476	
+PLTS	Platinum Analytics Cayman Ltd	17.50	0.00%	0.000000	0.0	0
+477	
+ELWS	Earlyworks Co., Ltd. Sponsored ADR	7.06	0.00%	0.000000	0.00	0
+478	
+EMPG	Empro Group Inc.	17.36	0.00%	0.000000	0.00	0
+479	
+LAWR	Robot Consulting	3.75	0.00%	0.000000	0.00	0
+480	
+TZUP	Thumzup Media Corporation	4.55	0.00%	0.000000	0.00	0
+481	
+CHEK	Check-Cap Ltd.	1.61	0.00%	0.000000	0.00	0
+482	
+ENTO	Entero Therapeutics Inc. Ordinary Shares	2.99	0.00%	0.000000	0.00	0
+483	
+POAI	PREDICTIVE ONCOLOGY INC	5.95	0.00%	0.000000	0.00	0
+484	
+ACTG	Acacia Research Corporation	5.04	0.00%	0.025000	0.00	509.19K
+485	
+ADVM	Adverum Biotechnologies Inc	4.36	0.00%	0.000000	0.00	0
+486	
+WETH	Wetouch Technology	1.39	0.00%	0.003000	0.00	34.26K
+487	
+CLWT	Euro Tech Holdings Co. Ltd.	1.24	0.00%	0.006000	0.00	211
+488	
+ESGL	ESGL HOLDINGS LTD	3.23	0.00%	0.000000	0.00	0
+489	
+PTHL	Pheton Holdings Ltd.	0.9023	0.00%	0.000000	0.0000	0
+490	
+PTNM	Pitanium	10.39	0.00%	0.000000	0.00	0
+491	
+UBXG	U-BX Technology Ltd.	1.70	0.00%	0.000000	0.0	1.51K
+492	
+AIRT	Air T, Inc.	23.50	0.00%	0.000000	0.0	1.99K
+493	
+LITM	Snow Lake Resources	2.39	0.00%	0.000000	0.00	0
+494	
+EVOK	Evoke Pharma, Inc.	11.00	0.00%	0.071000	0.00	0
+495	
+NSPR	InspireMD Inc.	1.79	0.00%	0.000000	0.00	224.69K
+496	
+NTIC	Northern Technologies International Corporation	8.24	0.00%	0.004000	0.00	3.30K
+497	
+NTSK	Netskope, Inc. Class A	9.47	0.00%	0.000000	0.00	4.22M
+498	
+NUKK	Nukkleus	2.06	0.00%	0.000000	0.00	0
+499	
+NUTR	Nusatrip Incorporated	9.00	0.00%	0.000000	0.00	0
+500	
+APLM	Apollomics Inc. Class A	19.50	0.00%	0.000000	0.0	2.04K
+501	
+ARMN	Aris Mining Corp	19.16	0.00%	0.014000	0.00	0
+502	
+CYBN	Cybin, Inc.	8.28	0.00%	0.000000	0.00	0
+503	
+ATGE	Adtalem Global Education Inc.	98.54	0.00%	0.021000	0.00	0
+504	
+ATHA	Athira Pharma, Inc.	6.75	0.00%	0.000000	0.00	0
+505	
+AVDL	Avadel Pharmaceuticals plc	21.64	0.00%	0.000000	0.00	0
+506	
+SLRX	سالاريوس للمستحضرات الصيدلانية	0.8400	0.00%	0.000000	0.00	0
+507	
+OBLG	OBLONG INC	2.70	0.00%	0.024000	0.0	0
+508	
+FIGS	FIGS, Inc. Class A	14.40	0.00%	0.000000	0.0	3.65M
+509	
+SONN	Sonnet BioTherapeutics	1.26	0.00%	0.000000	0.00	0
+510	
+SORA	AsiaStrategy	1.94	0.00%	0.000000	0.00	2.77K
+511	
+HOUR	Hour Loop	1.92	0.00%	0.000000	0.00	4.13K
+512	
+HSII	Heidrick & Struggles International, Inc.	59.01	0.00%	0.000000	0.00	0
+513	
+MAGH	Magnitude International Ltd	6.76	0.00%	0.000000	0.00	0
+514	
+ANY	Sphere 3D Corp.	1.59	0.00%	0.000000	0.00	212.66K
+515	
+MAMK	MaxsMaking Inc. Class A	13.00	0.00%	0.000000	0.00	0
+516	
+STAK	STAK INC. Class A	1.02	0.00%	0.000000	0.00	1.07M
+517	
+ZS	Zscaler, Inc.	155.99	-0.01%	0.200000	-0.01	1.51M
+518	
+GLW	كورنينغ إنك	129.86	-0.02%	0.005000	-0.03	10.57M
+519	
+IFBD	Infobird Co Ltd Ordinary Shares	0.9950	-0.03%	0.003000	-0.0003	783
+520	
+EYE	National Vision Holdings, Inc.	27.98	-0.04%	0.000000	-0.01	1.31M
+521	
+BLTE	Belite Bio, Inc. ADR	161.34	-0.04%	0.000000	-0.07	177.65K
+522	
+MWYN	Marwynn Holdings, Inc.	0.7662	-0.04%	0.000000	-0.0003	16.48K
+523	
+YELP	Yelp Inc.	24.32	-0.04%	0.000000	-0.01	1.19M
+524	
+FONR	Fonar Corporation	18.44	-0.05%	0.000000	-0.01	35.76K
+525	
+ESP	Espey Mfg. & Electronics Corp.	55.75	-0.05%	0.144000	-0.03	11.48K
+526	
+SANM	Sanmina Corporation	125.03	-0.06%	0.040000	-0.08	658.34K
+527	
+FSTR	L. B. Foster Company	28.21	-0.07%	0.000000	-0.02	37.88K
+528	
+BSET	Bassett Furniture Industries, Inc.	14.14	-0.07%	0.054000	-0.01	29.38K
+529	
+NPKI	NPK International Inc.	13.88	-0.07%	0.000000	-0.01	645.53K
+530	
+MEDP	ميدبيس هولدينغز	454.80	-0.08%	0.000000	-0.35	258.47K
+531	
+LRN	Stride	87.01	-0.08%	0.009000	-0.07	1.06M
+532	
+WAB	Westinghouse Air Brake Technologies Corporation	237.79	-0.08%	0.000000	-0.19	648.06K
+533	
+SEMR	SEMrush Holdings, Inc. Class A	11.92	-0.08%	0.017000	-0.01	785.13K
+534	
+IOT	Samsara, Inc. Class A	33.68	-0.09%	0.000000	-0.03	5.31M
+535	
+OSW	OneSpaWorld Holdings Ltd.	21.48	-0.09%	0.000000	-0.02	1.09M
+536	
+PODD	Insulet Corporation	230.28	-0.09%	0.121000	-0.21	743.42K
+537	
+CSGS	CSG Systems International, Inc.	79.51	-0.09%	0.018000	-0.07	502.58K
+538	
+DV	DoubleVerify Holdings, Inc.	9.99	-0.10%	0.005000	-0.01	2.38M
+539	
+FIX	كومفورت سيستمز يو إس إيه	1423.00	-0.10%	0.181000	-1.46	425.14K
+540	
+WK	Workiva Inc. Class A	61.68	-0.11%	0.147000	-0.07	582.85K
+541	
+BRIA	BrilliA	1.96	-0.11%	0.000000	-0.0021	11.00K
+542	
+TRSG	Tungray Technologies Inc.	1.08	-0.11%	0.000000	-0.0012	3.57K
+543	
+IEX	IDEX Corp	190.16	-0.12%	0.000000	-0.23	684.64K
+544	
+ROAD	Construction Partners, Inc. Class A	117.38	-0.12%	0.000000	-0.14	505.38K
+545	
+AWI	Armstrong World Industries, Inc.	169.97	-0.12%	0.000000	-0.20	725.82K
+546	
+OKTA	أوكتا	78.43	-0.13%	0.150000	-0.10	2.13M
+547	
+STRA	Strategic Education, Inc.	80.41	-0.15%	0.000000	-0.12	254.00K
+548	
+INTS	Intensity Therapeutics, Inc.	6.48	-0.15%	0.000000	-0.01	13.47K
+549	
+LZ	LegalZoom.com, Inc.	6.26	-0.16%	0.012000	-0.01	2.14M
+550	
+LNN	Lindsay Corporation	116.63	-0.16%	0.123000	-0.19	186.46K
+551	
+RCMT	RCM Technologies, Inc.	19.00	-0.16%	0.000000	-0.03	42.06K
+552	
+DECK	Deckers Outdoor Corporation	104.54	-0.16%	0.099000	-0.17	2.17M
+553	
+FSS	Federal Signal Corporation	107.03	-0.17%	0.000000	-0.18	664.58K
+554	
+GVA	Granite Construction Incorporated	121.44	-0.17%	0.139000	-0.21	404.02K
+555	
+ICCC	ImmuCell Corporation	6.04	-0.17%	0.005000	-0.01	7.27K
+556	
+PANW	بالو ألتو	168.91	-0.17%	0.151000	-0.28	5.78M
+557	
+IRTC	iRhythm Holdings, Inc.	117.33	-0.17%	0.182000	-0.20	579.16K
+558	
+WST	West Pharmaceutical Services, Inc.	239.00	-0.18%	0.062000	-0.42	1.02M
+559	
+GLOO	Gloo Holdings, Inc. Class A	5.64	-0.18%	0.000000	-0.01	54.10K
+560	
+EXAS	إكزاكت ساينسز	103.75	-0.18%	0.000000	-0.19	1.50M
+561	
+AMWL	American Well Corporation Class A	5.59	-0.18%	0.040000	-0.01	48.56K
+562	
+TALK	Talkspace, Inc.	5.13	-0.19%	0.006000	-0.01	6.93M
+563	
+RMBS	Rambus Inc.	93.32	-0.19%	0.057000	-0.18	1.34M
+564	
+CEPU	Central Puerto S.A. Sponsored ADR	15.50	-0.19%	0.004000	-0.03	337.40K
+565	
+CTLP	CANTALOUPE INC	10.55	-0.19%	0.005000	-0.02	529.53K
+566	
+BSM	Black Stone Minerals LP	15.31	-0.20%	0.000000	-0.03	424.60K
+567	
+SJT	San Juan Basin Royalty Trust	4.90	-0.20%	0.000000	-0.01	89.56K
+568	
+BELFA	Bel Fuse Inc. Class A	192.35	-0.20%	0.019000	-0.38	72.46K
+569	
+DAKT	Daktronics, Inc.	20.23	-0.20%	0.000000	-0.04	917.24K
+570	
+BROS	داتش بروس	51.18	-0.21%	0.000000	-0.11	2.99M
+571	
+DKS	ديك للسلع الرياضية	190.21	-0.23%	0.000000	-0.43	731.47K
+572	
+OBE	Obsidian Energy Ltd	8.53	-0.23%	0.000000	-0.02	1.29M
+573	
+SWKS	Skyworks Solutions, Inc.	53.58	-0.24%	0.000000	-0.13	3.25M
+574	
+LSTR	Landstar System, Inc.	148.15	-0.24%	0.254000	-0.35	382.84K
+575	
+OKUR	OnKure Therapeutics, Inc. Class A	4.01	-0.25%	0.000000	-0.01	175.08K
+576	
+RDVT	Red Violet, Inc.	39.60	-0.25%	0.027000	-0.1	110.29K
+577	
+TNDM	Tandem Diabetes Care, Inc.	23.85	-0.25%	0.038000	-0.06	1.65M
+578	
+TWLO	تويليو	126.55	-0.26%	0.106000	-0.33	1.04M
+579	
+LNTH	Lantheus Holdings Inc	80.24	-0.26%	0.050000	-0.21	941.50K
+580	
+MDGL	Madrigal Pharmaceuticals, Inc.	442.00	-0.27%	0.452000	-1.18	314.22K
+581	
+ENS	EnerSys	164.04	-0.27%	0.000000	-0.44	311.07K
+582	
+MGRC	McGrath RentCorp	105.23	-0.27%	0.000000	-0.29	136.08K
+583	
+ROG	Rogers Corporation	100.74	-0.27%	0.037000	-0.27	189.40K
+584	
+CVM	CEL-SCI Corporation	3.59	-0.28%	0.000000	-0.01	35.17K
+585	
+EHLD	Euroholdings Ltd.	7.10	-0.28%	0.013000	-0.0202	16.12K
+586	
+RNGR	Ranger Energy Services, Inc. Class A	17.13	-0.29%	0.000000	-0.05	219.46K
+587	
+ASND	Ascendis Pharma A/S Sponsored ADR	227.41	-0.29%	0.112000	-0.65	321.06K
+588	
+ALB	ألبيمارل	165.83	-0.29%	0.000000	-0.49	1.58M
+589	
+OPCH	Option Care Health Inc	29.66	-0.30%	0.000000	-0.09	1.58M
+590	
+NRP	Natural Resource Partners L.P.	117.91	-0.30%	0.000000	-0.36	28.31K
+591	
+NTRA	شركة ناتيرا	197.79	-0.30%	0.083000	-0.59	1.39M
+592	
+SLAB	Silicon Laboratories Inc.	205.73	-0.31%	0.093000	-0.63	425.53K
+593	
+FTI	تكنيب أف أم سي	65.13	-0.32%	0.019000	-0.21	4.40M
+594	
+TPC	Tutor Perini Corporation	71.21	-0.32%	0.000000	-0.23	427.85K
+595	
+ECG	Everus Construction Group, Inc.	115.77	-0.33%	0.027000	-0.38	369.01K
+596	
+COLM	Columbia Sportswear Company	55.00	-0.33%	0.000000	-0.18	562.98K
+597	
+TNC	Tennant Company	63.97	-0.34%	0.000000	-0.22	373.55K
+598	
+EQIX	أكوينيكس	973.56	-0.34%	0.533000	-3.32	451.76K
+599	
+CWAN	Clearwater Analytics Holdings, Inc. Class A	23.30	-0.34%	0.000000	-0.08	4.88M
+600	
+NL	NL Industries Inc	5.69	-0.35%	0.000000	-0.02	41.11K
+601	
+JNJ	جونسون آند جونسون	237.28	-0.35%	0.072000	-0.83	6.67M
+602	
+MLI	Mueller Industries, Inc.	110.46	-0.35%	0.067000	-0.39	495.03K
+603	
+MORN	شركة مورنينج ستار	183.24	-0.35%	0.044000	-0.635	403.91K
+604	
+SPT	Sprout Social	5.65	-0.35%	0.014000	-0.02	1.86M
+605	
+YDKG	Yueda Digital Holding Class A	0.8500	-0.35%	0.000000	-0.003	20.65K
+606	
+DCBO	Docebo, Inc.	19.77	-0.35%	0.010000	-0.07	114.77K
+607	
+THRM	Gentherm Incorporated	28.06	-0.36%	0.000000	-0.10	267.63K
+608	
+TRVG	trivago N.V. Sponsored ADR Class A	2.80	-0.36%	0.002000	-0.01	16.97K
+609	
+NTGR	NETGEAR, Inc.	21.58	-0.37%	0.093000	-0.08	377.90K
+610	
+CAI	Caris Life Sciences, Inc.	18.47	-0.38%	0.026000	-0.07	3.28M
+611	
+DORM	Dorman Products, Inc.	100.92	-0.38%	0.000000	-0.38	303.57K
+612	
+MSI	موتورولا سولوشنز	467.28	-0.39%	0.100000	-1.81	1.26M
+613	
+GOLF	Acushnet Holdings Corp.	94.08	-0.39%	0.000000	-0.37	338.36K
+614	
+WAY	Waystar Holding Corp.	24.65	-0.40%	0.000000	-0.10	2.82M
+615	
+LSTA	Lisata Therapeutics, Inc.	5.01	-0.40%	0.000000	-0.02	160.10K
+616	
+TTC	Toro Company	94.52	-0.41%	0.000000	-0.39	923.83K
+617	
+LHSW	Lianhe Sowell International Group Ltd. Class A	0.1711	-0.41%	0.000000	-0.0007	408.47K
+618	
+LITB	LightInTheBox Holding Co., Ltd. Sponsored ADR	2.43	-0.41%	0.000000	-0.01	4.12K
+619	
+VTS	Vitesse Energy, Inc.	19.13	-0.42%	0.000000	-0.08	250.44K
+620	
+IMRX	Immuneering Corp. Class A	4.78	-0.42%	0.000000	-0.02	1.21M
+621	
+AOSL	Alpha and Omega Semiconductor Limited	21.13	-0.42%	0.024000	-0.09	230.54K
+622	
+TLF	Tandy Leather Factory, Inc.	2.30	-0.43%	0.010000	-0.01	40.53K
+623	
+IMNM	Immunome, Inc.	20.62	-0.43%	0.000000	-0.09	989.23K
+624	
+PLUG	Plug Power Inc.	2.32	-0.43%	0.005000	-0.01	83.99M
+625	
+CORZ	Core Scientific	16.35	-0.43%	0.003000	-0.07	8.77M
+626	
+SPH	Suburban Propane Partners, L.P.	20.44	-0.44%	0.000000	-0.09	51.33K
+627	
+PCOR	بروكور	58.74	-0.44%	0.032000	-0.26	1.94M
+628	
+SXI	Standex International Corporation	254.21	-0.45%	0.000000	-1.14	128.58K
+629	
+ALLT	Allot Ltd.	6.71	-0.45%	0.016000	-0.03	342.10K
+630	
+UI	يوبيكويتي نيتوركس	784.88	-0.46%	0.000000	-3.64	83.00K
+631	
+RAY	Raytech Holding Limited	4.11	-0.46%	0.000000	-0.019	1.86K
+632	
+ULTA	ألتا	520.65	-0.46%	0.000000	-2.42	967.04K
+633	
+WHD	Cactus, Inc. Class A	46.26	-0.47%	0.000000	-0.22	908.89K
+634	
+NOVTU	Novanta Inc Units	54.10	-0.48%	0.000000	-0.26	384.19K
+635	
+APPF	AppFolio Inc Class A	167.67	-0.48%	0.000000	-0.81	285.17K
+636	
+LXEH	Lixiang Education Holding Co., Ltd. Sponsored ADR	0.2286	-0.48%	0.000000	-0.0011	97.44K
+637	
+GIL	Gildan Activewear Inc.	58.46	-0.49%	0.000000	-0.29	827.18K
+638	
+TECH	Bio-Techne Corporation	50.81	-0.49%	0.006000	-0.25	2.18M
+639	
+CRM	سيلز فورس دوت كوم	194.34	-0.50%	0.000000	-0.97	10.10M
+640	
+CXM	Sprinklr, Inc. Class A	5.95	-0.50%	0.000000	-0.03	3.54M
+641	
+GNPX	Genprex Inc	2.01	-0.50%	0.000000	-0.01	768.63K
+642	
+CGNX	Cognex Corporation	49.87	-0.50%	0.000000	-0.25	1.47M
+643	
+EXPE	اٍكسبيديا	240.04	-0.50%	0.226000	-1.21	1.36M
+644	
+QCLS	Q/C Technologies, Inc.	4.00	-0.50%	1.040000	-0.02	3.62M
+645	
+GIB	سي جي آي	71.51	-0.51%	0.029000	-0.37	258.41K
+646	
+CHKP	تشيك بوينت سوفتوير تكنولوجيز	153.16	-0.51%	0.105000	-0.79	561.67K
+647	
+EPSN	Epsilon Energy Ltd.	5.80	-0.51%	0.004000	-0.03	252.20K
+648	
+ANF	Abercrombie & Fitch Co. Class A	85.97	-0.52%	0.030000	-0.45	1.14M
+649	
+GRO	Brazil Potash Corp.	3.72	-0.53%	0.000000	-0.02	1.65M
+650	
+MTZ	شركة ماستك	303.07	-0.53%	0.000000	-1.60	564.73K
+651	
+GRDN	Guardian Pharmacy Services, Inc. Class A	33.91	-0.53%	0.000000	-0.18	337.92K
+652	
+IOTR	iOThree Limited	1.85	-0.54%	0.000000	-0.01	10.13K
+653	
+AAUC	Allied Gold Corporation	31.18	-0.54%	0.000000	-0.17	436.96K
+654	
+NTNX	نوتانيكس	41.47	-0.55%	0.070000	-0.23	3.21M
+655	
+MENS	Jyong Biotech Ltd.	1.79	-0.56%	0.000000	-0.01	220.58K
+656	
+FDS	فاكتست لنظم البحوث	207.82	-0.56%	0.047000	-1.18	904.47K
+657	
+DMAC	DiaMedica Therapeutics	7.12	-0.56%	0.000000	-0.04	357.30K
+658	
+ITRI	Itron, Inc.	91.79	-0.56%	0.294000	-0.52	581.16K
+659	
+OFLX	Omega Flex, Inc.	28.61	-0.56%	0.049000	-0.16	45.03K
+660	
+NUE	نيوكور كورب	161.16	-0.57%	0.061000	-0.92	1.13M
+661	
+ETD	Ethan Allen Interiors Inc.	22.21	-0.58%	0.000000	-0.13	294.61K
+662	
+KRT	Karat Packaging, Inc.	27.75	-0.59%	0.020000	-0.165	120.87K
+663	
+KSPI	Kaspi.KZ	73.08	-0.59%	0.000000	-0.435	405.79K
+664	
+NTCT	NetScout Systems, Inc.	30.56	-0.59%	0.026000	-0.18	728.51K
+665	
+URGN	UroGen Pharma Ltd.	18.48	-0.59%	0.027000	-0.11	902.30K
+666	
+VCYT	Veracyte, Inc.	33.28	-0.60%	0.044000	-0.20	879.55K
+667	
+ROP	شركة روبر تكنولوجيز	350.79	-0.60%	0.000000	-2.10	1.34M
+668	
+JLHL	Julong Holding Limited Class A	5.80	-0.60%	0.000000	-0.035	1.92K
+669	
+SMTK	SmartKem, Inc.	0.2501	-0.60%	0.000000	-0.0015	39.51K
+670	
+FELE	Franklin Electric Co., Inc.	91.37	-0.61%	0.000000	-0.56	252.72K
+671	
+VCEL	Vericel Corporation	32.30	-0.62%	0.036000	-0.2	998.07K
+672	
+ABNB	إير بي إن بي	131.13	-0.62%	0.277000	-0.82	3.07M
+673	
+LQDA	LIQUIDIA TECHNOLOGIES INC	36.63	-0.62%	0.019000	-0.23	866.63K
+674	
+SIMO	Silicon Motion Technology Corporation Sponsored ADR	125.40	-0.62%	0.016000	-0.78	233.64K
+675	
+CHRW	سي اٍتش روبينسون وورلد وايد	170.64	-0.63%	0.000000	-1.08	1.26M
+676	
+CORT	Corcept Therapeutics Incorporated.	33.30	-0.63%	0.036000	-0.21	1.65M
+677	
+SPSC	SPS Commerce, Inc.	60.05	-0.63%	0.000000	-0.38	430.68K
+678	
+PEW	GrabAGun Digital Holdings Inc.	3.12	-0.64%	0.000000	-0.02	436.32K
+679	
+ROK	روكويل أوتوميشن إنك	355.11	-0.64%	0.021000	-2.28	929.21K
+680	
+PI	Impinj, Inc.	98.64	-0.65%	0.000000	-0.65	586.12K
+681	
+MSCI	مؤشر MSCI للأسواق الناشئة	556.74	-0.65%	0.038000	-3.67	471.11K
+682	
+WAT	ووترز كورب	295.05	-0.65%	0.029000	-1.94	960.65K
+683	
+NLOP	Net Lease Office Properties	13.81	-0.65%	0.000000	-0.09	144.77K
+684	
+SNAP	سناب	4.62	-0.65%	0.018000	-0.03	29.40M
+685	
+AUUD	Auddia Inc.	0.8378	-0.66%	0.000000	-0.0056	99.99K
+686	
+CHT	اتصالات تشونغهوا	43.08	-0.67%	0.001000	-0.29	173.21K
+687	
+LQDT	Liquidity Services, Inc.	28.11	-0.67%	0.000000	-0.19	137.50K
+688	
+MAIA	MAIA Biotechnology, Inc.	1.49	-0.67%	0.000000	-0.01	811.31K
+689	
+AXR	AMREP Corporation	28.20	-0.67%	0.000000	-0.19	12.84K
+690	
+MRTN	Marten Transport, Ltd.	11.61	-0.68%	0.000000	-0.08	673.18K
+691	
+NKLR	Terra Innovatum Global N.V.	4.35	-0.68%	0.000000	-0.03	263.71K
+692	
+LMNR	Limoneira Company	13.22	-0.68%	0.001000	-0.09	111.87K
+693	
+WTTR	Select Water Solutions, Inc. Class A	14.50	-0.68%	0.000000	-0.1	1.27M
+694	
+CACI	CACI International Inc Class A	608.73	-0.69%	0.000000	-4.20	157.60K
+695	
+NXPI	NXP Semiconductors NV	192.69	-0.69%	0.133000	-1.33	2.13M
+696	
+AUID	authID Inc.	1.44	-0.69%	0.000000	-0.01	107.78K
+697	
+HSAI	Hesai Group	24.40	-0.69%	0.029000	-0.17	712.40K
+698	
+ADP	أوتوماتيك داتا بروسسينج	208.28	-0.69%	0.156000	-1.45	3.24M
+699	
+LGND	Ligand Pharmaceuticals Incorporated	209.52	-0.70%	0.196000	-1.47	192.78K
+700	
+GNTX	Gentex Corporation	21.08	-0.71%	0.000000	-0.15	1.86M
+701	
+AGYS	Agilysys, Inc.	67.54	-0.71%	0.010000	-0.48	309.84K
+702	
+FIVE	Five Below, Inc.	212.47	-0.71%	0.000000	-1.53	2.29M
+703	
+FIZZ	National Beverage Corp.	34.35	-0.72%	0.021000	-0.25	247.25K
+704	
+PUBM	Pubmatic	8.11	-0.73%	0.020000	-0.06	566.93K
+705	
+DOV	دوفر كورب	212.23	-0.74%	0.068000	-1.59	1.05M
+706	
+RERE	AiHuiShou International Co. Ltd.	5.39	-0.74%	0.005000	-0.04	1.98M
+707	
+CRSR	Corsair Gaming, Inc.	5.35	-0.74%	0.002000	-0.04	1.25M
+708	
+ZBRA	زيبرا تكنولوجيز	207.51	-0.74%	0.000000	-1.55	614.78K
+709	
+HHS	Harte-Hanks, Inc.	2.65	-0.75%	0.000000	-0.02	2.54K
+710	
+CLBT	Cellebrite	14.58	-0.75%	0.022000	-0.11	865.02K
+711	
+S	SentinelOne, Inc. Class A	14.38	-0.76%	0.000000	-0.11	5.23M
+712	
+KE	Kimball Electronics, Inc.	23.18	-0.77%	0.005000	-0.18	108.18K
+713	
+UG	United-Guardian, Inc.	6.43	-0.77%	0.000000	-0.05	2.64K
+714	
+XOM	إكسون موبايل	157.59	-0.77%	0.003000	-1.22	18.76M
+715	
+INVA	Innoviva, Inc.	21.89	-0.77%	0.055000	-0.17	659.33K
+716	
+SNOW	سنوفليك	173.25	-0.77%	0.142000	-1.35	4.24M
+717	
+RECT	Rectitude Holdings Ltd	1.28	-0.78%	0.000000	-0.01	6.03K
+718	
+PRLB	Proto Labs, Inc.	56.28	-0.78%	0.075000	-0.44	182.55K
+719	
+EXLS	ExlService Holdings, Inc.	30.59	-0.78%	0.010000	-0.24	2.03M
+720	
+LRCX	لام للأبحاث	224.71	-0.78%	0.021000	-1.76	12.36M
+721	
+CMC	Commercial Metals Company	61.46	-0.79%	0.000000	-0.49	1.21M
+722	
+SNY	سانوفي	43.71	-0.79%	0.105000	-0.35	4.39M
+723	
+CRAI	CRA International, Inc.	154.44	-0.79%	0.000000	-1.23	129.43K
+724	
+TWG	Top Wealth Group Holding Ltd.	3.72	-0.80%	0.000000	-0.03	27.78K
+725	
+EXTR	Extreme Networks, Inc.	14.93	-0.80%	0.008000	-0.12	1.82M
+726	
+CP	كنيدين باسيفك كانسس سيتي	79.94	-0.81%	0.000000	-0.65	2.46M
+727	
+CR	Crane Company	175.08	-0.81%	0.038000	-1.43	278.74K
+728	
+TBN	Tamboran Resources Corporation	31.81	-0.81%	0.000000	-0.26	53.22K
+729	
+GLOB	Globant SA	44.27	-0.81%	0.032000	-0.36	857.87K
+730	
+AGX	Argan, Inc.	469.81	-0.81%	0.000000	-3.82	329.32K
+731	
+ADPT	Adaptive Biotechnologies	13.28	-0.82%	0.015000	-0.11	1.55M
+732	
+DCO	Ducommun Incorporated	124.83	-0.83%	0.000000	-1.04	157.34K
+733	
+EXE	إكسباند إنرجي	105.52	-0.83%	0.000000	-0.88	4.23M
+734	
+KNF	Knife River Corporation	82.41	-0.83%	0.000000	-0.69	1.24M
+735	
+NXL	Nexalin Technology, Inc.	0.4056	-0.83%	0.000000	-0.0034	180.77K
+736	
+REX	REX American Resources Corporation	40.84	-0.83%	0.000000	-0.34	229.23K
+737	
+METCB	Ramaco Resources, Inc. Class B	10.65	-0.84%	0.000000	-0.09	38.44K
+738	
+NVDA	إنفيديا	180.40	-0.84%	0.025000	-1.53	155.15M
+739	
+ON	ON Semiconductor Corporation	60.46	-0.85%	0.036000	-0.52	5.06M
+740	
+INSM	انسميد	142.70	-0.85%	0.000000	-1.23	2.00M
+741	
+QCOM	كوالكوم	130.47	-0.85%	0.000000	-1.12	9.68M
+742	
+TCOM	تريب دوت كوم المحدودة	51.96	-0.86%	0.133000	-0.45	1.42M
+743	
+YOUL	YOULIFE GROUP INC	1.15	-0.86%	0.000000	-0.01	71.54K
+744	
+ALLE	Allegion Public Limited Company	144.66	-0.86%	0.029000	-1.25	555.95K
+745	
+MWA	Mueller Water Products, Inc. Class A	27.42	-0.87%	0.026000	-0.24	839.29K
+746	
+CALX	Calix, Inc.	51.00	-0.87%	0.000000	-0.45	1.10M
+747	
+NEUP	Neuphoria Therapeutics Inc.	4.57	-0.87%	0.000000	-0.04	20.22K
+748	
+AHR	American Healthcare REIT, Inc.	52.57	-0.87%	0.000000	-0.46	2.75M
+749	
+TLK	تلكوم اندونيسيا	18.08	-0.88%	0.000000	-0.16	441.68K
+750	
+NNVC	NanoViricides, Inc.	1.12	-0.88%	0.000000	-0.01	187.64K
+751	
+AS	أمير سبورتس	33.36	-0.89%	0.003000	-0.30	4.48M
+752	
+VS	Versus System Inc	1.11	-0.89%	0.000000	-0.01	4.60K
+753	
+CTVA	Corteva Inc	79.34	-0.89%	0.042000	-0.71	3.40M
+754	
+BB	BlackBerry Limited	3.30	-0.90%	0.000000	-0.03	6.87M
+755	
+NRC	National Research Corporation	17.57	-0.90%	0.001000	-0.16	124.84K
+756	
+LCFY	Locafy Ltd.	4.39	-0.90%	0.000000	-0.04	7.02K
+757	
+SBFM	Sunshine Biopharma Incorporated	1.10	-0.90%	0.029000	-0.01	5.60K
+758	
+IONS	Ionis Pharmaceuticals, Inc.	71.67	-0.91%	0.000000	-0.66	2.11M
+759	
+LEVI	Levi Strauss & Co.	18.50	-0.91%	0.000000	-0.17	2.11M
+760	
+PXED	Phoenix Education Partners, Inc.	27.30	-0.91%	0.000000	-0.25	109.83K
+761	
+EPRX	Eupraxia Pharmaceuticals, Inc.	7.51	-0.92%	0.000000	-0.07	238.35K
+762	
+LFUS	Littelfuse, Inc.	332.99	-0.92%	0.000000	-3.09	236.00K
+763	
+EQ	Equillium	2.13	-0.93%	0.000000	-0.02	402.81K
+764	
+ETN	إيتون كورب	360.54	-0.94%	0.000000	-3.41	2.23M
+765	
+ROMA	Roma Financial Corporation	5.28	-0.94%	0.000000	-0.05	51.22K
+766	
+ROST	روس ستورس	207.22	-0.94%	0.000000	-1.97	2.49M
+767	
+ORKT	Orangekloud Technology Inc. Class A	1.04	-0.95%	0.000000	-0.01	108.00K
+768	
+KLIC	Kulicke & Soffa Industries, Inc.	65.73	-0.95%	0.066000	-0.63	340.36K
+769	
+SYK	سترايكر كورب	345.81	-0.95%	0.073000	-3.30	2.43M
+770	
+PLOW	Douglas Dynamics, Inc.	40.86	-0.95%	0.000000	-0.39	205.24K
+771	
+JBSS	John B. Sanfilippo & Son, Inc.	75.40	-0.95%	0.000000	-0.72	60.16K
+772	
+AYI	أكيوتي براندز	265.36	-0.95%	0.057000	-2.54	396.85K
+773	
+WM	ويست مانجمنت إنك	233.79	-0.96%	0.000000	-2.26	1.17M
+774	
+ALAB	أستيرا لابس	126.34	-0.96%	0.067000	-1.23	3.84M
+775	
+ONCO	Onconetix Inc	0.5186	-0.97%	0.000000	-0.0051	70.36K
+776	
+PCTY	شركة بايلوسيتي	109.72	-0.97%	0.000000	-1.08	563.09K
+777	
+JKHY	جاك هنري وشركاه	165.15	-0.97%	0.068000	-1.62	557.37K
+778	
+OESX	Orion Energy Systems, Inc.	9.67	-0.97%	0.000000	-0.095	39.40K
+779	
+LECO	شركة لينكولن إلكتريك	258.23	-0.98%	0.015000	-2.55	363.92K
+780	
+AOUT	American Outdoor Brands, Inc.	8.12	-0.98%	0.000000	-0.08	105.10K
+781	
+SOLS	Solstice Advanced Materials, Inc.	74.41	-0.98%	0.000000	-0.74	2.77M
+782	
+MLSS	Milestone Scientific Inc.	0.2800	-0.99%	0.000000	-0.0028	84.15K
+783	
+SNTI	Senti Biosciences, Inc.	0.9703	-0.99%	0.000000	-0.0097	82.67K
+784	
+STFS	Star Fashion Culture Holdings Ltd.	4.01	-0.99%	0.000000	-0.04	11.64K
+785	
+GCT	GigaCloud Technology Inc	42.61	-1.00%	0.076000	-0.43	555.21K
+786	
+IMNN	Imunon, Inc.	2.97	-1.00%	0.000000	-0.03	32.42K
+787	
+CART	Maplebear Inc.	37.79	-1.00%	0.060000	-0.38	3.82M
+788	
+SNDR	Schneider National, Inc. Class B	23.82	-1.00%	0.007000	-0.24	1.26M
+789	
+STRL	Sterling Infrastructure, Inc.	421.23	-1.01%	0.181000	-4.28	385.77K
+790	
+PALI	Palisade Bio	1.97	-1.01%	0.000000	-0.02	4.30M
+791	
+GOOG	ألفابيت (جوجل)	306.30	-1.01%	0.087000	-3.11	13.77M
+792	
+CMDB	Costamare Bulkers Holdings Limited	15.62	-1.01%	0.000000	-0.16	48.78K
+793	
+ODFL	Old Dominion Freight Line, Inc.	182.57	-1.01%	0.003000	-1.86	1.77M
+794	
+FLXS	Flexsteel Industries, Inc.	45.18	-1.01%	0.045000	-0.46	33.69K
+795	
+BGLC	BioNexus Gene Lab Corp	2.51	-1.02%	0.011000	-0.0258	1.15K
+796	
+ZJK	ZJK Industrial Co., Ltd.	1.95	-1.02%	0.000000	-0.02	3.02K
+797	
+ASR	Grupo Aeroportuario del Sureste SAB de CV Sponsored ADR Class B	320.70	-1.02%	0.061000	-3.32	37.85K
+798	
+NIU	Niu Technologies	2.89	-1.03%	0.006000	-0.03	879.64K
+799	
+STN	Stantec Inc	89.02	-1.03%	0.000000	-0.93	150.90K
+800	
+WOR	Worthington Enterprises, Inc.	47.89	-1.03%	0.000000	-0.50	197.29K
+801	
+WSO	واتسكو	377.96	-1.03%	0.000000	-3.93	378.58K
+802	
+RS	شركة ريلاينس	295.94	-1.04%	0.000000	-3.10	332.42K
+803	
+PAY	Paymentus Holdings, Inc.	24.83	-1.04%	0.000000	-0.26	646.83K
+804	
+ISRG	إنتيوتيف سيرجيكل	477.73	-1.04%	0.000000	-5.03	1.46M
+805	
+WEAV	Weave Communications, Inc.	4.78	-1.04%	0.006000	-0.05	992.91K
+806	
+GOOGL	ألفابيت A	307.69	-1.04%	0.087000	-3.23	19.90M
+807	
+PSNY	Polestar Automotive Holding UK PLC Sponsored ADR Class A	17.13	-1.04%	0.000000	-0.18	93.21K
+808	
+OSPN	OneSpan Inc.	10.36	-1.05%	0.009000	-0.11	701.31K
+809	
+TR	Tootsie Roll Industries, Inc.	41.82	-1.06%	0.000000	-0.45	159.03K
+810	
+TS	تيناريس	55.19	-1.06%	0.042000	-0.59	2.35M
+811	
+FLS	Flowserve Corporation	74.33	-1.06%	0.005000	-0.80	2.32M
+812	
+QRVO	Qorvo, Inc.	77.13	-1.06%	0.000000	-0.83	1.24M
+813	
+BLBD	Blue Bird Corporation	53.91	-1.06%	0.043000	-0.58	490.95K
+814	
+NYAX	Nayax Ltd.	60.60	-1.06%	0.045000	-0.65	16.94K
+815	
+SPXC	SPX Technologies, Inc.	202.46	-1.06%	0.021000	-2.16	284.07K
+816	
+RDDT	رديت	142.79	-1.07%	0.000000	-1.54	4.12M
+817	
+AAON	AAON, Inc.	78.55	-1.07%	0.000000	-0.85	873.72K
+818	
+UFPI	UFP Industries, Inc.	89.68	-1.07%	0.198000	-0.97	526.65K
+819	
+SMSI	Smith Micro Software, Inc.	0.8067	-1.07%	0.000000	-0.0087	235.84K
+820	
+MTSI	MACOM Technology Solutions Holdings, Inc.	218.89	-1.08%	0.104000	-2.40	1.06M
+821	
+VIV	تليفونيكا برازيل	15.55	-1.08%	0.004000	-0.17	1.48M
+822	
+HNST	Honest Company, Inc.	2.74	-1.08%	0.000000	-0.03	1.09M
+823	
+CV	CapsoVision, Inc.	5.46	-1.09%	0.003000	-0.06	441.86K
+824	
+DLB	Dolby Laboratories, Inc. Class A	60.83	-1.09%	0.052000	-0.67	515.74K
+825	
+VTVT	vTv Therapeutics, Inc. Class A	36.30	-1.09%	0.000000	-0.4	43.06K
+826	
+GTLB	جيت لاب	22.63	-1.09%	0.067000	-0.25	3.23M
+827	
+AIT	التقنيات الصناعية التطبيقية	258.51	-1.09%	0.000000	-2.86	342.82K
+828	
+STVN	Stevanato Group SpA	15.23	-1.10%	0.002000	-0.17	299.89K
+829	
+HURN	Huron Consulting Group Inc.	125.48	-1.10%	0.000000	-1.40	235.82K
+830	
+VLTO	فيرالتو	89.99	-1.10%	0.000000	-1.00	1.41M
+831	
+PAYC	Paycom Software, Inc.	124.49	-1.10%	0.000000	-1.38	1.22M
+832	
+CSTL	Castle Biosciences	25.62	-1.10%	0.096000	-0.285	246.34K
+833	
+APPN	Appian	25.20	-1.10%	0.000000	-0.28	613.86K
+834	
+SITE	SiteOne Landscape Supply, Inc.	129.60	-1.10%	0.000000	-1.44	497.79K
+835	
+AVNS	Avanos Medical, Inc.	13.46	-1.10%	0.010000	-0.15	399.08K
+836	
+A	أغيلنت تكنولوجيز إنك	111.50	-1.11%	0.055000	-1.25	2.40M
+837	
+LIN	لينده	488.57	-1.11%	0.000000	-5.48	2.20M
+838	
+BMRN	بيومارين فارماسيوتيكال	55.43	-1.11%	0.092000	-0.62	2.44M
+839	
+IBEX	IBEX Ltd	28.62	-1.11%	0.002000	-0.32	85.54K
+840	
+CCLD	CareCloud	3.57	-1.11%	0.005000	-0.04	773.76K
+841	
+CISO	CISO Global, Inc.	0.3837	-1.11%	0.000000	-0.0043	80.60K
+842	
+META	ميتا بلاتفورمس	615.68	-1.12%	0.142000	-6.98	11.64M
+843	
+GDDY	جودادي	84.13	-1.12%	0.000000	-0.95	1.74M
+844	
+CLAR	Clarus Corporation	2.66	-1.12%	0.003000	-0.03	255.28K
+845	
+KEYS	Keysight Technologies Inc	284.12	-1.13%	0.151000	-3.26	781.87K
+846	
+PSO	بيرسون	13.12	-1.13%	0.048000	-0.15	992.37K
+847	
+INGN	Inogen, Inc.	6.13	-1.13%	0.044000	-0.07	180.61K
+848	
+NTAP	نيت أبب	100.77	-1.13%	0.175000	-1.15	1.83M
+849	
+PKE	Park Aerospace Corp.	27.68	-1.14%	0.018000	-0.32	334.81K
+850	
+TDW	Tidewater Inc	75.27	-1.14%	0.009000	-0.87	847.99K
+851	
+DGII	Digi International Inc.	49.65	-1.14%	0.000000	-0.57	305.93K
+852	
+MSAI	MultiSensor AI Holdings, Inc.	0.2927	-1.15%	0.000000	-0.0034	1.14M
+853	
+INKT	MiNK Therapeutics, Inc.	9.46	-1.15%	0.000000	-0.11	61.05K
+854	
+GNLX	Genelux Corp.	2.59	-1.15%	0.000000	-0.03	132.03K
+855	
+PLUS	ePlus inc.	74.69	-1.15%	0.693000	-0.87	255.48K
+856	
+BBIO	BridgeBio Pharma	70.12	-1.16%	0.030000	-0.82	1.42M
+857	
+ORCL	أوراكل	152.90	-1.16%	0.037000	-1.79	17.88M
+858	
+NESR	National Energy Services Reunited Corp.	20.52	-1.16%	0.000000	-0.24	1.75M
+859	
+KN	Knowles Corp.	24.56	-1.17%	0.000000	-0.29	581.64K
+860	
+GPOR	GULFPORT ENERGY CORP	197.38	-1.17%	0.000000	-2.34	210.92K
+861	
+EPAC	Enerpac Tool Group Corp Class A	36.20	-1.17%	0.000000	-0.43	347.81K
+862	
+MRK	ميرك اند كو	114.50	-1.18%	0.027000	-1.37	6.63M
+863	
+JYNT	Joint Corp.	8.37	-1.18%	0.000000	-0.10	81.01K
+864	
+INO	Inovio Pharmaceuticals, Inc.	1.66	-1.19%	0.000000	-0.02	574.35K
+865	
+LTH	Life Time Group Holdings, Inc.	25.76	-1.19%	0.000000	-0.31	2.17M
+866	
+NICE	NICE Ltd. Sponsored ADR	117.46	-1.19%	0.279000	-1.41	303.89K
+867	
+HIHO	Highway Holdings Limited	0.8201	-1.19%	0.009000	-0.0099	17.49K
+868	
+SONO	SONOS INC	13.33	-1.19%	0.012000	-0.16	1.38M
+869	
+LSPD	Lightspeed Commerce Inc	9.03	-1.20%	0.037000	-0.11	1.12M
+870	
+FDP	Fresh Del Monte Produce Inc.	40.87	-1.21%	0.015000	-0.50	261.06K
+871	
+COO	Cooper Companies, Inc.	71.17	-1.22%	0.000000	-0.88	1.76M
+872	
+OPRA	OPERA LTD	14.62	-1.22%	0.009000	-0.18	260.35K
+873	
+PNR	بينتاير	88.27	-1.22%	0.000000	-1.09	1.37M
+874	
+RAMP	LiveRamp Holdings, Inc.	27.61	-1.22%	0.023000	-0.34	661.72K
+875	
+GTBP	GT Biopharma Inc	0.4290	-1.22%	0.000000	-0.0053	205.28K
+876	
+HUBG	Hub Group	33.70	-1.23%	0.019000	-0.42	881.07K
+877	
+EJH	E-Home Household Service Holdings Ltd Ordinary Shares	0.1006	-1.23%	0.000000	-0.00125	698.76K
+878	
+WDFC	WD-40 Company	219.45	-1.23%	0.008000	-2.74	182.73K
+879	
+CNM	Core & Main, Inc. Class A	47.68	-1.24%	0.000000	-0.60	2.27M
+880	
+RSG	ريببليك سيرفيسز إنك	221.99	-1.24%	0.007000	-2.78	1.08M
+881	
+JBHT	J.B. Hunt Transport Services, Inc.	197.64	-1.24%	0.000000	-2.48	1.81M
+882	
+BBW	Build-A-Bear Workshop, Inc.	39.46	-1.25%	0.000000	-0.50	464.77K
+883	
+RELX	ريلكس جروب	33.86	-1.25%	0.006000	-0.43	5.36M
+884	
+CDNA	CareDx, Inc.	17.38	-1.25%	0.036000	-0.22	593.59K
+885	
+SFIX	Stitch Fix, Inc. Class A	3.15	-1.25%	0.018000	-0.04	2.08M
+886	
+MTD	Mettler-Toledo International Inc.	1191.54	-1.26%	0.000000	-15.18	136.09K
+887	
+NEU	NewMarket Corporation	613.15	-1.26%	0.000000	-7.81	156.04K
+888	
+NPO	Enpro Inc.	250.59	-1.26%	0.023000	-3.20	268.83K
+889	
+EXPO	Exponent, Inc.	64.50	-1.26%	0.035000	-0.82	426.98K
+890	
+KFY	Korn Ferry	60.48	-1.27%	0.000000	-0.78	541.07K
+891	
+NDSN	Nordson Corporation	267.55	-1.27%	0.006000	-3.45	277.08K
+892	
+TTAN	ServiceTitan, Inc. Class A	68.74	-1.28%	0.052000	-0.89	1.11M
+893	
+TYL	Tyler Technologies, Inc.	343.95	-1.29%	0.000000	-4.50	370.07K
+894	
+AME	AMETEK, Inc.	212.77	-1.29%	0.000000	-2.79	1.17M
+895	
+HUBS	هبسبوت	262.11	-1.30%	0.266000	-3.44	1.06M
+896	
+FSLR	فيرست سولار	197.81	-1.30%	0.215000	-2.61	1.22M
+897	
+KFRC	Kforce Inc.	25.83	-1.30%	0.000000	-0.34	232.33K
+898	
+PRE	Prenetics Global	20.46	-1.30%	0.000000	-0.27	119.40K
+899	
+SHOO	Steven Madden, Ltd.	32.61	-1.30%	0.000000	-0.43	1.17M
+900	
+OSTX	OS Therapies Incorporated	1.51	-1.31%	0.000000	-0.02	299.61K
+901	
+LLY	ليلي، إيلاي آند كو	918.05	-1.32%	0.069000	-12.30	3.43M
+902	
+SNN	سميث آند نيفيو	32.93	-1.32%	0.017000	-0.44	449.66K
+903	
+DCI	Donaldson Company, Inc.	84.03	-1.33%	0.000000	-1.13	706.03K
+904	
+HEI	HEICO Corporation	288.33	-1.33%	0.000000	-3.88	349.22K
+905	
+CALC	CalciMedica, Inc.	0.8224	-1.33%	0.000000	-0.0111	397.08K
+906	
+AVPT	AvePoint, Inc. Class A	10.35	-1.33%	0.000000	-0.14	1.22M
+907	
+BEEM	Beam Global	1.47	-1.34%	0.001000	-0.02	92.72K
+908	
+RNAZ	TransCode Therapeutics, Inc.	9.55	-1.34%	0.000000	-0.13	5.91K
+909	
+YDDL	One and one Green Technologies Inc Class A	8.12	-1.34%	0.000000	-0.11	199.45K
+910	
+FFIV	اٍف 5 نيتووركس	282.20	-1.34%	0.000000	-3.83	608.37K
+911	
+AVR	Anteris Technologies Global Corp.	5.89	-1.34%	0.000000	-0.08	631.89K
+912	
+AZZ	AZZ Inc.	122.12	-1.34%	0.000000	-1.66	167.24K
+913	
+WIT	ويبرو	2.19	-1.35%	0.007000	-0.03	11.10M
+914	
+VRSN	فيريسين	238.89	-1.35%	0.000000	-3.26	634.54K
+915	
+EXEL	Exelixis, Inc.	41.26	-1.36%	0.055000	-0.57	2.22M
+916	
+BBSI	Barrett Business Services, Inc.	28.15	-1.37%	0.000000	-0.39	229.33K
+917	
+FER	جروبو فيروفيال	64.31	-1.37%	0.129000	-0.89	1.13M
+918	
+FSV	FirstService Corp	140.83	-1.37%	0.000000	-1.96	139.73K
+919	
+BKNG	بوكنج هولدنج	4381.39	-1.37%	3.756000	-60.94	257.53K
+920	
+CRUS	Cirrus Logic, Inc.	134.01	-1.37%	0.168000	-1.86	376.53K
+921	
+MDB	مونجو دي بي	268.52	-1.38%	0.282000	-3.75	1.14M
+922	
+VRT	فيرتيف	264.71	-1.38%	0.000000	-3.70	6.64M
+923	
+RVLV	Revolve Group	22.87	-1.38%	0.000000	-0.32	688.80K
+924	
+JBDI	JBDI Holdings Limited	0.7002	-1.38%	0.000000	-0.0098	13.15K
+925	
+MDT	ميدترونيك	87.21	-1.39%	0.000000	-1.23	6.77M
+926	
+TCMD	Tactile Systems Technology	27.03	-1.39%	0.028000	-0.38	259.20K
+927	
+RAL	Ralliant Corporation	42.66	-1.39%	0.000000	-0.60	1.05M
+928	
+CRMD	CorMedix Inc.	6.37	-1.39%	0.024000	-0.09	1.35M
+929	
+MAYS	J.W. Mays, Inc.	43.39	-1.39%	0.000000	-0.61	1.28K
+930	
+JBL	جابل سيركت إنك	258.67	-1.40%	0.000000	-3.68	2.93M
+931	
+IIIN	Insteel Industries, Inc.	31.80	-1.40%	0.026000	-0.45	218.84K
+932	
+CDNS	كيدانس لأنظمة التصميم	289.64	-1.40%	0.073000	-4.11	1.66M
+933	
+ACCL	Acco Group Holdings Limited Class A	1.41	-1.40%	0.000000	-0.02	8.61K
+934	
+NOVT	Novanta Inc	119.33	-1.40%	0.000000	-1.69	567.69K
+935	
+AMPL	Amplitude Inc Class A	7.05	-1.40%	0.000000	-0.10	1.10M
+936	
+BBBY	Bed Bath & Beyond, Inc.	4.88	-1.41%	0.000000	-0.07	1.69M
+937	
+BMI	Badger Meter, Inc.	147.89	-1.41%	0.000000	-2.11	269.38K
+938	
+CLB	Core Laboratories Inc.	16.06	-1.41%	0.000000	-0.23	413.47K
+939	
+EQT	إي كيو تي كورب	63.52	-1.41%	0.000000	-0.91	6.59M
+940	
+IDN	Intellicheck Inc	4.89	-1.41%	0.000000	-0.07	138.74K
+941	
+RGEN	Repligen Corporation	117.59	-1.41%	0.119000	-1.68	809.93K
+942	
+OFIX	Orthofix Medical, Inc.	11.86	-1.41%	0.000000	-0.17	296.31K
+943	
+KOF	Coca-Cola FEMSA SAB de CV Sponsored ADR Class L	96.00	-1.42%	0.016000	-1.38	205.41K
+944	
+GHM	Graham Corporation	80.63	-1.43%	0.000000	-1.17	101.55K
+945	
+VEEV	فيفا سيستمز	184.03	-1.43%	0.000000	-2.67	1.29M
+946	
+AAPG	Ascentage Pharma Group International Unsponsored ADR	24.05	-1.43%	0.000000	-0.35	2.39K
+947	
+PONY	Pony AI Inc.	10.99	-1.43%	0.000000	-0.16	3.94M
+948	
+BLFS	BioLife Solutions, Inc.	19.12	-1.44%	0.000000	-0.28	395.78K
+949	
+UBER	أوبر	76.66	-1.45%	0.250000	-1.13	13.62M
+950	
+BUUU	BUUU Group Limited Class A	15.20	-1.46%	0.000000	-0.225	18.17K
+951	
+KVUE	Kenvue, Inc.	17.51	-1.46%	0.007000	-0.26	17.81M
+952	
+SPGI	تصنيفات إس آند بي غلوبال	426.64	-1.46%	0.000000	-6.30	1.91M
+953	
+INMD	InMode Ltd.	13.45	-1.47%	0.051000	-0.20	1.28M
+954	
+MAGN	Magnera Corporation	10.69	-1.47%	0.000000	-0.16	516.72K
+955	
+BCC	Boise Cascade Co.	71.84	-1.48%	0.092000	-1.08	369.55K
+956	
+LZB	La-Z-Boy Incorporated	32.58	-1.48%	0.085000	-0.49	418.77K
+957	
+PHAR	Pharming Group NV Sponsored ADR	15.26	-1.48%	0.000000	-0.23	8.53K
+958	
+EGP	EastGroup Properties, Inc.	188.16	-1.49%	0.000000	-2.84	308.59K
+959	
+GRMN	جارمن	231.60	-1.49%	0.162000	-3.5	494.73K
+960	
+CHNR	China Natural Resources, Inc.	3.30	-1.49%	0.000000	-0.05	7.07K
+961	
+CIGL	Concorde International Group	1.98	-1.49%	0.000000	-0.03	22.87K
+962	
+AZN	AstraZeneca PLC	188.42	-1.50%	0.055000	-2.87	1.17M
+963	
+REKR	Rekor Systems, Inc. Class B	0.9018	-1.51%	0.000000	-0.0138	1.56M
+964	
+INTT	InTest Corporation	14.24	-1.52%	0.000000	-0.22	64.54K
+965	
+RMNI	Rimini Street Inc Class A	3.24	-1.52%	0.011000	-0.05	242.03K
+966	
+NAVN	Navan, Inc. Class A	9.06	-1.52%	0.000000	-0.14	1.30M
+967	
+ELTK	Eltek Ltd	9.06	-1.52%	0.000000	-0.1401	6.41K
+968	
+CLRB	Cellectar Biosciences	3.25	-1.52%	0.000000	-0.05	22.42K
+969	
+CYD	China Yuchai International Limited	39.96	-1.53%	0.000000	-0.62	102.88K
+970	
+ITRN	Ituran Location and Control Ltd.	50.20	-1.53%	0.000000	-0.78	73.88K
+971	
+AEYE	AudioEye, Inc.	5.80	-1.53%	0.000000	-0.09	266.91K
+972	
+SRTS	Sensus Healthcare, Inc.	3.85	-1.53%	0.009000	-0.06	18.68K
+973	
+HSTM	HealthStream, Inc.	20.61	-1.53%	0.026000	-0.32	348.53K
+974	
+SD	SandRidge Energy, Inc.	16.61	-1.54%	0.000000	-0.26	401.68K
+975	
+LGL	LGL Group, Inc.	7.05	-1.54%	0.000000	-0.11	9.61K
+976	
+PTRN	Pattern Group, Inc. Class A	11.54	-1.54%	0.011000	-0.18	478.75K
+977	
+HTLM	HomesToLife Ltd	1.92	-1.54%	0.001000	-0.03	4.14K
+978	
+MCFT	Mastercraft Boat Holdings, Inc.	19.68	-1.55%	0.046000	-0.31	215.12K
+979	
+FLUX	FLUX POWER HOLDINGS INC	1.27	-1.55%	0.000000	-0.02	173.81K
+980	
+BDC	Belden Inc.	113.91	-1.56%	0.000000	-1.80	242.09K
+981	
+IDT	IDT Corporation Class B	47.25	-1.56%	0.000000	-0.75	188.43K
+982	
+BIRK	Birkenstock Holding Ltd.	36.66	-1.56%	0.000000	-0.58	3.06M
+983	
+INGR	Ingredion Incorporated	111.35	-1.56%	0.000000	-1.76	838.79K
+984	
+ACMR	ACM Research, Inc. Class A	46.60	-1.56%	0.049000	-0.74	800.05K
+985	
+SSD	Simpson Manufacturing Co., Inc.	175.00	-1.57%	0.000000	-2.8	203.22K
+986	
+WTS	Watts Water Technologies, Inc. Class A	296.52	-1.57%	0.075000	-4.73	158.23K
+987	
+IONR	ioneer Limited Sponsored ADR	3.13	-1.57%	0.000000	-0.05	31.37K
+988	
+BABA	علي بابا القابضة م.ض ADR	134.43	-1.57%	0.036000	-2.14	17.01M
+989	
+ZUMZ	Zumiez Inc.	21.17	-1.58%	0.039000	-0.34	220.03K
+990	
+IQST	iQSTEL, Inc.	1.87	-1.58%	0.000000	-0.03	55.17K
+991	
+PRIM	Primoris Services Corporation	138.28	-1.58%	0.000000	-2.22	685.02K
+992	
+SMMT	ساميت ثيرابيوتكس	15.60	-1.58%	0.000000	-0.25	1.74M
+993	
+INLX	Intellinetics, Inc.	7.44	-1.59%	0.000000	-0.12	8.96K
+994	
+MHH	Mastech Digital, Inc.	5.52	-1.60%	0.000000	-0.09	11.03K
+995	
+AEO	American Eagle Outfitters, Inc.	17.25	-1.60%	0.000000	-0.28	4.34M
+996	
+CHD	Church & Dwight Co., Inc.	95.74	-1.61%	0.010000	-1.57	2.37M
+997	
+GIC	Global Industrial Company	30.00	-1.61%	0.000000	-0.49	85.77K
+998	
+BIIB	بيوجن آيدك	182.31	-1.61%	0.184000	-2.98	846.18K
+999	
+LXFR	Luxfer Holdings PLC	11.62	-1.61%	0.000000	-0.19	394.83K
+1000	
+DTM	دي تي ميدستريم	133.86	-1.62%	0.010000	-2.21	917.89K
+1001	
+TJX	تي جيه إكس إنك	152.87	-1.62%	0.000000	-2.51	3.08M
+1002	
+ADI	أنالوغ ديفايسز إنك	308.59	-1.62%	0.054000	-5.07	3.52M
+1003	
+CNI	السكك الحديدية الوطنية الكندية	100.33	-1.63%	0.000000	-1.66	2.34M
+1004	
+BOOT	Boot Barn Holdings, Inc.	157.88	-1.63%	0.000000	-2.61	729.09K
+1005	
+RGCO	RGC Resources, Inc.	21.08	-1.63%	0.000000	-0.35	17.97K
+1006	
+INVX	Innovex International, Inc.	24.67	-1.63%	0.000000	-0.41	434.11K
+1007	
+TSLA	تسلا	392.78	-1.63%	0.135000	-6.49	50.37M
+1008	
+COST	كوستكو هولسيل	979.92	-1.63%	7.970000	-16.24	1.43M
+1009	
+ALKS	Alkermes Public Limited Company	27.20	-1.63%	0.066000	-0.45	1.63M
+1010	
+GHC	Graham Holdings Co. Class B	1060.35	-1.64%	0.070000	-17.66	22.73K
+1011	
+GMM	Global Mofy AI Limited	1.20	-1.64%	0.000000	-0.02	1.69K
+1012	
+JOUT	Johnson Outdoors Inc. Class A	43.69	-1.64%	0.089000	-0.73	56.39K
+1013	
+CXDO	Crexendo, Inc.	6.55	-1.65%	0.007000	-0.11	159.07K
+1014	
+GRC	Gorman-Rupp Company	60.55	-1.66%	0.000000	-1.02	169.07K
+1015	
+KEX	Kirby Corporation	125.89	-1.66%	0.000000	-2.12	1.01M
+1016	
+MOV	Movado Group, Inc.	23.05	-1.66%	0.000000	-0.39	178.53K
+1017	
+STM	إس تي ميكروإلكترونكس	33.23	-1.66%	0.000000	-0.56	5.15M
+1018	
+GH	Guardant Health	87.27	-1.67%	0.058000	-1.48	1.79M
+1019	
+AVGO	برودكوم	315.93	-1.67%	0.000000	-5.38	24.92M
+1020	
+SOTK	Sono-Tek Corporation	4.11	-1.67%	0.005000	-0.07	11.68K
+1021	
+IDXX	IDEXX Laboratories, Inc.	577.12	-1.68%	0.005000	-9.86	514.91K
+1022	
+TIMB	TIM S.A. Sponsored ADR	25.20	-1.68%	0.016000	-0.43	307.36K
+1023	
+ALGM	Allegro MicroSystems, Inc.	31.52	-1.68%	0.001000	-0.54	2.11M
+1024	
+CTSH	Cognizant Technology Solutions Corporation Class A	60.29	-1.68%	0.050000	-1.03	6.08M
+1025	
+AAPL	آبل	249.94	-1.69%	0.218000	-4.29	34.63M
+1026	
+CRCT	Cricut, Inc. Class A	4.06	-1.69%	0.011000	-0.07	456.47K
+1027	
+DGX	كويست دياغنوستيكس	195.23	-1.70%	0.019000	-3.38	694.12K
+1028	
+FUFU	BitFuFu, Inc. Class A	2.31	-1.70%	0.005000	-0.04	35.15K
+1029	
+ICHR	Ichor Holdings, Ltd.	46.81	-1.70%	0.000000	-0.81	540.93K
+1030	
+TMO	ثيرمو فيشر ساينتيفيك	464.69	-1.70%	0.516000	-8.02	2.42M
+1031	
+TRI	تومسون رويترز	93.90	-1.70%	0.013000	-1.62	1.88M
+1032	
+COKE	Coca-Cola Consolidated, Inc.	212.85	-1.70%	0.000000	-3.69	363.55K
+1033	
+ACCS	ACCESS Newswire Inc.	6.91	-1.71%	0.000000	-0.12	3.89K
+1034	
+MANH	شركة مانهاتن أسوشيتس	138.22	-1.71%	0.000000	-2.40	522.90K
+1035	
+LTRN	Lantern Pharma, Inc.	2.29	-1.72%	0.000000	-0.04	22.41K
+1036	
+OTH	Off The Hook YS Inc.	2.27	-1.73%	0.000000	-0.04	37.06K
+1037	
+AMBQ	Ambiq Micro, Inc.	25.53	-1.73%	0.000000	-0.45	286.09K
+1038	
+ADM	آرتشر دانيلز ميدلاند	70.87	-1.73%	0.168000	-1.25	3.81M
+1039	
+ITT	ITT, Inc.	184.73	-1.74%	0.018000	-3.27	699.27K
+1040	
+MSA	MSA Safety, Inc.	173.53	-1.74%	0.000000	-3.08	214.88K
+1041	
+MNDY	مان دي.كوم	73.97	-1.74%	0.296000	-1.31	1.09M
+1042	
+CBRE	سي بي آر إي غروب	133.91	-1.74%	0.000000	-2.37	2.67M
+1043	
+CRNT	Ceragon Networks Ltd	2.26	-1.74%	0.000000	-0.04	214.35K
+1044	
+CSL	Carlisle Companies Incorporated	338.83	-1.75%	0.086000	-6.04	354.54K
+1045	
+KMB	كيمبرلي كلارك	98.72	-1.75%	0.015000	-1.76	4.35M
+1046	
+ONC	شركة بيجين المحدودة	282.29	-1.75%	0.011000	-5.04	407.10K
+1047	
+IREN	IREN Limited	42.21	-1.75%	0.027000	-0.75	23.68M
+1048	
+CLRO	ClearOne, Inc.	4.27	-1.75%	0.000000	-0.076	6.71K
+1049	
+ALNY	Alnylam Pharmaceuticals, Inc	314.80	-1.75%	0.216000	-5.62	1.02M
+1050	
+LYTS	LSI Industries Inc.	19.11	-1.75%	0.000000	-0.34	174.59K
+1051	
+IBM	آي بي إم	251.60	-1.76%	0.142000	-4.51	5.14M
+1052	
+INR	Infinity Natural Resources, Inc. Class A	17.83	-1.76%	0.000000	-0.32	231.39K
+1053	
+SLB	شلمبرغر ايمتد	45.32	-1.76%	0.025000	-0.81	13.25M
+1054	
+XYL	إكسايلم	119.62	-1.76%	0.000000	-2.14	1.99M
+1055	
+CAVA	مجموعة كافا	88.93	-1.76%	0.000000	-1.59	3.02M
+1056	
+ADSK	أوتوديسك	248.48	-1.76%	0.000000	-4.44	1.81M
+1057	
+LH	لاب كورب أوف أمريكا هولدنجز	265.84	-1.77%	0.000000	-4.78	536.54K
+1058	
+HAS	هاسبرو إنك	91.63	-1.77%	0.028000	-1.65	1.24M
+1059	
+LUCY	Innovative Eyewear, Inc.	1.11	-1.77%	0.000000	-0.02	73.04K
+1060	
+ACN	أسنتشر ليمتد	195.15	-1.77%	0.158000	-3.51	8.07M
+1061	
+STE	STERIS plc	216.22	-1.78%	0.022000	-3.91	608.49K
+1062	
+BWEN	Broadwind, Inc.	2.21	-1.78%	0.000000	-0.04	134.82K
+1063	
+KVYO	كلافيو	18.78	-1.78%	0.037000	-0.34	2.44M
+1064	
+FTV	Fortive Corp.	54.84	-1.79%	0.000000	-1.00	3.97M
+1065	
+SLS	Sellas Life Sciences	4.95	-1.79%	0.000000	-0.09	5.34M
+1066	
+RACE	مجموعة فيراري	330.47	-1.79%	0.063000	-6.01	566.39K
+1067	
+BYAH	Park Ha Biological Technology Co., Ltd. Class A	1.10	-1.79%	0.000000	-0.02	18.07K
+1068	
+GMED	غلوبوس ميديكال	86.58	-1.79%	0.011000	-1.58	971.43K
+1069	
+HLIO	Helios Technologies, Inc.	63.76	-1.79%	0.000000	-1.16	200.31K
+1070	
+GFS	GlobalFoundries Inc.	42.47	-1.80%	0.032000	-0.78	3.45M
+1071	
+BELFB	Bel Fuse Inc. Class B	205.74	-1.80%	0.019000	-3.78	242.92K
+1072	
+FERG	فيرغسون	221.86	-1.80%	0.000000	-4.06	1.28M
+1073	
+SOPH	SOPHiA GENETICS SA	4.91	-1.80%	0.008000	-0.09	80.52K
+1074	
+LMB	Limbach Holdings, Inc.	75.74	-1.81%	0.008000	-1.40	209.40K
+1075	
+AA	Alcoa Corporation	64.23	-1.82%	0.000000	-1.19	4.49M
+1076	
+HBB	Hamilton Beach Brands Holding Co. Class A	16.21	-1.82%	0.000000	-0.30	20.34K
+1077	
+VERX	Vertex, Inc. Class A	12.96	-1.82%	0.000000	-0.24	1.37M
+1078	
+MPX	Marine Products Corporation	7.01	-1.82%	0.000000	-0.13	39.06K
+1079	
+XTKG	X3 Holdings Co., Ltd. Class A	1.08	-1.82%	0.000000	-0.02	181.99K
+1080	
+EPAM	EPAM Systems, Inc.	133.98	-1.82%	0.000000	-2.48	844.83K
+1081	
+OOMA	Ooma Inc	13.91	-1.83%	0.000000	-0.26	231.63K
+1082	
+NSP	Insperity, Inc.	23.08	-1.83%	0.126000	-0.43	1.39M
+1083	
+RIVN	ريفيان	15.53	-1.83%	0.064000	-0.29	16.87M
+1084	
+ACIW	ACI Worldwide, Inc.	39.13	-1.83%	0.026000	-0.73	574.77K
+1085	
+LEGN	Legend Biotech	18.21	-1.83%	0.025000	-0.34	952.67K
+1086	
+LRMR	Larimar Therapeutics, Inc.	4.30	-1.83%	0.000000	-0.08	1.12M
+1087	
+HRMY	Harmony Biosciences Holdings, Inc.	27.85	-1.83%	0.098000	-0.52	640.34K
+1088	
+DWSN	Dawson Geophysical Company	4.81	-1.84%	0.002000	-0.09	150.38K
+1089	
+GWW	غرينجر دبليو دبليو إنك	1045.82	-1.85%	0.000000	-19.71	211.79K
+1090	
+LGN	Legence Corp. Class A	51.53	-1.85%	0.010000	-0.97	490.07K
+1091	
+LII	شركة لينوكس إنترناشونال	477.99	-1.85%	0.000000	-8.99	272.25K
+1092	
+TSM	شركة تايوان لصناعة أشباه الموصلات المحدودة	339.57	-1.85%	0.033000	-6.41	12.49M
+1093	
+INTZ	Intrusion Inc.	1.06	-1.85%	0.000000	-0.02	60.43K
+1094	
+WELL	Welltower, Inc.	209.21	-1.85%	0.000000	-3.95	3.09M
+1095	
+FAST	فاستنال	45.08	-1.85%	0.001000	-0.85	6.36M
+1096	
+EHC	Encompass Health Corporation	99.68	-1.86%	0.000000	-1.89	711.43K
+1097	
+ONON	On Holding AG Class A	39.05	-1.86%	0.030000	-0.74	3.16M
+1098	
+ORLY	O'Reilly Automotive, Inc.	87.72	-1.87%	0.002000	-1.67	5.20M
+1099	
+APYX	Apyx Medical Corporation	3.67	-1.87%	0.008000	-0.07	84.87K
+1100	
+EFX	إكويفاكس	183.79	-1.88%	0.000000	-3.53	1.24M
+1101	
+VVV	Valvoline, Inc.	33.39	-1.88%	0.000000	-0.64	1.12M
+1102	
+NPCE	NeuroPace, Inc.	13.56	-1.88%	0.022000	-0.26	213.38K
+1103	
+U	Unity Software, Inc.	19.71	-1.89%	0.000000	-0.38	7.91M
+1104	
+PEP	بيبسيكو إنك	153.54	-1.89%	0.000000	-2.96	4.85M
+1105	
+TXN	تكساس إنسترومنتس إنك	190.78	-1.89%	0.000000	-3.67	5.05M
+1106	
+HIND	Vyome Holdings, Inc.	2.08	-1.89%	0.000000	-0.04	33.81K
+1107	
+CCJ	كاميكو	109.40	-1.90%	0.011000	-2.12	2.68M
+1108	
+DHR	داناهر كورب	191.50	-1.90%	0.003000	-3.71	4.11M
+1109	
+RDGT	Ridgetech, Inc.	2.06	-1.90%	0.000000	-0.04	3.80K
+1110	
+MZTI	Marzetti Company	139.38	-1.90%	0.000000	-2.70	380.80K
+1111	
+TOST	توست	27.85	-1.90%	0.023000	-0.54	9.47M
+1112	
+PULM	Pulmatrix Inc	2.07	-1.90%	0.000000	-0.04	3.79K
+1113	
+NTWK	NetSol Technologies, Inc.	3.61	-1.90%	0.022000	-0.07	20.79K
+1114	
+MSFT	مايكروسوفت	391.79	-1.91%	0.345000	-7.62	25.66M
+1115	
+PRSU	Pursuit Attractions and Hospitality, Inc.	36.43	-1.91%	0.244000	-0.71	244.66K
+1116	
+JAKK	JAKKS Pacific, Inc.	19.50	-1.91%	0.008000	-0.38	103.32K
+1117	
+CSW	CSW Industrials, Inc.	255.25	-1.92%	0.000000	-5.00	123.15K
+1118	
+TEAM	Atlassian Corp Class A	73.47	-1.92%	0.111000	-1.44	4.74M
+1119	
+SAIA	شركة سايا	322.63	-1.92%	0.003000	-6.33	464.14K
+1120	
+YTRA	Yatra Online, Inc.	1.02	-1.92%	0.008000	-0.02	37.66K
+1121	
+SLXN	Biomotion Sciences. Ordinary Shares	1.53	-1.92%	0.000000	-0.03	4.46K
+1122	
+ZBIO	Zenas BioPharma, Inc.	23.03	-1.92%	0.000000	-0.45	441.68K
+1123	
+IOSP	Innospec Inc.	67.54	-1.93%	0.000000	-1.33	236.75K
+1124	
+GMAB	Genmab A/S	25.85	-1.93%	0.469000	-0.51	1.09M
+1125	
+PAYX	بايتشيكس	90.64	-1.94%	0.176000	-1.79	3.91M
+1126	
+TRNO	Terreno Realty Corporation	62.24	-1.94%	0.014000	-1.23	621.42K
+1127	
+PSIG	PS International Group Limited	5.33	-1.95%	0.000000	-0.1062	837
+1128	
+IESC	IES Holdings, Inc.	441.56	-1.96%	0.000000	-8.83	104.36K
+1129	
+VMI	Valmont Industries, Inc.	401.06	-1.96%	0.056000	-8.02	190.01K
+1130	
+CERT	Certara, Inc.	6.50	-1.96%	0.000000	-0.13	3.35M
+1131	
+EW	إدوارد لايفساينس	82.61	-1.97%	0.000000	-1.66	3.51M
+1132	
+EMR	إمرسون إلكتريك	129.88	-1.97%	0.031000	-2.61	1.99M
+1133	
+IIIV	I3 VERTICALS, INC.	22.36	-1.97%	0.012000	-0.45	223.09K
+1134	
+REGN	ريجينيرون	744.12	-1.97%	1.215000	-14.93	672.28K
+1135	
+ZWS	Zurn Elkay Water Solutions Corporation	44.34	-1.97%	0.000000	-0.89	1.16M
+1136	
+EBAY	اٍي باي	91.77	-1.97%	0.036000	-1.84	4.30M
+1137	
+HNRG	Hallador Energy Co	16.42	-1.97%	0.000000	-0.33	672.91K
+1138	
+SIF	SIFCO Industries, Inc.	13.88	-1.98%	0.000000	-0.28	20.11K
+1139	
+NWPX	NWPX Infrastructure Inc.	71.91	-1.98%	0.000000	-1.45	128.82K
+1140	
+J	جاكوبس إنجنيرينغ	127.79	-1.99%	0.069000	-2.59	1.12M
+1141	
+WCN	ويست كونكشنز	163.71	-1.99%	0.020000	-3.33	1.12M
+1142	
+MQ	Marqeta, Inc.	3.93	-2.00%	0.000000	-0.08	2.76M
+1143	
+TPR	كوتش	140.29	-2.00%	0.082000	-2.87	1.53M
+1144	
+BSY	بنتلي سيستمز	37.12	-2.01%	0.003000	-0.76	2.61M
+1145	
+IINN	Inspira Technologies Oxy B.H.N. Ltd.	0.5603	-2.01%	0.000000	-0.0115	85.13K
+1146	
+ABT	مختبرات أبوت	108.49	-2.01%	0.038000	-2.22	8.24M
+1147	
+RUM	Rumble	5.34	-2.02%	0.000000	-0.11	1.11M
+1148	
+BRZE	Braze, Inc. Class A	18.88	-2.02%	0.038000	-0.39	1.40M
+1149	
+TDC	Teradata Corporation	26.69	-2.02%	0.021000	-0.55	1.65M
+1150	
+RLGT	Radiant Logistics, Inc.	6.80	-2.02%	0.001000	-0.14	156.97K
+1151	
+QNCX	Quince Therapeutics, Inc.	0.0970	-2.02%	0.000000	-0.002	13.24M
+1152	
+ALV	Autoliv Inc.	102.08	-2.03%	0.037000	-2.12	566.69K
+1153	
+GPC	جينيون بارتس	100.72	-2.04%	0.000000	-2.10	2.05M
+1154	
+XPEV	XPENG INC.	18.77	-2.04%	0.022000	-0.39	5.45M
+1155	
+INVE	Identiv, Inc.	3.36	-2.04%	0.000000	-0.07	43.53K
+1156	
+CENX	Century Aluminum Company	55.34	-2.04%	0.028000	-1.15	1.90M
+1157	
+CIGI	Colliers International Group Inc.	105.54	-2.04%	0.000000	-2.20	352.48K
+1158	
+ASAN	Asana, Inc.	6.71	-2.04%	0.017000	-0.14	4.01M
+1159	
+TRT	Trio-Tech International	6.20	-2.05%	0.014000	-0.13	106.54K
+1160	
+CPSH	CPS Technologies Corporation	3.83	-2.05%	0.000000	-0.08	67.39K
+1161	
+AXSM	Axsome Therapeutics, Inc.	157.87	-2.05%	0.039000	-3.30	464.64K
+1162	
+PDEX	Pro-Dex, Inc.	48.97	-2.06%	0.005000	-1.03	24.38K
+1163	
+RVSN	Rail Vision Ltd.	8.97	-2.07%	0.000000	-0.19	26.03K
+1164	
+CAH	كاردينال هيلث إنك	211.87	-2.08%	0.000000	-4.49	1.75M
+1165	
+KO	كوكا كولا	75.97	-2.08%	0.026000	-1.61	12.70M
+1166	
+KARO	Karooooo Ltd.	47.18	-2.08%	0.020000	-1.00	31.21K
+1167	
+MXL	MaxLinear, Inc.	16.46	-2.08%	0.010000	-0.35	1.09M
+1168	
+UNF	UniFirst Corporation	267.72	-2.08%	0.128000	-5.70	518.55K
+1169	
+ABVX	Abivax SA Sponsored ADR	123.99	-2.08%	0.000000	-2.63	701.12K
+1170	
+PPIH	Perma-Pipe International Holdings Inc	28.30	-2.08%	0.000000	-0.6	49.21K
+1171	
+NEGG	Newegg Commerce, Inc. - Common Shares	37.00	-2.09%	0.000000	-0.79	21.96K
+1172	
+AZTA	Azenta, Inc.	21.57	-2.09%	0.000000	-0.46	1.41M
+1173	
+FIGR	Figure Technology Solutions	33.68	-2.09%	0.003000	-0.72	4.26M
+1174	
+ALM	Almonty Industries Inc.	17.78	-2.09%	0.000000	-0.38	4.71M
+1175	
+TG	Tredegar Corporation	7.92	-2.10%	0.000000	-0.17	119.46K
+1176	
+INCY	Incyte Corporation	92.24	-2.10%	0.136000	-1.98	1.58M
+1177	
+AEHR	Aehr Test Systems	36.31	-2.10%	0.000000	-0.78	1.10M
+1178	
+HLIT	Harmonic Inc.	9.34	-2.10%	0.000000	-0.20	1.09M
+1179	
+BITF	Bitfarms	2.32	-2.11%	0.001000	-0.05	26.76M
+1180	
+MTRX	Matrix Service Company	10.21	-2.11%	0.064000	-0.22	246.37K
+1181	
+ALGN	محاذاة التكنولوجيا	172.41	-2.11%	0.044000	-3.71	1.71M
+1182	
+CSCO	سيسكو سيستمز	77.60	-2.11%	0.055000	-1.67	18.79M
+1183	
+ARQT	Arcutis Biotherapeutics	22.24	-2.11%	0.000000	-0.48	1.98M
+1184	
+UPWK	Upwork	12.09	-2.11%	0.049000	-0.26	2.29M
+1185	
+BJDX	Bluejay Diagnostics, Inc.	1.85	-2.12%	0.000000	-0.04	27.09K
+1186	
+LIF	Life360, Inc.	40.70	-2.12%	0.060000	-0.88	1.34M
+1187	
+INFY	إنفوسيس	12.92	-2.12%	0.020000	-0.28	19.17M
+1188	
+AUDC	AudioCodes Ltd.	8.33	-2.12%	0.000000	-0.18	89.27K
+1189	
+DAO	Youdao, Inc.	10.12	-2.13%	0.001000	-0.22	19.75K
+1190	
+PVL	Permianville Royalty Trust	1.84	-2.13%	0.000000	-0.04	92.67K
+1191	
+MTRN	Materion Corporation	141.39	-2.13%	0.000000	-3.08	246.78K
+1192	
+WDAY	Workday, Inc. Class A	132.29	-2.13%	0.311000	-2.88	3.60M
+1193	
+HROW	Harrow, Inc.	34.48	-2.13%	0.000000	-0.75	587.88K
+1194	
+SVRA	Savara, Inc.	5.04	-2.14%	0.000000	-0.11	1.90M
+1195	
+ELS	إيكويتي لايف ستايل	66.36	-2.14%	0.014000	-1.45	1.49M
+1196	
+DRTS	Alpha Tau Medical Ltd	7.31	-2.14%	0.000000	-0.16	288.22K
+1197	
+GDHG	Golden Heaven Group Holdings Ltd. Class A	1.83	-2.14%	0.000000	-0.04	1.36K
+1198	
+INFU	InfuSystem Holdings, Inc.	9.62	-2.14%	0.000000	-0.21	100.66K
+1199	
+SMWB	Similarweb Ltd.	2.74	-2.14%	0.000000	-0.06	381.15K
+1200	
+KRYS	Krystal Biotech, Inc.	250.83	-2.15%	0.000000	-5.50	232.90K
+1201	
+GILD	جيلاد سينسيس	141.29	-2.15%	0.070000	-3.11	6.81M
+1202	
+LUXE	LuxExperience BV	8.20	-2.15%	0.017000	-0.18	136.09K
+1203	
+INBS	Intelligent Bio Solutions Inc.	3.63	-2.16%	0.001000	-0.08	63.51K
+1204	
+AORT	Artivion, Inc.	36.67	-2.16%	0.005000	-0.81	220.09K
+1205	
+BE	BLOOM ENERGY CORP	156.58	-2.17%	0.023000	-3.47	8.50M
+1206	
+RL	رالف لورين	341.62	-2.17%	0.163000	-7.59	582.24K
+1207	
+BLZE	Backblaze, Inc. Class A	3.61	-2.17%	0.009000	-0.08	412.04K
+1208	
+BTCT	BTC Digital Ltd.	1.35	-2.17%	0.000000	-0.03	41.88K
+1209	
+LOPE	Grand Canyon Education, Inc.	164.02	-2.17%	0.066000	-3.64	267.42K
+1210	
+OBIO	Orchestra BioMed Holdings, Inc.	4.51	-2.17%	0.000000	-0.10	300.77K
+1211	
+HPAI	Helport AI Limited	2.70	-2.17%	0.000000	-0.06	1.67K
+1212	
+PPCB	Propanc Biopharma	0.1169	-2.18%	0.000000	-0.0026	839.14K
+1213	
+SPOK	Spok Holdings, Inc.	11.23	-2.18%	0.010000	-0.25	155.91K
+1214	
+MELI	MercadoLibre, Inc.	1690.26	-2.19%	0.965000	-37.88	366.07K
+1215	
+AQST	AQUESTIVE THERAPEUTICS, INC.	4.02	-2.19%	0.003000	-0.09	2.27M
+1216	
+CIX	CompX International Inc. Class A	22.70	-2.20%	0.064000	-0.51	6.91K
+1217	
+EBF	Ennis, Inc.	20.44	-2.20%	0.026000	-0.46	172.71K
+1218	
+ESI	Element Solutions Inc	31.62	-2.20%	0.000000	-0.71	1.93M
+1219	
+LINC	Lincoln Educational Services Corporation	38.64	-2.20%	0.000000	-0.87	906.81K
+1220	
+DUOT	Duos Technologies Group Inc	7.53	-2.21%	0.022000	-0.17	995.03K
+1221	
+VIA	Via Transportation, Inc. Class A	14.16	-2.21%	0.011000	-0.32	1.19M
+1222	
+GHRS	GH Research Plc	15.02	-2.21%	0.000000	-0.34	102.56K
+1223	
+CCRN	Cross Country Healthcare, Inc.	8.86	-2.21%	0.026000	-0.20	561.49K
+1224	
+HCSG	Healthcare Services Group, Inc.	19.45	-2.21%	0.000000	-0.44	846.67K
+1225	
+ASYS	Amtech Systems, Inc.	11.06	-2.21%	0.006000	-0.25	181.79K
+1226	
+BDRX	MIDATECH PHARMA PLC SPON ADS EACH REP 5 ORD	0.7702	-2.22%	0.000000	-0.0175	50.01K
+1227	
+TARS	Tarsus Pharmaceuticals, Inc.	68.24	-2.22%	0.104000	-1.55	472.27K
+1228	
+NOK	نوكيا	8.36	-2.22%	0.000000	-0.19	52.16M
+1229	
+XTLB	XTL Biopharmaceuticals Ltd. Sponsored ADR	0.5950	-2.22%	0.000000	-0.0135	10.48K
+1230	
+TPCS	TechPrecision Corporation	3.53	-2.22%	0.000000	-0.08	40.09K
+1231	
+GGG	جراكو	84.72	-2.23%	0.000000	-1.93	1.04M
+1232	
+PRM	Perimeter Solutions Inc	21.90	-2.23%	0.000000	-0.5	1.05M
+1233	
+CPRX	Catalyst Pharmaceuticals, Inc.	22.81	-2.23%	0.000000	-0.52	986.10K
+1234	
+MSB	Mesabi Trust	30.99	-2.24%	0.014000	-0.71	99.26K
+1235	
+SUI	صن كوميونيتيز	132.24	-2.24%	0.132000	-3.03	996.76K
+1236	
+IMCR	Immunocore Holdings Plc Shs Sponsored American Depositary Shares Repr 1 Sh	30.04	-2.25%	0.079000	-0.69	310.20K
+1237	
+CRDO	كريدو تكنولوجي	101.72	-2.25%	0.025000	-2.34	7.42M
+1238	
+STLD	Steel Dynamics, Inc.	168.75	-2.25%	0.000000	-3.88	1.25M
+1239	
+LUV	الخطوط الجوية ساوثويست إيرلاينز كو	40.19	-2.26%	0.038000	-0.93	10.77M
+1240	
+SRRK	SCHOLAR ROCK HOLDING CORP	39.79	-2.26%	0.000000	-0.92	975.95K
+1241	
+AZO	أوتوزون إنك	3361.98	-2.26%	0.000000	-77.66	117.52K
+1242	
+CLSK	Cleanspark, Inc.	9.88	-2.27%	0.001000	-0.23	16.39M
+1243	
+HALO	Halozyme Therapeutics, Inc.	63.65	-2.27%	0.000000	-1.48	1.71M
+1244	
+PBYI	Puma Biotechnology, Inc.	6.00	-2.28%	0.021000	-0.14	235.29K
+1245	
+NXGL	NexGel, Inc.	0.8045	-2.28%	0.000000	-0.0188	159.78K
+1246	
+HSY	هيرشي	212.72	-2.29%	0.034000	-4.99	1.81M
+1247	
+MCK	ماكيسون كورب	920.35	-2.29%	0.000000	-21.54	764.87K
+1248	
+VICR	Vicor Corporation	191.84	-2.29%	0.053000	-4.49	828.56K
+1249	
+TTMI	TTM Technologies, Inc.	95.31	-2.29%	0.000000	-2.23	1.61M
+1250	
+HDSN	Hudson Technologies, Inc.	5.97	-2.29%	0.000000	-0.14	399.80K
+1251	
+APT	Alpha Pro Tech, Ltd.	4.69	-2.29%	0.015000	-0.11	19.73K
+1252	
+BJ	بي جيز هول سيل كلوب	94.31	-2.30%	0.180000	-2.22	2.68M
+1253	
+MDWD	MediWound Ltd.	17.00	-2.30%	0.000000	-0.4	46.16K
+1254	
+LTRX	Lantronix, Inc.	5.94	-2.30%	0.004000	-0.14	447.05K
+1255	
+HURC	Hurco Companies, Inc.	14.82	-2.31%	0.009000	-0.35	28.30K
+1256	
+UMC	يونايتد مايكروإلكترونيكس كوربوريشن	9.30	-2.31%	0.001000	-0.22	8.06M
+1257	
+PRVA	Privia Health Group, Inc.	21.59	-2.31%	0.000000	-0.51	1.11M
+1258	
+SCVL	Shoe Carnival, Inc.	16.88	-2.31%	0.027000	-0.40	282.26K
+1259	
+RIO	مجموعة ريو تينتو	87.72	-2.32%	0.150000	-2.08	3.54M
+1260	
+ESAB	ESAB Corporation	97.19	-2.32%	0.000000	-2.31	849.07K
+1261	
+DAIC	Cid Holdco Inc	0.2320	-2.32%	0.000000	-0.0055	813.70K
+1262	
+RDY	مختبرات دكتور ريدي	13.86	-2.33%	0.012000	-0.33	2.24M
+1263	
+RPM	شركة آر بي إم إنترناشونال	98.86	-2.33%	0.026000	-2.36	840.74K
+1264	
+TRMB	ترمبل نافيجيشن	65.53	-2.33%	0.000000	-1.56	2.39M
+1265	
+LZMH	LZ Technology Holdings Limited Class B	1.26	-2.33%	0.000000	-0.03	81.19K
+1266	
+IPAR	Interparfums, Inc.	88.10	-2.34%	0.060000	-2.11	253.86K
+1267	
+LEN	لينار كورب	94.75	-2.35%	0.954000	-2.28	2.93M
+1268	
+MSM	MSC Industrial Direct Co., Inc. Class A	87.94	-2.35%	0.003000	-2.12	535.82K
+1269	
+NIO	NIO	5.82	-2.35%	0.007000	-0.14	26.48M
+1270	
+PETS	PetMed Express, Inc.	2.49	-2.35%	0.000000	-0.06	79.72K
+1271	
+VRTX	فيرتكس للأدوية	451.59	-2.36%	0.471000	-10.90	1.41M
+1272	
+POOL	Pool Corporation	205.77	-2.36%	0.000000	-4.97	643.86K
+1273	
+ACNT	Ascent Industries Co.	12.39	-2.36%	0.041000	-0.30	185.58K
+1274	
+PRDO	Perdoceo Education Corporation	34.28	-2.36%	0.071000	-0.83	757.82K
+1275	
+NSSC	NAPCO Security Technologies, Inc.	42.56	-2.36%	0.024000	-1.03	879.50K
+1276	
+UNP	يونيون باسيفيك كورب	236.57	-2.37%	0.011000	-5.75	2.97M
+1277	
+IT	جارتنر	158.12	-2.39%	0.000000	-3.87	1.16M
+1278	
+NSC	نورفوك ساوثرن كورب	284.36	-2.39%	0.000000	-6.96	1.11M
+1279	
+GNRC	Generac Holdings Inc.	200.27	-2.39%	0.000000	-4.91	810.81K
+1280	
+AQMS	Aqua Metals, Inc.	4.49	-2.39%	0.000000	-0.11	36.52K
+1281	
+ALH	Alliance Laundry Holdings, Inc.	19.97	-2.39%	0.000000	-0.49	669.93K
+1282	
+CHA	Chagee Holdings Ltd.	11.00	-2.40%	0.038000	-0.27	502.23K
+1283	
+SGI	Somnigroup International Inc.	75.61	-2.40%	0.000000	-1.86	2.17M
+1284	
+JSPR	Jasper Therapeutics, Inc.	1.22	-2.40%	0.000000	-0.03	257.86K
+1285	
+APG	APi Group Corporation	41.07	-2.40%	0.000000	-1.01	2.52M
+1286	
+IR	Ingersoll Rand Inc.	82.03	-2.41%	0.000000	-2.03	2.82M
+1287	
+RMD	ResMed Inc.	227.88	-2.41%	0.000000	-5.62	897.16K
+1288	
+XCUR	Exicure, Inc.	4.43	-2.42%	0.000000	-0.11	22.11K
+1289	
+ADVB	Advanced Biomed, Inc.	4.44	-2.42%	0.000000	-0.11	8.56K
+1290	
+SLP	Simulations Plus, Inc.	11.63	-2.43%	0.008000	-0.29	193.17K
+1291	
+HCKT	Hackett Group, Inc.	13.25	-2.43%	0.000000	-0.33	261.61K
+1292	
+KAI	Kadant Inc.	294.32	-2.44%	0.026000	-7.36	161.19K
+1293	
+ASML	أيه أس أم أل القابضة	1355.17	-2.45%	0.000000	-33.99	1.35M
+1294	
+DRMA	Dermata Therapeutics, Inc.	1.19	-2.46%	0.000000	-0.03	43.47K
+1295	
+EXOZ	eXoZymes Inc.	7.13	-2.46%	0.000000	-0.18	1.17K
+1296	
+PTLE	PTL Limited Class A	6.31	-2.47%	0.000000	-0.16	4.50K
+1297	
+ATRC	AtriCure, Inc.	28.85	-2.47%	0.024000	-0.73	740.34K
+1298	
+SN	شارك نينجا	102.66	-2.48%	0.000000	-2.61	1.11M
+1299	
+WMT	وول مارت ستورز	121.98	-2.48%	0.459000	-3.10	19.69M
+1300	
+AMPX	Amprius Technologies	18.90	-2.48%	0.000000	-0.48	6.28M
+1301	
+AMZN	أمازون دوت كوم	209.87	-2.48%	0.537000	-5.33	37.48M
+1302	
+III	Information Services Group, Inc.	3.91	-2.49%	0.001000	-0.10	261.59K
+1303	
+INOD	Innodata Inc.	44.30	-2.49%	0.000000	-1.13	551.20K
+1304	
+NMAX	Newsmax Inc. Class B	7.04	-2.49%	0.016000	-0.18	519.03K
+1305	
+DUO	Fangdd Network Group Ltd.	1.17	-2.50%	0.000000	-0.03	23.36K
+1306	
+LPX	Louisiana-Pacific Corporation	75.16	-2.50%	0.000000	-1.93	593.76K
+1307	
+MLM	Martin Marietta Materials, Inc.	567.92	-2.50%	0.000000	-14.58	676.98K
+1308	
+WMK	Weis Markets, Inc.	65.99	-2.50%	0.564000	-1.69	124.63K
+1309	
+CADL	Candel Therapeutics, Inc.	5.04	-2.51%	0.000000	-0.13	973.88K
+1310	
+URBN	Urban Outfitters, Inc.	63.75	-2.51%	0.000000	-1.64	2.20M
+1311	
+ODC	Oil-Dri Corporation of America	60.02	-2.52%	0.017000	-1.55	43.96K
+1312	
+PACS	PACS Group, Inc.	34.80	-2.52%	0.000000	-0.9	887.38K
+1313	
+LFVN	LifeVantage Corporation	4.65	-2.52%	0.000000	-0.12	76.45K
+1314	
+GSK	غلاكسو سميث كلاين	52.06	-2.53%	0.008000	-1.35	4.65M
+1315	
+BLD	توب بيلد	357.86	-2.54%	0.000000	-9.33	253.66K
+1316	
+BCPC	Balchem Corp	162.88	-2.54%	0.000000	-4.25	202.70K
+1317	
+MDLZ	مونديلز	56.47	-2.54%	0.000000	-1.47	9.25M
+1318	
+ZEO	Zeo Energy Corp. Class A	0.8989	-2.54%	0.000000	-0.0234	128.96K
+1319	
+SWVL	SWVL Holdings Corp Class A	1.53	-2.55%	0.011000	-0.04	20.44K
+1320	
+NVO	نوڤو نورديسك	37.45	-2.55%	0.011000	-0.98	25.32M
+1321	
+OWLT	Owlet, Inc. Class A	5.35	-2.55%	0.000000	-0.14	172.72K
+1322	
+INDV	Indivior Pharmaceuticals, Inc.	30.53	-2.55%	0.047000	-0.80	4.50M
+1323	
+RSSS	Research Solutions, Inc.	2.29	-2.55%	0.000000	-0.06	27.07K
+1324	
+NGVC	Natural Grocers by Vitamin Cottage, Inc.	25.20	-2.55%	0.073000	-0.66	124.27K
+1325	
+DY	Dycom Industries, Inc.	352.19	-2.56%	0.000000	-9.24	326.80K
+1326	
+FUBO	FuboTV	1.14	-2.56%	0.035000	-0.03	7.45M
+1327	
+POAS	Phaos Technology Holdings (Cayman) Ltd. Class A	1.52	-2.56%	0.000000	-0.04	68.06K
+1328	
+NRXP	NRX Pharmaceuticals, Inc.	1.90	-2.56%	0.000000	-0.05	575.14K
+1329	
+NOW	سيرفس ناو	113.71	-2.58%	0.535000	-3.01	10.05M
+1330	
+RDNT	RadNet, Inc.	61.99	-2.58%	0.000000	-1.64	801.44K
+1331	
+ENSG	Ensign Group, Inc.	204.96	-2.58%	0.100000	-5.42	350.10K
+1332	
+LFST	LifeStance Health	6.41	-2.58%	0.000000	-0.17	1.56M
+1333	
+CSGP	CoStar Group, Inc.	43.11	-2.58%	0.072000	-1.14	8.36M
+1334	
+PTC	بارامترك تكنولوجي	150.11	-2.60%	0.000000	-4.01	942.32K
+1335	
+YCBD	cbdMD, Inc.	0.7330	-2.60%	0.000000	-0.0196	269.25K
+1336	
+NCEL	NewcelX Ltd.	2.62	-2.60%	0.000000	-0.07	6.69K
+1337	
+NNNN	Anbio Biotechnology	20.94	-2.60%	0.000000	-0.56	34.79K
+1338	
+ITW	إلينوي تول ووركس إنك	260.74	-2.61%	0.000000	-7.00	1.22M
+1339	
+BLDP	Ballard Power Systems Inc.	2.61	-2.61%	0.000000	-0.07	3.27M
+1340	
+QGEN	QIAGEN NV	40.45	-2.62%	0.067000	-1.09	2.05M
+1341	
+ALC	الكون	75.74	-2.62%	0.000000	-2.04	1.71M
+1342	
+AOS	A. O. Smith Corporation	64.02	-2.62%	0.000000	-1.72	1.19M
+1343	
+EXP	Eagle Materials Inc.	183.55	-2.63%	0.012000	-4.95	392.65K
+1344	
+MGEE	MGE Energy, Inc.	72.45	-2.63%	0.000000	-1.96	218.44K
+1345	
+MHK	Mohawk Industries, Inc.	101.67	-2.63%	0.000000	-2.75	954.21K
+1346	
+MTVA	MetaVia Inc.	1.48	-2.63%	0.000000	-0.04	827.22K
+1347	
+BURL	مصنع برلنغتون للمعاطف	300.43	-2.63%	0.000000	-8.12	802.33K
+1348	
+PHOE	Phoenix Asia Holdings Ltd.	15.58	-2.63%	0.000000	-0.42	4.84K
+1349	
+WS	Worthington Steel, Inc.	31.69	-2.64%	0.000000	-0.86	314.98K
+1350	
+TOVX	Theriva Biologics, Inc.	0.1810	-2.64%	0.000000	-0.0049	1.65M
+1351	
+URI	United Rentals, Inc.	725.30	-2.65%	0.000000	-19.72	419.71K
+1352	
+CNSP	CNS Pharmaceuticals	2.20	-2.65%	0.000000	-0.06	29.67K
+1353	
+LOGI	لوجيتك	90.14	-2.65%	0.069000	-2.45	1.51M
+1354	
+HSCS	HeartSciences Inc.	2.58	-2.65%	0.000000	-0.0701	5.10K
+1355	
+BRC	Brady Corporation Class A	83.69	-2.67%	0.000000	-2.30	195.02K
+1356	
+MMM	3 ام	145.08	-2.67%	0.048000	-3.98	4.23M
+1357	
+TDS	Telephone and Data Systems, Inc.	41.63	-2.67%	0.112000	-1.14	950.88K
+1358	
+ZKH	ZKH Group Ltd.	3.28	-2.67%	0.000000	-0.09	19.24K
+1359	
+LAKE	Lakeland Industries, Inc.	8.37	-2.67%	0.000000	-0.23	71.64K
+1360	
+LPTH	LightPath Technologies, Inc. Class A	11.67	-2.67%	0.000000	-0.32	1.39M
+1361	
+OSUR	OraSure Technologies, Inc.	2.90	-2.68%	0.000000	-0.08	754.56K
+1362	
+MNSO	MINISO Group Holding Ltd. Sponsored ADR	17.04	-2.68%	0.003000	-0.47	361.92K
+1363	
+SHW	شيروين ويليامز كو	312.12	-2.68%	0.009000	-8.58	2.09M
+1364	
+LAMR	شركة لامار للإعلان	130.51	-2.68%	0.007000	-3.59	679.48K
+1365	
+CL	كولغيت بالموليف كو	87.52	-2.69%	0.014000	-2.42	6.30M
+1366	
+BLIN	Bridgeline Digital, Inc.	0.8517	-2.69%	0.000000	-0.0235	31.96K
+1367	
+OIS	Oil States International, Inc.	11.93	-2.69%	0.000000	-0.33	701.32K
+1368	
+PRPO	Precipio, Inc.	28.56	-2.69%	0.000000	-0.79	12.13K
+1369	
+SQM	Sociedad Quimica y Minera de Chile S.A. Sponsored ADR Pfd Series B	75.03	-2.70%	0.075000	-2.08	478.23K
+1370	
+ESLA	Estrella Immunopharma, Inc.	1.08	-2.70%	0.000000	-0.03	98.88K
+1371	
+AUPH	Aurinia Pharmaceuticals Inc.	14.08	-2.70%	0.023000	-0.39	955.76K
+1372	
+HOVR	New Horizon Aircraft Ltd. Class A	1.80	-2.70%	0.000000	-0.05	295.68K
+1373	
+GRRR	Gorilla Technology	11.07	-2.72%	0.031000	-0.31	358.20K
+1374	
+EVEX	Eve Holding, Inc.	2.50	-2.72%	0.000000	-0.07	1.44M
+1375	
+TOMZ	TOMI Environmental Solutions, Inc.	0.5988	-2.73%	0.000000	-0.0168	188.80K
+1376	
+TREX	Trex Company, Inc.	37.04	-2.73%	0.000000	-1.04	1.69M
+1377	
+HLN	Haleon PLC Sponsored ADR	10.31	-2.74%	0.000000	-0.29	5.97M
+1378	
+JJSF	J & J Snack Foods Corp.	75.47	-2.74%	0.000000	-2.13	316.62K
+1379	
+MDXG	MiMedx Group, Inc.	4.24	-2.75%	0.008000	-0.12	823.84K
+1380	
+VGAS	Verde Clean Fuels, Inc. Class A	1.77	-2.75%	0.000000	-0.05	35.34K
+1381	
+ERII	Energy Recovery, Inc.	9.91	-2.75%	0.012000	-0.28	602.05K
+1382	
+BEKE	كي القابضة	16.54	-2.76%	0.000000	-0.47	4.54M
+1383	
+ANIK	Anika Therapeutics, Inc.	14.11	-2.76%	0.000000	-0.40	95.61K
+1384	
+BGSF	BGSF, Inc.	6.31	-2.77%	0.000000	-0.18	20.73K
+1385	
+VIPS	Vipshop Holdings Ltd Sponsored ADR	15.46	-2.77%	0.231000	-0.44	1.60M
+1386	
+HVT	Haverty Furniture Companies, Inc.	21.32	-2.78%	0.000000	-0.61	125.49K
+1387	
+GRWG	GrowGeneration Corp.	1.05	-2.78%	0.007000	-0.03	279.58K
+1388	
+CIFR	Cipher Mining	14.67	-2.78%	0.001000	-0.42	15.86M
+1389	
+ACAD	ACADIA Pharmaceuticals Inc.	20.32	-2.78%	0.048000	-0.58	2.47M
+1390	
+MMSI	Merit Medical Systems, Inc.	68.27	-2.79%	0.061000	-1.96	906.07K
+1391	
+PHVS	Pharvaris N.V.	26.17	-2.79%	0.000000	-0.75	95.96K
+1392	
+RVTY	ريفيتي	84.93	-2.79%	0.057000	-2.44	1.16M
+1393	
+IDYA	IDEAYA Biosciences	33.31	-2.80%	0.119000	-0.96	751.00K
+1394	
+SANA	Sana Biotechnology, Inc.	3.13	-2.80%	0.000000	-0.09	2.17M
+1395	
+BKE	Buckle, Inc.	49.09	-2.81%	0.000000	-1.42	533.31K
+1396	
+SG	Sweetgreen, Inc. Class A	5.52	-2.82%	0.013000	-0.16	3.41M
+1397	
+VLGEA	Village Super Market, Inc. Class A	40.98	-2.82%	0.777000	-1.19	64.14K
+1398	
+MLP	Maui Land & Pineapple Company, Inc.	15.44	-2.83%	0.000000	-0.45	36.05K
+1399	
+XPRO	Expro Group	16.48	-2.83%	0.000000	-0.48	1.14M
+1400	
+RMTI	Rockwell Medical, Inc.	1.03	-2.83%	0.002000	-0.03	226.39K
+1401	
+ABTC	American Bitcoin	1.03	-2.83%	0.000000	-0.03	9.13M
+1402	
+USPH	U.S. Physical Therapy, Inc.	75.22	-2.83%	0.015000	-2.19	127.25K
+1403	
+WDC	ويسترن ديجيتال كورب	304.90	-2.84%	0.038000	-8.91	12.29M
+1404	
+DASH	دور داش	164.99	-2.84%	0.223000	-4.82	2.63M
+1405	
+RYAAY	رايان إير	59.80	-2.84%	0.013000	-1.75	1.46M
+1406	
+COR	أمريسورس برجين	325.18	-2.85%	0.000000	-9.53	2.03M
+1407	
+VMC	فولكان ماتيريالز كو	257.86	-2.86%	0.000000	-7.60	1.35M
+1408	
+BZAI	Blaize Holdings, Inc.	1.02	-2.86%	0.000000	-0.03	1.41M
+1409	
+CWST	Casella Waste Systems, Inc. Class A	85.91	-2.86%	0.032000	-2.53	462.20K
+1410	
+GCO	Genesco Inc.	25.36	-2.87%	0.000000	-0.75	106.88K
+1411	
+RBA	مزادات ريتشي وأخوانه	97.14	-2.87%	0.020000	-2.87	946.94K
+1412	
+CRH	سي ار اتش	101.91	-2.88%	0.051000	-3.02	4.63M
+1413	
+TVTX	Travere Therapeutics, Inc.	26.96	-2.88%	0.034000	-0.80	1.10M
+1414	
+WLDS	Wearable Devices Ltd.	1.35	-2.88%	0.000000	-0.04	80.62K
+1415	
+LUD	Luda Technology Group Limited	3.70	-2.89%	0.000000	-0.11	35.45K
+1416	
+GEHC	GE Healthcare Technologies Inc.	70.25	-2.89%	0.000000	-2.09	4.30M
+1417	
+ANGO	AngioDynamics, Inc.	10.40	-2.89%	0.002000	-0.31	289.62K
+1418	
+ENTX	Entera Bio Ltd.	1.34	-2.90%	0.000000	-0.04	101.15K
+1419	
+POWW	Outdoor Holding	2.01	-2.90%	0.000000	-0.06	501.52K
+1420	
+WEYS	Weyco Group, Inc.	32.46	-2.90%	0.085000	-0.97	12.45K
+1421	
+CMMB	Chemomab Therapeutics Ltd. Sponsored ADR	2.00	-2.91%	0.000000	-0.06	25.78K
+1422	
+IRD	Opus Genetics, Inc.	4.66	-2.92%	0.000000	-0.14	916.45K
+1423	
+ALNT	Allient Inc.	61.25	-2.92%	0.000000	-1.84	144.07K
+1424	
+MYGN	Myriad Genetics, Inc.	4.64	-2.93%	0.005000	-0.14	2.20M
+1425	
+ELAB	PMGC Holdings Inc.	4.31	-2.93%	0.000000	-0.13	24.25K
+1426	
+MAS	ماسكو كورب	59.92	-2.96%	0.000000	-1.83	2.46M
+1427	
+COGT	Cogent Biosciences, Inc.	34.37	-2.96%	0.000000	-1.05	1.86M
+1428	
+UROY	Uranium Royalty	3.60	-2.96%	0.000000	-0.11	1.48M
+1429	
+CLS	سيليستيكا إنك	273.58	-2.97%	0.000000	-8.37	1.36M
+1430	
+MP	MP Materials Corp Class A	57.54	-2.97%	0.000000	-1.76	3.48M
+1431	
+CMPS	COMPASS Pathways Plc Sponsored ADR	5.88	-2.97%	0.000000	-0.18	1.74M
+1432	
+APEI	American Public Education, Inc.	54.32	-2.97%	0.000000	-1.66	550.63K
+1433	
+SLSR	Solaris Resources Inc	8.50	-2.97%	0.000000	-0.26	207.18K
+1434	
+FLEX	فلكس	63.45	-2.97%	0.027000	-1.94	3.20M
+1435	
+LAUR	Laureate Education, Inc.	33.22	-2.98%	0.014000	-1.02	1.95M
+1436	
+IE	Ivanhoe Electric Inc.	12.01	-2.99%	0.000000	-0.37	2.67M
+1437	
+NKE	نايك إنك	53.47	-2.99%	0.056000	-1.65	16.75M
+1438	
+ALAR	Alarum Technologies Ltd Sponsored ADR	7.13	-2.99%	0.003000	-0.22	40.92K
+1439	
+DAIO	Data I/O Corporation	2.59	-3.00%	0.004000	-0.08	23.14K
+1440	
+SUPN	Supernus Pharmaceuticals, Inc.	49.29	-3.01%	0.040000	-1.53	575.95K
+1441	
+HAYW	Hayward Holdings, Inc.	13.85	-3.01%	0.018000	-0.43	2.14M
+1442	
+ARGX	argenx SE Sponsored ADR	684.77	-3.01%	0.677000	-21.26	348.12K
+1443	
+OMCL	Omnicell, Inc.	34.03	-3.02%	0.043000	-1.06	494.28K
+1444	
+PKG	Packaging Corporation of America	209.42	-3.03%	0.000000	-6.55	1.11M
+1445	
+SHPH	Shuttle Pharmaceuticals Holdings,Inc.	0.9988	-3.03%	0.000000	-0.0312	54.32K
+1446	
+NHC	National HealthCare Corporation	157.72	-3.04%	0.280000	-4.95	118.40K
+1447	
+IRMD	IRadimed Corp.	99.67	-3.04%	0.000000	-3.13	71.60K
+1448	
+HRTX	Heron Therapeutics Inc	0.8400	-3.04%	0.000000	-0.0263	2.17M
+1449	
+IBP	Installed Building Products, Inc.	277.17	-3.05%	0.000000	-8.72	402.84K
+1450	
+BWMN	Bowman Consulting Group, Ltd.	26.70	-3.05%	0.000000	-0.84	184.23K
+1451	
+NRXS	NeurAxis, Inc.	6.99	-3.05%	0.000000	-0.22	395.17K
+1452	
+ONCY	Oncolytics Biotech Inc.	0.9605	-3.06%	0.000000	-0.0303	594.62K
+1453	
+LAES	SEALSQ Corp.	3.01	-3.06%	0.000000	-0.095	7.40M
+1454	
+MTLS	Materialise NV Sponsored ADR	5.06	-3.07%	0.009000	-0.16	91.57K
+1455	
+UCL	uCloudlink	1.58	-3.07%	0.000000	-0.05	11.66K
+1456	
+ZENA	ZenaTech, Inc.	2.21	-3.07%	0.000000	-0.07	9.81M
+1457	
+HD	هوم ديبوت	330.93	-3.08%	0.018000	-10.50	3.53M
+1458	
+BEAT	HeartBeam	1.26	-3.08%	0.000000	-0.04	603.78K
+1459	
+TLSA	Tiziana Life Sciences plc	1.26	-3.08%	0.000000	-0.04	81.38K
+1460	
+IOVA	Iovance Biotherapeutics Inc	3.77	-3.08%	0.004000	-0.12	14.42M
+1461	
+GROV	Grove Collaborative Holdings, Inc. Class A	1.26	-3.08%	0.002000	-0.04	9.46K
+1462	
+CPRT	كوبارت	33.00	-3.08%	0.000000	-1.05	8.77M
+1463	
+LOVE	Lovesac Co.	10.70	-3.08%	0.000000	-0.34	265.34K
+1464	
+BHP	بي إتش بي	68.30	-3.09%	0.066000	-2.18	4.13M
+1465	
+IPWR	Ideal Power Inc.	3.14	-3.09%	0.000000	-0.10	45.36K
+1466	
+FLNC	Fluence Energy, Inc. Class A	15.99	-3.09%	0.000000	-0.51	2.55M
+1467	
+CLX	كلوركس	107.93	-3.11%	0.015000	-3.47	2.39M
+1468	
+GUTS	Fractyl Health, Inc.	0.4449	-3.11%	0.000000	-0.0143	1.65M
+1469	
+USLM	United States Lime & Minerals, Inc.	119.65	-3.11%	0.000000	-3.84	150.68K
+1470	
+FTK	Flotek Industries, Inc.	16.48	-3.12%	0.000000	-0.53	280.63K
+1471	
+TTEK	Tetra Tech, Inc.	30.78	-3.12%	0.037000	-0.99	3.26M
+1472	
+ORN	Orion Group Holdings, Inc.	9.92	-3.13%	0.000000	-0.32	463.07K
+1473	
+INMB	INmune Bio, Inc.	1.24	-3.13%	0.000000	-0.04	344.76K
+1474	
+CBLL	Ceribell, Inc.	18.89	-3.13%	0.000000	-0.61	248.72K
+1475	
+UDMY	Udemy, Inc.	4.64	-3.13%	0.025000	-0.15	2.03M
+1476	
+APLD	Applied Digital	26.65	-3.13%	0.000000	-0.86	12.25M
+1477	
+HERE	Here Group Limited Sponsored ADR	3.72	-3.13%	0.001000	-0.12	114.89K
+1478	
+NEO	NeoGenomics, Inc.	8.01	-3.14%	0.012000	-0.26	1.27M
+1479	
+TGLS	Tecnoglass Inc.	43.55	-3.14%	0.000000	-1.41	639.67K
+1480	
+AMRZ	Amrize Ltd	54.65	-3.14%	0.000000	-1.77	3.29M
+1481	
+PG	بروكتر أند جامبل	146.71	-3.15%	0.027000	-4.77	9.98M
+1482	
+PSIX	Power Solutions International, Inc.	53.80	-3.15%	0.000000	-1.75	574.27K
+1483	
+PXLW	Pixelworks, Inc.	5.85	-3.15%	0.015000	-0.19	23.05K
+1484	
+UNCY	Unicycive Therapeutics	6.76	-3.15%	0.000000	-0.22	458.80K
+1485	
+DBGI	Digital Brands Group, Inc.	2.61	-3.16%	0.000000	-0.085	259.13K
+1486	
+MITQ	Moving iMage Technologies Inc	0.5500	-3.17%	0.003000	-0.018	4.53K
+1487	
+CLMB	Climb Global Solutions, Inc.	77.40	-3.17%	0.055000	-2.53	108.06K
+1488	
+SHOP	شوبيفاي	123.75	-3.17%	0.061000	-4.05	6.68M
+1489	
+SNGX	Soligenix, Inc.	1.22	-3.17%	0.000000	-0.04	182.52K
+1490	
+BTQ	BTQ Technologies	2.74	-3.18%	0.000000	-0.09	1.39M
+1491	
+ELMD	Electromed, Inc.	23.17	-3.18%	0.016000	-0.76	32.89K
+1492	
+NC	NACCO Industries, Inc. Class A	49.50	-3.19%	0.097000	-1.63	12.10K
+1493	
+WMS	Advanced Drainage Systems, Inc.	135.39	-3.19%	0.088000	-4.46	932.65K
+1494	
+SIGA	SIGA Technologies Inc	4.86	-3.19%	0.000000	-0.16	1.07M
+1495	
+KIDS	OrthoPediatrics Corp.	16.66	-3.20%	0.007000	-0.55	144.61K
+1496	
+YETI	YETI Holdings	36.32	-3.20%	0.168000	-1.20	1.26M
+1497	
+XERS	XERIS PHARMACEUTICALS INC	5.43	-3.21%	0.008000	-0.18	1.38M
+1498	
+EFOI	Energy Focus, Inc.	1.81	-3.21%	0.000000	-0.06	21.40K
+1499	
+GRBK	Green Brick Partners	63.42	-3.21%	0.000000	-2.10	197.79K
+1500	
+MBUU	Malibu Boats, Inc. Class A	25.21	-3.22%	0.000000	-0.84	223.31K
+1501	
+MLTX	MoonLake Immunotherapeutics Class A	16.23	-3.22%	0.000000	-0.54	615.27K
+1502	
+MVIS	MicroVision, Inc.	0.6141	-3.22%	0.000000	-0.0204	4.66M
+1503	
+GDYN	Grid Dynamics Holdings, Inc. Class A	6.02	-3.22%	0.000000	-0.20	1.04M
+1504	
+ADBE	أدوبي سيستمز	246.00	-3.23%	0.000000	-8.2	7.26M
+1505	
+USNA	USANA Health Sciences, Inc.	17.09	-3.23%	0.030000	-0.57	131.18K
+1506	
+TOL	تول براذرز	136.94	-3.24%	0.063000	-4.58	1.17M
+1507	
+DG	دولار جنرال	126.67	-3.25%	0.244000	-4.26	4.00M
+1508	
+EL	إستي لودر	86.02	-3.25%	0.049000	-2.89	3.53M
+1509	
+NVS	نوفارتس	149.81	-3.25%	0.000000	-5.04	1.55M
+1510	
+POWI	Power Integrations, Inc.	46.08	-3.25%	0.000000	-1.55	640.78K
+1511	
+OLLI	Ollie's Bargain Outlet Holdings Inc	100.70	-3.26%	0.000000	-3.39	1.12M
+1512	
+JBTM	JBT Marel Corporation	130.13	-3.26%	0.107000	-4.38	628.49K
+1513	
+EGG	Enigmatig Limited Class A	5.60	-3.28%	0.000000	-0.19	7.47K
+1514	
+RADX	Radiopharm Theranostics Limited Sponsored ADR	4.70	-3.29%	0.000000	-0.16	33.55K
+1515	
+UEC	Uranium Energy Corp.	13.53	-3.29%	0.000000	-0.46	10.09M
+1516	
+INNV	Innovus Pharmaceuticals, Inc.	8.24	-3.29%	0.000000	-0.28	340.86K
+1517	
+CNXN	PC Connection, Inc.	56.47	-3.29%	0.000000	-1.92	57.41K
+1518	
+GVH	Globavend Holdings Ltd.	1.03	-3.30%	0.000000	-0.035	45.36K
+1519	
+SMR	NuScale Power Corporation Class A	12.03	-3.30%	0.000000	-0.41	15.63M
+1520	
+AMSC	American Superconductor Corporation	30.14	-3.30%	0.000000	-1.03	618.65K
+1521	
+ZDGE	Zedge, Inc. Class B	2.93	-3.30%	0.000000	-0.10	146.94K
+1522	
+VANI	Vivani Medical Inc.	1.17	-3.31%	0.000000	-0.04	101.28K
+1523	
+VSEC	VSE Corporation	185.26	-3.31%	0.000000	-6.35	1.02M
+1524	
+IMDX	Insight Molecular Diagnostics Inc.	4.38	-3.31%	0.000000	-0.15	147.99K
+1525	
+MMA	Mixed Martial Arts Group Limited	0.4109	-3.32%	0.000000	-0.0141	132.39K
+1526	
+ICLR	ICON Plc	97.14	-3.33%	0.023000	-3.35	1.14M
+1527	
+PYPL	باي بال	44.59	-3.34%	0.088000	-1.54	18.72M
+1528	
+SSYS	Stratasys Ltd.	7.80	-3.35%	0.036000	-0.27	561.29K
+1529	
+TSCO	تراكتور سبلاي	45.95	-3.36%	0.000000	-1.60	5.42M
+1530	
+CALM	Cal-Maine Foods, Inc.	83.71	-3.36%	0.000000	-2.91	867.64K
+1531	
+KMDA	Kamada Ltd	8.59	-3.37%	0.009000	-0.30	57.51K
+1532	
+ANNX	Annexon, Inc.	5.42	-3.39%	0.000000	-0.19	2.81M
+1533	
+STX	سيجيت تكنولوجي	406.77	-3.40%	0.033000	-14.32	3.75M
+1534	
+PRZO	ParaZero Technologies Ltd.	1.13	-3.42%	0.000000	-0.04	677.90K
+1535	
+ACU	Acme United Corporation	43.31	-3.43%	0.006000	-1.54	23.19K
+1536	
+DHI	هورتون دي آر إنك	137.25	-3.44%	0.596000	-4.89	2.29M
+1537	
+FRPT	Freshpet Inc	65.10	-3.44%	0.000000	-2.32	1.86M
+1538	
+VITL	Vital Farms, Inc.	15.16	-3.44%	0.028000	-0.54	3.82M
+1539	
+KROS	Keros Therapeutics	10.95	-3.44%	0.000000	-0.39	394.97K
+1540	
+EDAP	EDAP TMS SA Sponsored ADR	3.92	-3.45%	0.000000	-0.14	65.07K
+1541	
+PPSI	Pioneer Power Solutions, Inc.	3.36	-3.45%	0.016000	-0.12	39.92K
+1542	
+HMR	Heidmar Maritime Holdings	0.8593	-3.46%	0.001000	-0.0308	18.02K
+1543	
+ROL	Rollins, Inc.	53.91	-3.46%	0.000000	-1.93	2.63M
+1544	
+RDHL	RedHill Biopharma Ltd. Sponsored ADR	0.8447	-3.46%	0.000000	-0.0303	12.31K
+1545	
+GSAT	Globalstar, Inc.	58.68	-3.46%	0.000000	-2.10	603.33K
+1546	
+COUR	Coursera Inc	5.86	-3.46%	0.048000	-0.21	4.05M
+1547	
+VIOT	Viomi Technology Co., Ltd.	1.39	-3.47%	0.000000	-0.05	244.75K
+1548	
+DOX	Amdocs Limited	64.34	-3.49%	0.000000	-2.33	1.28M
+1549	
+OMDA	Omada Health, Inc.	14.11	-3.49%	0.035000	-0.51	1.36M
+1550	
+MRVL	Marvell Technology, Inc.	87.62	-3.49%	0.000000	-3.17	15.98M
+1551	
+SANG	Sangoma Technologies Corporation	4.42	-3.49%	0.004000	-0.16	9.44K
+1552	
+MBX	MBX Biosciences, Inc.	28.70	-3.50%	0.000000	-1.04	493.98K
+1553	
+QXO	QXO, Inc.	20.13	-3.50%	0.059000	-0.73	5.07M
+1554	
+AMLX	Amylyx Pharmaceuticals, Inc.	13.79	-3.50%	0.000000	-0.50	602.60K
+1555	
+VTEX	VTEX Class A	3.85	-3.51%	0.005000	-0.14	992.82K
+1556	
+EGAN	eGain Corporation	8.49	-3.52%	0.014000	-0.31	157.20K
+1557	
+ALTS	ALT5 Sigma	1.37	-3.52%	0.000000	-0.05	1.45M
+1558	
+CHWY	Chewy	24.33	-3.53%	0.013000	-0.89	5.49M
+1559	
+UFPT	UFP Technologies, Inc.	198.40	-3.53%	0.000000	-7.25	149.44K
+1560	
+MKC	ماكورميك آند كو	55.06	-3.54%	0.000000	-2.02	2.76M
+1561	
+ATGL	Alpha Technology Group Ltd. Class A	18.80	-3.54%	0.000000	-0.69	1.12K
+1562	
+RITR	Reitar Logtech Holdings Limited Class A	0.5809	-3.55%	0.000000	-0.0214	83.44K
+1563	
+VC	Visteon Corporation	84.45	-3.56%	0.108000	-3.12	808.08K
+1564	
+ZTS	زويتيس	117.35	-3.56%	0.051000	-4.33	5.12M
+1565	
+RIGL	Rigel Pharmaceuticals, Inc.	25.44	-3.56%	0.061000	-0.94	373.12K
+1566	
+SHLS	Shoals Technologies Group, Inc. Class A	5.95	-3.57%	0.000000	-0.22	3.00M
+1567	
+ATON	AlphaTON Capital	0.3500	-3.58%	0.000000	-0.013	298.65K
+1568	
+APP	آب لوفن كورب	442.57	-3.60%	0.000000	-16.52	3.50M
+1569	
+NB	NioCorp Developments Ltd.	4.80	-3.61%	0.000000	-0.18	3.52M
+1570	
+DOUG	Douglas Elliman Inc.	1.60	-3.61%	0.015000	-0.06	884.12K
+1571	
+REAX	Real Brokerage Inc.	2.40	-3.61%	0.000000	-0.09	1.11M
+1572	
+PHGE	BiomX Inc.	5.04	-3.63%	0.000000	-0.19	52.91K
+1573	
+SCSC	ScanSource, Inc.	34.27	-3.63%	0.143000	-1.29	263.87K
+1574	
+FC	Franklin Covey Co.	11.64	-3.64%	0.006000	-0.44	83.44K
+1575	
+LASR	NLIGHT, INC.	68.54	-3.65%	0.022000	-2.60	1.82M
+1576	
+NXTT	Next Technology	2.11	-3.65%	0.000000	-0.08	54.28K
+1577	
+BGM	BGM Group Ltd. Class A	0.8671	-3.66%	0.000000	-0.0329	12.70K
+1578	
+GNE	Genie Energy Ltd. Class B	13.69	-3.66%	0.059000	-0.52	60.75K
+1579	
+INAB	IN8bio, Inc.	1.84	-3.66%	0.000000	-0.07	40.01K
+1580	
+SMCI	Super Micro Computer, Inc.	30.35	-3.68%	0.000000	-1.16	24.17M
+1581	
+QNRX	Quoin Pharmaceuticals. Ltd Sponsored ADR	7.84	-3.69%	0.000000	-0.30	16.80K
+1582	
+TDUP	thredUP, Inc. Class A	3.39	-3.69%	0.000000	-0.13	1.51M
+1583	
+ERIC	إريكسون	11.47	-3.69%	0.021000	-0.44	8.22M
+1584	
+MBRX	Moleculin Biotech, Inc.	2.08	-3.70%	0.000000	-0.08	87.84K
+1585	
+BRLT	Brilliant Earth Group, Inc. Class A	1.30	-3.70%	0.000000	-0.05	41.60K
+1586	
+KMRK	K-Tech Solutions Company Limited Class A	1.56	-3.70%	0.000000	-0.06	7.05K
+1587	
+NUWE	NUWELLIS INC	1.04	-3.70%	0.000000	-0.04	80.15K
+1588	
+LXRX	Lexicon Pharmaceuticals, Inc.	1.56	-3.70%	0.000000	-0.06	1.39M
+1589	
+DCTH	Delcath Systems, Inc.	9.38	-3.70%	0.000000	-0.36	339.52K
+1590	
+PRFX	باين ريفورم	2.33	-3.71%	0.000000	-0.0899	9.37K
+1591	
+RLMD	RELMADA THERAPEUTICS INC	6.21	-3.72%	0.000000	-0.24	1.46M
+1592	
+PYPD	PolyPid	4.39	-3.73%	0.000000	-0.17	50.43K
+1593	
+JZXN	Jiuzi Holdings Inc Ordinary Shares	1.03	-3.74%	0.000000	-0.04	143.99K
+1594	
+FENC	Fennec Pharmaceuticals Inc.	7.47	-3.74%	0.005000	-0.29	225.56K
+1595	
+ATEC	Alphatec Holdings, Inc.	12.56	-3.75%	0.000000	-0.49	2.62M
+1596	
+EVMN	Evommune, Inc.	24.09	-3.76%	0.000000	-0.94	291.42K
+1597	
+AVY	آفري دنيسون كورب	164.67	-3.76%	0.000000	-6.44	723.57K
+1598	
+THR	Thermon Group Holdings, Inc.	47.60	-3.78%	0.000000	-1.87	561.38K
+1599	
+AUR	أورورا للابتكار	4.06	-3.79%	0.000000	-0.16	16.73M
+1600	
+TRC	Tejon Ranch Co.	18.25	-3.80%	0.020000	-0.72	119.75K
+1601	
+LWAY	Lifeway Foods, Inc.	18.49	-3.80%	0.000000	-0.73	103.56K
+1602	
+POWL	Powell Industries, Inc.	502.23	-3.81%	0.000000	-19.89	263.85K
+1603	
+RYET	Ruanyun Edai Technology Inc.	1.01	-3.81%	0.000000	-0.04	6.11K
+1604	
+MAZE	Maze Therapeutics, Inc.	48.47	-3.81%	0.000000	-1.92	491.48K
+1605	
+VMD	Viemed Healthcare, Inc.	9.32	-3.82%	0.000000	-0.37	400.98K
+1606	
+TKNO	Alpha Teknova, Inc.	2.77	-3.82%	0.000000	-0.11	80.69K
+1607	
+ANAB	AnaptysBio, Inc.	64.72	-3.82%	0.092000	-2.57	1.04M
+1608	
+VIRC	Virco Mfg. Corporation	6.02	-3.83%	0.000000	-0.24	43.09K
+1609	
+TILE	Interface, Inc.	26.07	-3.84%	0.000000	-1.04	574.09K
+1610	
+CTAS	سينتاس كورب	185.44	-3.84%	0.003000	-7.40	3.47M
+1611	
+LAW	CS Disco, Inc.	4.24	-3.85%	0.000000	-0.17	189.72K
+1612	
+SBC	SBC Medical Group	3.50	-3.85%	0.001000	-0.14	34.25K
+1613	
+KMT	Kennametal Inc.	36.07	-3.86%	0.000000	-1.45	1.34M
+1614	
+JFB	JFB Construction Holdings Class A	17.13	-3.87%	0.011000	-0.69	57.39K
+1615	
+UTI	Universal Technical Institute, Inc.	35.98	-3.87%	0.025000	-1.45	456.84K
+1616	
+TTRX	Turn Therapeutics Inc.	3.48	-3.87%	0.000000	-0.14	13.95K
+1617	
+ABTS	Abits Group Inc	2.61	-3.87%	0.000000	-0.105	4.49K
+1618	
+COCO	Vita Coco Company, Inc.	55.89	-3.87%	0.027000	-2.25	735.20K
+1619	
+SLGB	Smart Logistics Global Limited	0.9901	-3.87%	0.000000	-0.0399	113.67K
+1620	
+SOGP	Sound Group	12.41	-3.87%	0.000000	-0.50	53.87K
+1621	
+ADUR	Aduro Clean Technologies (Uplisting)	11.65	-3.88%	0.000000	-0.47	286.96K
+1622	
+DLTR	دولار تري إنك	107.49	-3.89%	0.000000	-4.35	3.55M
+1623	
+MHO	M/I Homes, Inc.	123.91	-3.90%	1.044000	-5.03	182.36K
+1624	
+RELL	Richardson Electronics, Ltd.	10.83	-3.90%	0.000000	-0.44	286.17K
+1625	
+MBLY	شركة موبيلاي	7.62	-3.91%	0.020000	-0.31	5.12M
+1626	
+BCDA	BioCardia, Inc.	1.23	-3.91%	0.000000	-0.05	42.28K
+1627	
+EP	Empire Petroleum Corporation	2.95	-3.91%	0.000000	-0.12	154.79K
+1628	
+FEAM	5E Advanced Materials, Inc.	1.72	-3.91%	0.000000	-0.07	283.02K
+1629	
+W	Wayfair, Inc. Class A	76.76	-3.92%	0.000000	-3.13	2.44M
+1630	
+ECL	إيكولاب إنك	261.84	-3.94%	0.052000	-10.75	1.73M
+1631	
+FND	Floor & Decor	54.18	-3.94%	0.000000	-2.22	2.96M
+1632	
+THO	Thor Industries, Inc.	78.00	-3.94%	0.060000	-3.2	631.39K
+1633	
+OSRH	OSR Holdings, Inc.	0.4332	-3.95%	0.008000	-0.0178	164.24K
+1634	
+SKE	Skeena Resources Limited	28.47	-3.95%	0.000000	-1.17	1.28M
+1635	
+AU	أنجلو جولد أشانتي	92.39	-3.96%	0.084000	-3.81	6.37M
+1636	
+SXT	Sensient Technologies Corporation	85.62	-3.96%	0.000000	-3.53	354.50K
+1637	
+TEL	تايكو إلكترو	196.25	-3.96%	0.069000	-8.09	2.37M
+1638	
+WLDN	Willdan Group, Inc.	75.18	-3.97%	0.000000	-3.11	294.19K
+1639	
+KNSA	KINIKSA PHARMACEUTICALS, LTD.	45.15	-3.98%	0.042000	-1.87	630.13K
+1640	
+CVKD	Cadrenal Therapeutics, Inc.	7.24	-3.98%	0.000000	-0.30	33.81K
+1641	
+CAN	Canaan Inc.	0.4570	-3.99%	0.000000	-0.019	13.92M
+1642	
+PHM	بولت إنك	117.08	-4.00%	0.475000	-4.88	1.73M
+1643	
+BBAI	BigBear.ai Holdings, Inc.	3.80	-4.04%	0.000000	-0.16	29.58M
+1644	
+CHE	Chemed Corporation	383.21	-4.04%	0.068000	-16.13	281.78K
+1645	
+NEM	نيومونت للتعدين	106.54	-4.05%	0.049000	-4.50	14.71M
+1646	
+SKY	Skyline Champion Corporation	75.13	-4.05%	0.104000	-3.17	504.03K
+1647	
+SLN	Silence Therapeutics PLC Sponsored ADR	6.63	-4.05%	0.000000	-0.28	287.28K
+1648	
+TNYA	Tenaya Therapeutics, Inc.	0.8225	-4.07%	0.000000	-0.0349	2.22M
+1649	
+HIVE	Hive Blockchain	2.12	-4.07%	0.000000	-0.09	9.04M
+1650	
+INVZ	Innoviz Technologies Ltd.	0.7098	-4.08%	0.002000	-0.0302	2.14M
+1651	
+KVHI	KVH Industries, Inc.	7.75	-4.08%	0.031000	-0.33	110.16K
+1652	
+ATR	AptarGroup, Inc.	124.22	-4.08%	0.033000	-5.28	910.52K
+1653	
+TXG	10x Genomics	17.35	-4.09%	0.041000	-0.74	2.35M
+1654	
+BMEA	Biomea Fusion Inc	1.17	-4.10%	0.000000	-0.05	1.32M
+1655	
+WCT	Wellchange Holdings Company Limited Class A	3.63	-4.10%	0.000000	-0.155	1.49K
+1656	
+WWR	Westwater Resources Inc	0.7250	-4.10%	0.000000	-0.031	811.97K
+1657	
+ELTX	Elicio Therapeutics, Inc	11.68	-4.11%	0.000000	-0.50	210.07K
+1658	
+KTTA	Pasithea Therapeutics Corp.	0.8200	-4.12%	0.000000	-0.0352	76.55K
+1659	
+MMS	MAXIMUS, Inc.	69.11	-4.13%	0.000000	-2.98	804.19K
+1660	
+DUOL	‏دوولينجو	100.05	-4.13%	0.252000	-4.31	1.36M
+1661	
+SLI	Standard Lithium	3.95	-4.13%	0.000000	-0.17	1.57M
+1662	
+NATR	Nature's Sunshine Products, Inc.	23.00	-4.13%	0.003000	-0.99	139.64K
+1663	
+LYFT	Lyft	13.46	-4.13%	0.000000	-0.58	13.76M
+1664	
+IMUX	IMMUNIC INC	1.15	-4.17%	0.000000	-0.05	1.19M
+1665	
+RVYL	Ryvyl Inc.	5.52	-4.17%	0.000000	-0.24	19.32K
+1666	
+GNS	Genius Group Limited	0.3900	-4.20%	0.000000	-0.0171	474.31K
+1667	
+ELA	Envela Corporation	11.61	-4.21%	0.000000	-0.51	75.34K
+1668	
+WFG	WEST FRASER TIMBER CO	63.19	-4.21%	0.075000	-2.78	212.59K
+1669	
+SCWO	374Water Inc	2.73	-4.21%	0.000000	-0.12	34.79K
+1670	
+TEM	تمبوس إيه آي	48.69	-4.23%	0.028000	-2.15	4.62M
+1671	
+TIVC	تيفيك هيلث سيستمز	0.9194	-4.23%	0.119000	-0.0406	74.10K
+1672	
+TLSI	TriSalus Life Sciences, Inc.	3.85	-4.23%	0.005000	-0.17	252.79K
+1673	
+SNWV	Sanuwave Health, Inc.	21.07	-4.23%	0.000000	-0.93	46.84K
+1674	
+ARBB	ARB IOT Group Limited	4.29	-4.24%	0.000000	-0.19	4.57K
+1675	
+AHMA	Ambitions Enterprise Management	4.73	-4.25%	0.000000	-0.21	11.62K
+1676	
+IZEA	IZEA Worldwide, Inc.	3.60	-4.26%	0.000000	-0.16	168.79K
+1677	
+MKTW	MarketWise, Inc. Class A	13.67	-4.27%	0.000000	-0.61	34.01K
+1678	
+CECO	CECO Environmental Corp.	56.28	-4.29%	0.000000	-2.52	637.14K
+1679	
+BRCB	Black Rock Coffee Bar, Inc. Class A	16.42	-4.31%	0.007000	-0.74	551.32K
+1680	
+DXST	Decent Holding Inc.	4.00	-4.31%	0.001000	-0.18	169.22K
+1
