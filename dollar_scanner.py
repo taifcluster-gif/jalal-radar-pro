@@ -29,6 +29,8 @@ dollar_scanner.py (v2)
 
 import os
 import time
+import json
+import threading
 import logging
 from datetime import datetime
 
@@ -36,6 +38,7 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 import urllib.request
+import urllib.parse
 import json as _json
 
 logging.basicConfig(level=logging.INFO)
@@ -60,6 +63,12 @@ CONFIG = {
     "alpaca_key": os.environ.get("ALPACA_API_KEY_DOLLAR", ""),
     "alpaca_secret": os.environ.get("ALPACA_SECRET_KEY_DOLLAR", ""),
     "alpaca_base_url": os.environ.get("ALPACA_BASE_URL_DOLLAR", "https://paper-api.alpaca.markets"),
+
+    # ── (v3) إعدادات التنفيذ التلقائي والمراقبة ──
+    "max_open_positions": 5,        # أقصى عدد مراكز مفتوحة بنفس الوقت (5×70$ = 350$ من أصل 1000$)
+    "scan_interval_min": 20,        # كل كم دقيقة نفحص فرص جديدة
+    "monitor_interval_sec": 60,     # كل كم ثانية نراقب المراكز المفتوحة (وقف/هدف)
+    "state_file": os.path.join(os.getcwd(), "dollar_scanner_state.json"),
 }
 
 
@@ -96,17 +105,20 @@ def init_sharia_filter():
     return us_list
 
 
-def _alpaca_req(path, base=None):
+def _alpaca_req(path, base=None, method="GET", data=None):
     base = base or CONFIG["alpaca_base_url"]
-    req = urllib.request.Request(
-        base + path,
-        headers={
-            "APCA-API-KEY-ID": CONFIG["alpaca_key"],
-            "APCA-API-SECRET-KEY": CONFIG["alpaca_secret"],
-        },
-    )
+    headers = {
+        "APCA-API-KEY-ID": CONFIG["alpaca_key"],
+        "APCA-API-SECRET-KEY": CONFIG["alpaca_secret"],
+    }
+    body = None
+    if data is not None:
+        body = _json.dumps(data).encode()
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(base + path, data=body, headers=headers, method=method)
     with urllib.request.urlopen(req, timeout=10) as r:
-        return _json.loads(r.read().decode())
+        raw = r.read().decode()
+        return _json.loads(raw) if raw else {}
 
 
 def get_candidate_universe():
@@ -267,6 +279,190 @@ def run_scan():
     opportunities.sort(key=lambda x: x["score"], reverse=True)
     logger.info(f"عدد الفرص الجاهزة للدخول: {len(opportunities)}")
     return opportunities
+
+
+# ════════════════════════════════════════════════════════════
+# (v3) التنفيذ الفعلي — أوامر شراء/بيع + مراقبة الوقف والهدف
+# ════════════════════════════════════════════════════════════
+_state_lock = threading.Lock()
+
+
+def load_state():
+    """يحمّل حالة المراكز المفتوحة اللي فتحها هذا السكانر بالذات."""
+    with _state_lock:
+        if os.path.exists(CONFIG["state_file"]):
+            try:
+                with open(CONFIG["state_file"], encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                return {}
+        return {}
+
+
+def save_state(state):
+    with _state_lock:
+        with open(CONFIG["state_file"], "w", encoding="utf-8") as f:
+            json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+def place_buy_order(symbol, qty):
+    """يفتح أمر شراء سوق على حساب دولار سكانر المنفصل."""
+    try:
+        return _alpaca_req("/v2/orders", method="POST", data={
+            "symbol": symbol, "qty": str(round(qty, 3)),
+            "side": "buy", "type": "market", "time_in_force": "day",
+        })
+    except Exception as e:
+        logger.error(f"{symbol}: فشل أمر الشراء - {e}")
+        return {"error": str(e)}
+
+
+def close_position_order(symbol):
+    """يبيع كامل المركز بأمر سوق فوري."""
+    try:
+        return _alpaca_req(f"/v2/positions/{urllib.parse.quote(symbol)}", method="DELETE")
+    except Exception as e:
+        logger.error(f"{symbol}: فشل أمر البيع - {e}")
+        return {"error": str(e)}
+
+
+def get_open_positions_from_alpaca():
+    """يجيب المراكز المفتوحة فعلياً من Alpaca (حساب دولار سكانر بس)."""
+    try:
+        return _alpaca_req("/v2/positions")
+    except Exception as e:
+        logger.error(f"فشل جلب المراكز: {e}")
+        return []
+
+
+def get_latest_price(symbol):
+    """يجيب آخر سعر لحظي لرمز واحد — يُستخدم بالمراقبة (وقف/هدف)."""
+    try:
+        snap = _alpaca_req(f"/v2/stocks/{symbol}/snapshot", base="https://data.alpaca.markets")
+        return float(snap.get("latestTrade", {}).get("p", 0)) or None
+    except Exception as e:
+        logger.warning(f"{symbol}: فشل جلب السعر اللحظي - {e}")
+        return None
+
+
+def execute_opportunities(opportunities):
+    """
+    يشتري الفرص الجديدة (اللي مو محتفظين فيها أصلاً)، بحد أقصى
+    max_open_positions مركز مفتوح بنفس الوقت — يحمي رأس المال (1000$)
+    من التركّز الزايد بمراكز كثيرة.
+    """
+    state = load_state()
+    open_count = len(state)
+
+    if open_count >= CONFIG["max_open_positions"]:
+        logger.info(f"⏸️ وصلنا الحد الأقصى للمراكز المفتوحة ({open_count}/{CONFIG['max_open_positions']}) — تجاهل فرص جديدة")
+        return
+
+    for opp in opportunities:
+        if open_count >= CONFIG["max_open_positions"]:
+            break
+        symbol = opp["symbol"]
+        if symbol in state:
+            continue  # عندنا فيه مركز مفتوح أصلاً
+
+        qty = opp["suggested_qty"]
+        result = place_buy_order(symbol, qty)
+        if "error" in result:
+            logger.warning(f"{symbol}: تجاهلنا الفرصة — فشل أمر الشراء")
+            continue
+
+        state[symbol] = {
+            "entry_price": opp["last_close"],
+            "qty": qty,
+            "stop_loss": opp["stop_loss_price"],
+            "take_profit": opp["take_profit_price"],
+            "entry_time": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        }
+        open_count += 1
+        logger.info(f"✅ شراء {symbol}: {qty} سهم @ ${opp['last_close']} "
+                    f"(وقف: ${opp['stop_loss_price']}, هدف: ${opp['take_profit_price']})")
+
+    save_state(state)
+
+
+def monitor_open_positions():
+    """
+    يفحص كل مركز مفتوح (من حالتنا المحلية) ضد سعره اللحظي — يبيع فوراً
+    لو لمس وقف الخسارة أو هدف الربح.
+    """
+    state = load_state()
+    if not state:
+        return
+
+    changed = False
+    for symbol in list(state.keys()):
+        info = state[symbol]
+        price = get_latest_price(symbol)
+        if price is None:
+            continue
+
+        hit_stop = price <= info["stop_loss"]
+        hit_target = price >= info["take_profit"]
+
+        if hit_stop or hit_target:
+            result = close_position_order(symbol)
+            if "error" in result:
+                logger.warning(f"{symbol}: فشل إغلاق المركز — بنعيد المحاولة الدورة الجاية")
+                continue
+            reason = "وقف الخسارة 🛡" if hit_stop else "هدف الربح ✅"
+            pnl = round((price - info["entry_price"]) * info["qty"], 2)
+            logger.info(f"{reason} {symbol} @ ${price} — ربح/خسارة: ${pnl}")
+            del state[symbol]
+            changed = True
+
+    if changed:
+        save_state(state)
+
+
+# ════════════════════════════════════════════════════════════
+# (v3) المجدول الخلفي — يشتغل مع تشغيل التطبيق تلقائياً
+# ════════════════════════════════════════════════════════════
+_scheduler_state = {"running": False, "last_scan": None, "last_error": None}
+
+
+def _scheduler_loop():
+    _scheduler_state["running"] = True
+    last_scan_time = 0
+    while True:
+        try:
+            # ── المراقبة (وقف/هدف) — أسرع دورة ──
+            monitor_open_positions()
+
+            # ── الفحص عن فرص جديدة — دورة أبطأ ──
+            now = time.time()
+            if now - last_scan_time >= CONFIG["scan_interval_min"] * 60:
+                logger.info("🔍 [دولار سكانر] بدء دورة فحص جديدة...")
+                opps = run_scan()
+                execute_opportunities(opps)
+                last_scan_time = now
+                _scheduler_state["last_scan"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+        except Exception as e:
+            _scheduler_state["last_error"] = str(e)
+            logger.error(f"[دولار سكانر] خطأ بحلقة المجدول: {e}")
+
+        time.sleep(CONFIG["monitor_interval_sec"])
+
+
+def start_scheduler():
+    """يشغّل المجدول بخيط منفصل — يُستدعى مرة وحدة عند إقلاع التطبيق."""
+    if not CONFIG["alpaca_key"] or not CONFIG["alpaca_secret"]:
+        logger.warning("⚠️ دولار سكانر: المفاتيح غير موجودة — المجدول لن يبدأ")
+        return
+    _main_key = os.environ.get("ALPACA_API_KEY", "")
+    if _main_key and _main_key == CONFIG["alpaca_key"]:
+        logger.error("⚠️ توقف أمان: مفاتيح دولار سكانر مطابقة للبوت الرئيسي — المجدول لن يبدأ")
+        return
+    if not CONFIG["sharia_compliant_symbols"]:
+        init_sharia_filter()
+    t = threading.Thread(target=_scheduler_loop, daemon=True)
+    t.start()
+    logger.info("⚡ دولار سكانر: المجدول الخلفي بدأ (فحص كل "
+                f"{CONFIG['scan_interval_min']} دقيقة، مراقبة كل {CONFIG['monitor_interval_sec']} ثانية)")
 
 
 if __name__ == "__main__":

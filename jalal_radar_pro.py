@@ -2680,6 +2680,22 @@ def backtest_start():
 def backtest_status():
     return jsonify(_backtest_state)
 
+@app.route("/api/dollar-scanner/status")
+def dollar_scanner_status():
+    """(v3) حالة سريعة لاستراتيجية دولار سكانر — مستقلة عن البوت الرئيسي."""
+    try:
+        import dollar_scanner
+        state = dollar_scanner.load_state()
+        return jsonify({
+            "ok": True,
+            "scheduler": dollar_scanner._scheduler_state,
+            "open_positions": state,
+            "open_count": len(state),
+            "max_positions": dollar_scanner.CONFIG["max_open_positions"],
+        })
+    except Exception as e:
+        return jsonify({"ok": False, "msg": str(e)})
+
 @app.route("/api/stats")
 def stats():
     """
@@ -2800,6 +2816,13 @@ try:
         print("ℹ️ المراقبة اللحظية معطّلة (البوت غير مفعّل أو المفاتيح غير محفوظة)")
 except Exception as _e:
     print(f"تحذير: المراقبة اللحظية لم تبدأ: {_e}")
+
+# ── (v3) استراتيجية دولار سكانر — مستقلة تماماً، حساب Alpaca منفصل ──
+try:
+    import dollar_scanner
+    dollar_scanner.start_scheduler()
+except Exception as _e:
+    print(f"تحذير: دولار سكانر لم يبدأ: {_e}")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
