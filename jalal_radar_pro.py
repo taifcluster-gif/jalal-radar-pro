@@ -2636,7 +2636,7 @@ def export_excel():
     from flask import Response
     activities = api_activities(500)
     output = io.StringIO()
-    output.write("﻿")
+    # (v3.5) إصلاح: كان فيه BOM مكرر (هذا السطر + utf-8-sig تحت) يفسد اسم أول عمود بالملف
     writer = csv.writer(output)
     writer.writerow(["الرمز","الجانب","الكمية","السعر","الإجمالي $","الوقت","رقم الأمر"])
     for a in activities:
@@ -2671,19 +2671,70 @@ def export_internal_log():
     (تحليل) تصدير السجل الداخلي الكامل بصيغة CSV — فيه سبب كل صفقة
     (هدف 1، هدف 2، وقف خسارة، تريلينج) وربحها/خسارتها، بخلاف /api/export_excel
     اللي يصدّر بس تنفيذات Alpaca الخام بدون سبب.
+
+    (v3.5) إصلاح جذري: كان يعتمد بالكامل على الملف المحلي trades.json اللي
+    يعيش على قرص Render غير الدائم — ينمسح مع كل رفعة كود، فيطلع التصدير فاضي
+    تمامًا أغلب الوقت رغم إن البوت يسجّل صح لحظة الصفقة. الحين يبني الصفوف من
+    نشاط Alpaca الدائم (نفس مصدر /api/stats الموثوق) عشان ما يضيع شي، ويحاول
+    يضيف "السبب" من الملف المحلي إذا لقاه متوفر (تطابق رمز + وقت قريب)، وإلا يحطه "-".
     """
     from flask import Response
-    trades = load_trades(limit=0)  # الكل
+    local_trades = load_trades(limit=0)  # أفضل محاولة لإيجاد "السبب" — قد يكون فاضي، وهذا متوقع بعد أي رفعة كود
+
+    def find_reason(symbol, side, time_str):
+        best = None
+        try:
+            t_dt = datetime.strptime(time_str[:16], "%Y-%m-%d %H:%M")
+        except Exception:
+            return "-"
+        for lt in local_trades:
+            if lt.get("symbol") != symbol or lt.get("side") != side:
+                continue
+            try:
+                lt_dt = datetime.strptime(str(lt.get("time",""))[:16], "%Y-%m-%d %H:%M")
+            except Exception:
+                continue
+            diff = abs((lt_dt - t_dt).total_seconds())
+            if diff <= 300:  # نفس الصفقة تقريبًا لو الفرق 5 دقائق أو أقل
+                best = lt.get("reason","-")
+                break
+        return best or "-"
+
+    acts = api_activities(500)
+    acts.sort(key=lambda a: a.get("transaction_time",""))
+
+    open_pos = {}
+    rows = []
+    for a in acts:
+        try:
+            sym = a.get("symbol",""); side = a.get("side","")
+            qty = float(a.get("qty") or a.get("cumulative_qty") or 0)
+            price = float(a.get("price") or 0)
+            if not sym or qty<=0 or price<=0: continue
+            raw_time = a.get("transaction_time") or a.get("time") or ""
+            try:
+                time_str = datetime.fromisoformat(raw_time.replace("Z","+00:00")).strftime("%Y-%m-%d %H:%M")
+            except Exception:
+                time_str = raw_time
+
+            p = open_pos.setdefault(sym, {"qty":0.0,"cost":0.0})
+            if side == "buy":
+                p["qty"] += qty; p["cost"] += qty*price
+                rows.append([sym, "buy", qty, find_reason(sym,"buy",time_str), price, "", time_str, a.get("source","alpaca")])
+            elif side.startswith("sell") and p["qty"] > 1e-9:
+                avg = p["cost"]/p["qty"]
+                sold = min(qty, p["qty"])
+                pnl = round((price-avg)*sold, 2)
+                p["qty"] -= sold; p["cost"] -= avg*sold
+                rows.append([sym, "sell", qty, find_reason(sym,"sell",time_str), price, pnl, time_str, a.get("source","alpaca")])
+        except Exception:
+            continue
+
     output = io.StringIO()
-    output.write("﻿")
     writer = csv.writer(output)
     writer.writerow(["الرمز","الجانب","الكمية","السبب","سعر الخروج","الربح/الخسارة $","الوقت","المصدر"])
-    for t in trades:
-        writer.writerow([
-            t.get("symbol",""), t.get("side",""), t.get("qty",""),
-            t.get("reason",""), t.get("exit_price",""), t.get("pnl",""),
-            t.get("time",""), t.get("source","")
-        ])
+    for r in rows:
+        writer.writerow(r)
     csv_bytes = output.getvalue().encode("utf-8-sig")
     return Response(
         csv_bytes,
