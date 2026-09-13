@@ -170,9 +170,14 @@ def api_activities(limit=100):
     (v3.3) إصلاح السجل الفاضي: Alpaca حدها الأقصى 100 نشاط لكل طلب —
     طلب 200 أو 500 كان يرجع HTTP 422 والسجل يطلع فاضي.
     الحل: نجيب على دفعات 100 مع page_token حتى نوصل المطلوب.
+
+    (v3.7) إصلاح تكرار: صفحة Alpaca التالية ترجّع آخر عنصر بالصفحة
+    السابقة كأول عنصر فيها (ترقيم شامل، مو حصري) — كان يسبب تكرار
+    نفس عملية التنفيذ (Fill) بالنتيجة، وهذا يضخّم أرقام الربح/الخسارة
+    والكمية بأي تحليل يعتمد على هذي الدالة. نزيل التكرار بالـid.
     """
     cfg = load_cfg()
-    out, token = [], None
+    out, token, seen_ids = [], None, set()
     while len(out) < limit:
         size = min(100, limit - len(out))
         path = f"/account/activities/FILL?page_size={size}"
@@ -181,7 +186,10 @@ def api_activities(limit=100):
         r = _req(cfg["trade_url"] + "/v2", path)
         if not isinstance(r, list) or not r:
             break
-        out += r
+        new_items = [a for a in r if a.get("id") not in seen_ids]
+        for a in new_items:
+            seen_ids.add(a.get("id"))
+        out += new_items
         if len(r) < size:
             break  # آخر صفحة
         token = r[-1].get("id")
