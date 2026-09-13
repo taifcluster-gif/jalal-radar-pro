@@ -2823,6 +2823,46 @@ def backtest_start():
 def backtest_status():
     return jsonify(_backtest_state)
 
+@app.route("/api/test-sa-source")
+def test_sa_source():
+    """
+    (v3.9) تشخيص مصدر بيانات تاسي — يختبر سهم أرامكو (2222) عبر مصدر
+    سهمك أول، وyfinance (.SR) ثانياً، ويرجّع تقرير واضح عن سبب أي فشل.
+    """
+    code = request.args.get("code", "2222")
+    log = []
+    cfg = load_cfg()
+    key = cfg.get("sahmk_key", "")
+
+    log.append(f"مفتاح سهمك محفوظ: {'نعم' if key else 'لا'}" + (f" (يبدأ بـ: {key[:6]}...)" if key else ""))
+
+    r1 = sahmk_get(f"/quote/{code}/")
+    if isinstance(r1, dict) and "error" in r1:
+        log.append(f"❌ سهمك (السعر اللحظي): {r1['error']}")
+    else:
+        log.append(f"✅ سهمك (السعر اللحظي): {r1}")
+
+    r2 = sahmk_get(f"/historical/{code}/")
+    if isinstance(r2, dict) and "error" in r2:
+        log.append(f"❌ سهمك (التاريخي): {r2['error']}")
+    elif isinstance(r2, list):
+        log.append(f"✅ سهمك (التاريخي): {len(r2)} صف")
+    else:
+        log.append(f"⚠️ سهمك (التاريخي): رد غير متوقع - {str(r2)[:200]}")
+
+    yf_code = code + ".SR"
+    try:
+        ticker = yf.Ticker(yf_code)
+        df = ticker.history(period="2y", interval="1d")
+        if df.empty:
+            log.append(f"❌ yfinance ({yf_code}): رجع فاضي تماماً")
+        else:
+            log.append(f"✅ yfinance ({yf_code}): {len(df)} صف، آخر إغلاق: {df['Close'].iloc[-1]:.2f}")
+    except Exception as e:
+        log.append(f"❌ yfinance ({yf_code}): خطأ - {e}")
+
+    return jsonify({"code": code, "log": log})
+
 @app.route("/api/dollar-scanner/status")
 def dollar_scanner_status():
     """(v3) حالة سريعة لاستراتيجية دولار سكانر — مستقلة عن البوت الرئيسي."""
