@@ -2599,9 +2599,41 @@ def analyze_favorites():
     market = request.args.get("market","us")
     favs = load_favs().get(market, [])
     if not favs: return jsonify({"data":[]})
+    out = []
+
+    # ── (v3.8) إصلاح: كانت أي سوق غير us/crypto (يعني sa) تُحلّل بدالة
+    # التحليل الأمريكية المرتبطة بـAlpaca بالغلط — تجيب سعر AAPL-مثلاً
+    # فوراً بمجرد فتح تبويب تاسي، بدل تجاهل الرمز أو تحليله بمنطق تاسي.
+    if market == "sa":
+        for code in favs:
+            name = SA_STOCKS.get(code, code)
+            try:
+                live_price = sahmk_price(code)
+                df = sahmk_history(code)
+                if df is None or len(df) < 50:
+                    yf_code = code + ".SR"
+                    ticker = yf.Ticker(yf_code)
+                    df = ticker.history(period="2y", interval="1d")
+                    df.reset_index(inplace=True)
+                    if df.empty or len(df) < 50:
+                        continue
+                for col in ["Open","High","Low","Close","Volume"]:
+                    if col not in df.columns:
+                        continue
+                price = live_price if live_price and live_price > 0 else float(df["Close"].iloc[-1])
+                if price <= 0:
+                    continue
+                r = analyze_symbol_sa(df, code, name, price)
+                if r:
+                    r["is_fav"] = True
+                    out.append(r)
+            except Exception:
+                continue
+        out.sort(key=lambda x:(-x["score"],-x["confidence"]))
+        return jsonify({"data":out})
+
     is_crypto = (market=="crypto")
     stocks = US_STOCKS if market=="us" else CRYPTO
-    out = []
     for code in favs:
         name = stocks.get(code, code)
         live = api_last_price(code, is_crypto) if load_cfg().get("key") else None
