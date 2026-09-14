@@ -35,6 +35,22 @@ def log(msg):
     """طباعة فورية بطابع زمني UTC — تظهر في لوجات Render مباشرة"""
     print(f"[{datetime.utcnow().strftime('%H:%M:%S')} UTC] {msg}", flush=True)
 
+def sanitize_nan(obj):
+    """
+    (v4.1) حماية عامة: بايثون يسمح بـNaN/Infinity بصيغة JSON الخاصة فيه،
+    بس المتصفحات (JSON.parse) ترفضها كلياً — أي NaN يتسرب بأي نتيجة يكسر
+    الواجهة بالكامل بصمت (الطلب ينجح 200 بس JSON.parse يفشل، فلا يطلع
+    أي شي، ولا حتى رسالة خطأ). نطبّقها على أي رد JSON فيه نتائج تحليل
+    عشان نمنع تكرار هذا الصنف من الأعطال مهما كان مصدره مستقبلاً.
+    """
+    if isinstance(obj, dict):
+        return {k: sanitize_nan(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_nan(v) for v in obj]
+    if isinstance(obj, float) and (obj != obj or obj in (float("inf"), float("-inf"))):
+        return None
+    return obj
+
 app = Flask(__name__)
 
 USD_TO_SAR = 3.75
@@ -761,6 +777,10 @@ def analyze_symbol_sa(df, code, name, price):
             di_n=100*(dm_n.rolling(14).mean()/atr14.replace(0,1))
             dx=100*(di_p-di_n).abs()/(di_p+di_n).replace(0,1)
             adx_val=round(float(dx.rolling(14).mean().iloc[-1]),1)
+            # (v4.1) إصلاح: NaN ما يرمي استثناء بايثون، فيتسرب لـJSON ويكسر
+            # المتصفح بالكامل (NaN مو صيغة JSON صحيحة عالمياً) — نفحصه صراحة
+            if pd.isna(adx_val) or not (adx_val == adx_val):  # NaN != NaN
+                adx_val=0
         except: adx_val=0
         trend="صاعد" if price>ema20>ema50 else ("هابط" if price<ema20<ema50 else "محايد")
         eta="2-4 أيام" if score>=15 else "أسبوع"
@@ -2349,11 +2369,11 @@ def scan_status():
 @app.route("/results")
 def results():
     market = request.args.get("market","us")
-    return jsonify({
+    return jsonify(sanitize_nan({
         "data": scan_state[market]["data"],
         "last": scan_state[market]["last"],
         "scanned": scan_state[market]["scanned"],
-    })
+    }))
 
 @app.route("/analyze_one", methods=["POST"])
 def analyze_one():
@@ -2365,7 +2385,7 @@ def analyze_one():
     live = api_last_price(code, is_crypto) if load_cfg().get("key") else None
     r = analyze_symbol(code, name, is_crypto, live)
     if not r: return jsonify({"ok":False,"msg":f"تعذّر تحليل {code}"})
-    return jsonify({"ok":True,"result":r})
+    return jsonify(sanitize_nan({"ok":True,"result":r}))
 
 # ── Alpaca ──
 @app.route("/api/config", methods=["GET","POST"])
@@ -2643,7 +2663,7 @@ def analyze_favorites():
             except Exception:
                 continue
         out.sort(key=lambda x:(-x["score"],-x["confidence"]))
-        return jsonify({"data":out})
+        return jsonify(sanitize_nan({"data":out}))
 
     is_crypto = (market=="crypto")
     stocks = US_STOCKS if market=="us" else CRYPTO
@@ -2655,7 +2675,7 @@ def analyze_favorites():
             r["is_fav"] = True
             out.append(r)
     out.sort(key=lambda x:(-x["score"],-x["confidence"]))
-    return jsonify({"data":out})
+    return jsonify(sanitize_nan({"data":out}))
 
 @app.route("/api/trades")
 def trades_log():
