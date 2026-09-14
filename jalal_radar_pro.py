@@ -792,17 +792,30 @@ def run_scan_sa():
                     ticker=yf.Ticker(yf_code)
                     df=ticker.history(period="2y",interval="1d")
                     df.reset_index(inplace=True)
-                    if df.empty or len(df)<50: return
-                except: return
+                    if df.empty or len(df)<50:
+                        log(f"⚠️ [تاسي] {code} ({name}): yfinance رجع {len(df) if df is not None else 0} صف بس — تجاهلناه")
+                        return
+                except Exception as e:
+                    log(f"❌ [تاسي] {code} ({name}): فشل yfinance - {e}")
+                    return
             for col in ["Open","High","Low","Close","Volume"]:
-                if col not in df.columns: return
+                if col not in df.columns:
+                    log(f"❌ [تاسي] {code} ({name}): عمود ناقص بالبيانات ({col})")
+                    return
             price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
-            if price<=0: return
+            if price<=0:
+                log(f"❌ [تاسي] {code} ({name}): سعر غير صالح ({price})")
+                return
             r=analyze_symbol_sa(df,code,name,price)
+            if r is None:
+                log(f"❌ [تاسي] {code} ({name}): analyze_symbol_sa رجع None (خطأ بالحساب)")
+            else:
+                log(f"✅ [تاسي] {code} ({name}): سكور {r['score']}/20 — {r['verdict']}")
             with lock:
                 done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
                 if r: results.append(r)
-        except:
+        except Exception as e:
+            log(f"❌ [تاسي] {code} ({name}): استثناء عام - {e}")
             with lock:
                 done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
 
