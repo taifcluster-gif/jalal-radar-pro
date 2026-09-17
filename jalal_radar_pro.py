@@ -1439,25 +1439,25 @@ def start_scheduler():
 
 PAGE_CSS = r"""
 :root {
-  --bg: #f7f9fc;
-  --surface: #ffffff;
-  --surface-2: #f1f5f9;
-  --ink: #0f1729;
-  --ink-2: #475569;
-  --ink-3: #94a3b8;
-  --line: #e5eaf1;
-  --brand: #2563eb;
-  --brand-dark: #1d4ed8;
-  --brand-soft: #eff6ff;
-  --green: #059669;
-  --green-soft: #ecfdf5;
-  --red: #e11d48;
-  --red-soft: #fff1f3;
-  --amber: #d97706;
-  --amber-soft: #fffbeb;
-  --shadow-sm: 0 1px 2px rgba(15,23,41,.06);
-  --shadow: 0 2px 8px rgba(15,23,41,.06), 0 1px 3px rgba(15,23,41,.04);
-  --shadow-lg: 0 12px 32px rgba(15,23,41,.10);
+  --bg: #0e1015;
+  --surface: #16181d;
+  --surface-2: #1c1f26;
+  --ink: #e8e8e6;
+  --ink-2: #a8a8a4;
+  --ink-3: #6b6f76;
+  --line: #2a2d34;
+  --brand: #ef9f27;
+  --brand-dark: #ba7517;
+  --brand-soft: #2a2010;
+  --green: #1d9e75;
+  --green-soft: #10251e;
+  --red: #e2504a;
+  --red-soft: #2a1414;
+  --amber: #ef9f27;
+  --amber-soft: #2a2010;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow: 0 2px 8px rgba(0,0,0,.35), 0 1px 3px rgba(0,0,0,.25);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.45);
   --r: 14px;
   --r-lg: 20px;
 }
@@ -1635,8 +1635,8 @@ body {
 .sig { background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--shadow-sm); margin-top:12px; overflow:hidden; transition:.18s; }
 .sig:hover { box-shadow:var(--shadow); }
 .sig-verdict { padding:11px 16px; display:flex; align-items:center; justify-content:space-between; }
-.sig-verdict.buy { background:var(--green-soft); border-bottom:1px solid #d1fae5; }
-.sig-verdict.cond { background:var(--amber-soft); border-bottom:1px solid #fde68a; }
+.sig-verdict.buy { background:var(--green-soft); border-bottom:1px solid #1a4a3a; }
+.sig-verdict.cond { background:var(--amber-soft); border-bottom:1px solid #4a3818; }
 .sig-verdict.watch { background:var(--surface-2); border-bottom:1px solid var(--line); }
 .verdict-main { display:flex; align-items:center; gap:9px; }
 .verdict-ico { font-size:21px; }
@@ -2247,9 +2247,9 @@ function renderSig(s) {
     ? '<div class="sig-px-main">'+s.price+' ر.س</div>'
     : '<div class="sig-px-main">$'+s.price+'</div>'+(s.price_sar?'<div class="sig-px-sar">'+s.price_sar+' ر.س</div>':'');
   var live = (!isSA && s.live) ? '<div class="sig-px-live">مباشر Alpaca</div>' : '';
-  var tradeBtn = (!isSA && s.verdict==='BUY') ?
-    '<button class="sig-trade-btn" onclick=\'buyFromCard('+JSON.stringify(s).replace(/'/g,"&#39;")+')\'>' + '⚡ تداول</button>' :
-    (isSA && s.verdict==='BUY' ? '<span style="background:var(--brand-2);color:#fff;padding:6px 12px;border-radius:8px;font-size:12px;">📊 تداول يدوي</span>' : '');
+  // (v4.2) رابط TradingView بدل زر التداول المباشر — يفتح صفحة السهم للمراجعة اليدوية
+  var tvSym = isSA ? ('TADAWUL-'+s.code) : s.code;
+  var tvBtn = '<a class="sig-trade-btn" href="https://www.tradingview.com/symbols/'+tvSym+'/" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;">📈 TradingView</a>';
   return '<div class="sig">'+
     '<div class="sig-verdict '+vClass+'"><div class="verdict-main"><span class="verdict-ico">'+vIco+'</span>'+
     '<div><div class="verdict-label">'+vLabel+'</div><div class="verdict-sub">ثقة '+s.confidence+'% · '+trend+'</div></div></div>'+
@@ -2261,7 +2261,7 @@ function renderSig(s) {
     '<div class="sig-bar"><div class="sig-bar-fill" style="width:'+s.confidence+'%"></div></div>'+
     '<div class="sig-tags"><span class="tag">R:R <b>'+s.rr+'</b></span>'+
     '<span class="tag">🎯 <b>'+curPre+s.t1+cur+'</b> +'+ptp+'%</span>'+
-    '<span class="tag">🛡 <b>'+curPre+s.sl+cur+'</b> -'+psl+'%</span>'+tradeBtn+'</div>'+
+    '<span class="tag">🛡 <b>'+curPre+s.sl+cur+'</b> -'+psl+'%</span>'+tvBtn+'</div>'+
     '<div class="sig-levels"><div class="lvl entry"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+s.lb+cur+'</div></div>'+
     '<div class="lvl tp"><div class="lvl-lbl">هدف 1</div><div class="lvl-val">'+curPre+s.t1+cur+'</div><div class="lvl-pct">+'+ptp+'%</div></div>'+
     '<div class="lvl tp"><div class="lvl-lbl">هدف 2</div><div class="lvl-val">'+curPre+s.t2+cur+'</div></div>'+
