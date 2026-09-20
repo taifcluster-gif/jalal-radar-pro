@@ -1,0 +1,1 @@
+web: gunicorn jalal_scanner_public:app
