@@ -2,7 +2,7 @@
 """
 jalal_scanner_public.py
 ════════════════════════════════════════════════════════════
-نسخة الماسح العامة — المصححة بالكامل لحل مشكلة Not Found 404.
+نسخة الماسح العامة — النسخة المستقرة والمحسنة بالكامل.
 
 الاعتماديات (requirements.txt): flask, yfinance, pandas, numpy
 """
@@ -132,7 +132,7 @@ def sahmk_history(symbol):
     return None
 
 # ════════════════════════════════════════════════════════════
-# فلتر التذبذب العالي (الخشاش والزخم للسوق المختار)
+# تحليل الخشاش / الزخم العالي
 # ════════════════════════════════════════════════════════════
 def analyze_high_volatility(code, name, is_crypto=False):
     try:
@@ -143,8 +143,7 @@ def analyze_high_volatility(code, name, is_crypto=False):
         prev_close = float(df["Close"].iloc[-2])
         chg = round((price - prev_close) / prev_close * 100, 2)
 
-        if not is_crypto and price > 15.0:
-            return None
+        if not is_crypto and price > 15.0: return None
 
         c = df.copy()
         rv = _rsi(c["Close"], 14)
@@ -189,7 +188,7 @@ def analyze_high_volatility(code, name, is_crypto=False):
         return None
 
 # ════════════════════════════════════════════════════════════
-# تحليل JRF القياسي — أمريكي / كريبتو
+# تحليل JRF القياسي
 # ════════════════════════════════════════════════════════════
 def analyze_symbol(code, name, is_crypto=False):
     try:
@@ -313,7 +312,7 @@ def analyze_symbol_sa(df, code, name, price):
     except: return None
 
 # ════════════════════════════════════════════════════════════
-# حالة المسح والمفضلة
+# إدارة الحالة والسجل
 # ════════════════════════════════════════════════════════════
 scan_state = {
     "us":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
@@ -411,9 +410,6 @@ def compute_scan_history_status(market=None, days=10):
     rows.sort(key=lambda r: r["ts"], reverse=True)
     return rows
 
-# ════════════════════════════════════════════════════════════
-# تشغيل عمليات المسح
-# ════════════════════════════════════════════════════════════
 def run_scan(market="us", volatile_only=False):
     scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
     stocks = US_STOCKS if market=="us" else (SA_STOCKS if market=="sa" else CRYPTO)
@@ -485,8 +481,7 @@ def scan_route():
 @app.route("/scan_status", methods=["GET"])
 def scan_status():
     market = request.args.get("market", "us")
-    if market not in scan_state:
-        market = "us"
+    if market not in scan_state: market = "us"
     return jsonify({
         "status": scan_state[market]["status"],
         "progress": scan_state[market]["progress"],
@@ -496,8 +491,7 @@ def scan_status():
 @app.route("/results", methods=["GET"])
 def results_route():
     market = request.args.get("market", "us")
-    if market not in scan_state:
-        market = "us"
+    if market not in scan_state: market = "us"
     return jsonify(sanitize_nan({
         "data": scan_state[market]["data"],
         "last": scan_state[market]["last"],
@@ -530,8 +524,7 @@ def analyze_one():
     return jsonify(sanitize_nan({"ok":True,"result":r}))
 
 @app.route("/api/favorites", methods=["GET"])
-def get_favorites():
-    return jsonify(load_favs())
+def get_favorites(): return jsonify(load_favs())
 
 @app.route("/api/favorites/toggle", methods=["POST"])
 def toggle_favorite():
@@ -616,7 +609,7 @@ def export_scan_history():
     )
 
 # ════════════════════════════════════════════════════════════
-# الواجهة
+# الواجهة المحسنة
 # ════════════════════════════════════════════════════════════
 PAGE = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -646,7 +639,8 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 .q-box { display:flex; gap:8px; margin-bottom:14px; }
 .q-box input { flex:1; padding:10px 12px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; }
 .q-box button { padding:10px 16px; border-radius:var(--r); border:0; background:var(--surface-2); color:var(--ink); font-family:inherit; cursor:pointer; }
-.scan-btn { width:100%; padding:13px; border-radius:var(--r); border:0; background:var(--brand); color:#2a1a00; font-size:14px; font-weight:800; cursor:pointer; margin-bottom:8px; }
+.scan-btn { width:100%; padding:13px; border-radius:var(--r); border:0; background:var(--brand); color:#2a1a00; font-size:14px; font-weight:800; cursor:pointer; margin-bottom:8px; box-shadow:0 4px 12px rgba(239,159,39,0.2); transition:0.2s; }
+.scan-btn:active { transform:scale(0.98); }
 .scan-meta { text-align:center; color:var(--ink-3); font-size:11px; margin-bottom:12px; }
 .tally { display:flex; gap:8px; margin-bottom:12px; }
 .tally-cell { flex:1; background:var(--surface); border-radius:var(--r); padding:10px; text-align:center; }
@@ -771,28 +765,41 @@ function onMarketChange() {
 
 function startScan() {
   var isVolatile = document.getElementById('volatile-chk').checked;
+  var btn = document.getElementById('scan-btn');
+  btn.disabled = true;
   document.getElementById('loader').classList.add('show');
+  document.getElementById('loader-sub').textContent = 'جارٍ بدء الفحص...';
+
   fetch('/scan?market='+encodeURIComponent(market)+'&volatile='+(isVolatile?'true':'false'))
     .then(function(r){ return r.json(); })
     .then(function(d){
       if(scanPoll) clearInterval(scanPoll);
-      scanPoll = setInterval(pollScan, 1200);
+      scanPoll = setInterval(pollScan, 1000);
     })
     .catch(function(err){
+      btn.disabled = false;
       document.getElementById('loader').classList.remove('show');
-      toast('حدث خطأ في طلب المسح');
+      toast('تعذر بدء المسح، حاول مجدداً');
     });
 }
+
 function pollScan() {
   fetch('/scan_status?market='+encodeURIComponent(market))
     .then(function(r){ return r.json(); })
     .then(function(d){
-      document.getElementById('loader-sub').textContent = 'تم '+(d.progress||0)+'%';
-      if(d.status==='done'){
+      var prog = d.progress || 0;
+      document.getElementById('loader-sub').textContent = 'جارٍ الفحص... تم ' + prog + '% (' + (d.scanned||0) + ' سهم)';
+      if(d.status === 'done'){
         clearInterval(scanPoll);
         document.getElementById('loader').classList.remove('show');
+        document.getElementById('scan-btn').disabled = false;
         loadResults();
+        loadFavorites();
+        toast('تم الانتهاء من المسح بنجاح! 🎉');
       }
+    })
+    .catch(function(err){
+      // تجاهل أخطاء الشبكة المؤقتة أثناء الت polling
     });
 }
 
@@ -810,7 +817,7 @@ function loadResults() {
         '<div class="tally-cell"><div class="tally-num">'+data.length+'</div><div class="tally-lbl">مرشّح</div></div></div>' : '';
       document.getElementById('signals').innerHTML = data.length ?
         data.map(renderSig).join('') :
-        '<div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div>';
+        '<div class="empty"><div class="empty-ico">📡</div>لا توجد نتائج مسح حالياً، اضغط مسح السوق</div>';
     });
 }
 
@@ -852,6 +859,7 @@ function toggleFav(code) {
       if(d.ok){ toast(d.added?'⭐ أُضيف للمفضلة':'تمت الإزالة'); loadResults(); loadFavorites(); }
     });
 }
+
 function loadFavorites() {
   fetch('/api/favorites/analyze?market='+encodeURIComponent(market)).then(function(r){return r.json();}).then(function(d){
     var box = document.getElementById('fav-section');
@@ -859,6 +867,7 @@ function loadFavorites() {
     box.innerHTML = '<div class="fav-header">⭐ مفضلتك ('+d.data.length+')</div>' + d.data.map(renderSig).join('');
   });
 }
+
 function analyzeOne() {
   var code = document.getElementById('q-code').value.trim().toUpperCase();
   if(!code){ toast('أدخل الرمز'); return; }
@@ -870,6 +879,7 @@ function analyzeOne() {
       box.innerHTML = renderSig(d.result);
     });
 }
+
 function toast(msg) {
   var t = document.getElementById('toast');
   t.textContent = msg; t.style.opacity = '1';
