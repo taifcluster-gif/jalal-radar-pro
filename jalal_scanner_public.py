@@ -2,7 +2,7 @@
 """
 jalal_scanner_public.py
 ════════════════════════════════════════════════════════════
-نسخة الماسح العامة — المحدثة بالقائمة المنسدلة وترتيب الخشاش في النهاية.
+نسخة الماسح العامة — المحدثة بفصل الخشاش كفلتر خاص لكل سوق.
 
 الاعتماديات (requirements.txt): flask, yfinance, pandas, numpy
 """
@@ -132,7 +132,7 @@ def sahmk_history(symbol):
     return None
 
 # ════════════════════════════════════════════════════════════
-# 1. فلتر التذبذب العالي والزخم (High-Volatility & Momentum / الخشاش السريع)
+# فلتر التذبذب العالي (الخشاش والزخم للسوق المختار)
 # ════════════════════════════════════════════════════════════
 def analyze_high_volatility(code, name, is_crypto=False):
     try:
@@ -147,7 +147,6 @@ def analyze_high_volatility(code, name, is_crypto=False):
             return None
 
         c = df.copy()
-        e5, e13 = _ema(c["Close"], 5), _ema(c["Close"], 13)
         rv = _rsi(c["Close"], 14)
         va = _sma(c["Volume"], 20)
         av = _atr(c["High"], c["Low"], c["Close"], 14)
@@ -157,15 +156,13 @@ def analyze_high_volatility(code, name, is_crypto=False):
         vol_avg = float(va.iloc[last]) if float(va.iloc[last]) > 0 else 1.0
         vr_now = vol_now / vol_avg
 
-        if vr_now < 1.2:
-            return None
-
+        if vr_now < 1.1: return None
         rsi_v = float(rv.iloc[last])
         
         score = 5
-        if vr_now >= 2.0: score += 4
-        if 40 <= rsi_v <= 85: score += 4
-        if chg > 1.0: score += 4
+        if vr_now >= 1.5: score += 4
+        if 30 <= rsi_v <= 90: score += 4
+        if chg > 0.5: score += 4
 
         atr_v = float(av.iloc[last]) if not pd.isna(float(av.iloc[-1])) else price * 0.02
         t1 = round(price + atr_v * 1.5, 2)
@@ -175,7 +172,7 @@ def analyze_high_volatility(code, name, is_crypto=False):
         ptp = round((t1 - price) / price * 100, 2)
         psl = round((price - sl) / price * 100, 2)
 
-        verdict = "HIGH_MOMENTUM" if score >= 12 else "VOLATILE_WATCH"
+        verdict = "HIGH_MOMENTUM" if score >= 11 else "VOLATILE_WATCH"
 
         return {
             "code": code, "name": name, "is_crypto": is_crypto,
@@ -200,13 +197,6 @@ def analyze_symbol(code, name, is_crypto=False):
         if df.empty or len(df) < 50: return None
         price = float(df["Close"].iloc[-1])
 
-        price_tier = "normal"
-        if not is_crypto:
-            if price >= 5: price_tier = "normal"
-            elif price >= 1: price_tier = "low"
-            elif price > 0: price_tier = "penny"
-            else: return None
-
         c = df.copy()
         e20, e50, e200 = _ema(c["Close"], 20), _ema(c["Close"], 50), _ema(c["Close"], 200)
         rv = _rsi(c["Close"])
@@ -216,7 +206,6 @@ def analyze_symbol(code, name, is_crypto=False):
         va = _sma(c["Volume"], 20)
         av = _atr(c["High"], c["Low"], c["Close"])
 
-        avg_vol = float(va.iloc[-1]) if not pd.isna(va.iloc[-1]) else 0
         last = -1
         vr_now = float(c["Volume"].iloc[last]) / float(va.iloc[last]) if float(va.iloc[last]) > 0 else 1.0
 
@@ -244,8 +233,7 @@ def analyze_symbol(code, name, is_crypto=False):
 
         rsi_v = round(float(rv.iloc[last]), 1)
         adx_v = round(float(adv.iloc[last]), 1)
-        if pd.isna(adx_v) or adx_v != adx_v:
-            adx_v = 0
+        if pd.isna(adx_v) or adx_v != adx_v: adx_v = 0
         vr = round(vr_now, 1)
 
         e100 = float(_ema(c["Close"],100).iloc[last])
@@ -256,9 +244,9 @@ def analyze_symbol(code, name, is_crypto=False):
         elif ad: trend="مضاربة"
         else: trend="ضعيف"
 
-        if score>=14 and rr>=1.2: verdict="BUY"
-        elif score>=10 and rr>=0.9 and ad: verdict="BUY_COND"
-        elif score>=7: verdict="WATCH"
+        if score>=13 and rr>=1.1: verdict="BUY"
+        elif score>=9 and rr>=0.8: verdict="BUY_COND"
+        elif score>=6: verdict="WATCH"
         else: verdict="AVOID"
 
         confidence = min(100, round(score/20*80 + min(rr,3)/3*20))
@@ -279,7 +267,7 @@ def analyze_symbol(code, name, is_crypto=False):
             "trend":trend, "confidence":confidence,
             "lb":lb, "t1":t1, "t2":t2, "sl":sl, "rr":rr, "ptp":ptp, "psl":psl,
             "rsi":rsi_v, "adx":adx_v, "vr":vr, "chg":chg,
-            "eta":eta, "price_tier":price_tier, "is_sa": False,
+            "eta":eta, "price_tier":"normal", "is_sa": False,
         }
     except Exception:
         return None
@@ -287,7 +275,7 @@ def analyze_symbol(code, name, is_crypto=False):
 def analyze_symbol_sa(df, code, name, price):
     try:
         c = df.copy()
-        e20=_ema(c["Close"],20); e50=_ema(c["Close"],50); e200=_ema(c["Close"],200)
+        e20=_ema(c["Close"],20); e50=_ema(c["Close"],50)
         rv=_rsi(c["Close"]); ml,sg,_=_macd(c["Close"])
         rsi=float(rv.iloc[-1]); macd_val=float(ml.iloc[-1]); macd_sig=float(sg.iloc[-1])
         ema20=float(e20.iloc[-1]); ema50=float(e50.iloc[-1])
@@ -296,13 +284,13 @@ def analyze_symbol_sa(df, code, name, price):
         score=5
         if price>ema20: score+=3
         if price>ema50: score+=3
-        if 35<rsi<75: score+=2
+        if 30<rsi<80: score+=2
         if macd_val>macd_sig: score+=3
-        if vr>1.0: score+=2
+        if vr>0.9: score+=2
         
-        if score>=13: verdict="BUY"
-        elif score>=9: verdict="BUY_COND"
-        elif score>=6: verdict="WATCH"
+        if score>=12: verdict="BUY"
+        elif score>=8: verdict="BUY_COND"
+        elif score>=5: verdict="WATCH"
         else: verdict="AVOID"
         
         confidence=min(99,int(score/20*100))
@@ -331,7 +319,6 @@ scan_state = {
     "us":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
     "sa":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
     "crypto":   {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
-    "volatile": {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
 }
 FAV_FILE = os.path.join(os.getcwd(), "public_favorites.json")
 
@@ -339,8 +326,8 @@ def load_favs():
     if os.path.exists(FAV_FILE):
         try:
             with open(FAV_FILE) as f: return json.load(f)
-        except: return {"us": [], "sa": [], "crypto": [], "volatile": []}
-    return {"us": [], "sa": [], "crypto": [], "volatile": []}
+        except: return {"us": [], "sa": [], "crypto": []}
+    return {"us": [], "sa": [], "crypto": []}
 
 def save_favs(d):
     with open(FAV_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
@@ -427,12 +414,12 @@ def compute_scan_history_status(market=None, days=10):
 # ════════════════════════════════════════════════════════════
 # تشغيل عمليات المسح
 # ════════════════════════════════════════════════════════════
-def run_scan(market="us"):
+def run_scan(market="us", volatile_only=False):
     scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
-    stocks = US_STOCKS if market=="us" else CRYPTO
+    stocks = US_STOCKS if market=="us" else (SA_STOCKS if market=="sa" else CRYPTO)
     is_crypto = (market=="crypto")
     items = list(stocks.items())
-    if market=="us":
+    if market=="us" and not volatile_only:
         import random
         random.seed(int(time.time())//1800)
         random.shuffle(items)
@@ -440,7 +427,30 @@ def run_scan(market="us"):
     total = len(items); results = []; lock = threading.Lock(); done = [0]
 
     def scan_one(code, name):
-        r = analyze_symbol(code, name, is_crypto)
+        if volatile_only and market != "sa":
+            r = analyze_high_volatility(code, name, is_crypto)
+        elif market == "sa":
+            try:
+                live_price = sahmk_price(code); df = sahmk_history(code)
+                if df is None or len(df) < 50:
+                    ticker = yf.Ticker(code + ".SR")
+                    df = ticker.history(period="2y", interval="1d")
+                    df.reset_index(inplace=True)
+                if df is not None and not df.empty and len(df) >= 50:
+                    price = live_price if live_price and live_price > 0 else float(df["Close"].iloc[-1])
+                    if volatile_only:
+                        if price <= 25.0: # شروط الخشاش السعودي
+                            r = analyze_symbol_sa(df, code, name, price)
+                            if r and r["vr"] >= 1.1: pass
+                            else: r = None
+                        else: r = None
+                    else:
+                        r = analyze_symbol_sa(df, code, name, price)
+                else: r = None
+            except: r = None
+        else:
+            r = analyze_symbol(code, name, is_crypto)
+
         with lock:
             done[0] += 1; scan_state[market]["progress"] = round(done[0]/total*100)
             if r: results.append(r)
@@ -449,14 +459,9 @@ def run_scan(market="us"):
         futs = [ex.submit(scan_one, c, n) for c, n in items]
         for f in as_completed(futs): pass
 
-    buys = [s for s in results if s["verdict"] in ("BUY","BUY_COND")]
-    buys.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
-    top = buys[:5]
-    if len(top) < 5:
-        watch = [s for s in results if s["verdict"]=="WATCH"]
-        watch.sort(key=lambda x:(-x["score"],-x["confidence"]))
-        top += watch[:5-len(top)]
-    medals = ["🥇","🥈","🥉","4️⃣","5️⃣"]
+    results.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
+    top = results[:8]
+    medals = ["🥇","🥈","🥉","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣"]
     for i,s in enumerate(top): s["medal"] = medals[i] if i<len(medals) else str(i+1)
     fav_set = set(load_favs().get(market, []))
     for s in top: s["is_fav"] = s["code"] in fav_set
@@ -464,86 +469,7 @@ def run_scan(market="us"):
     scan_state[market]["last"] = datetime.now().strftime("%Y-%m-%d %H:%M")
     scan_state[market]["scanned"] = len(results)
     scan_state[market]["status"] = "done"; scan_state[market]["progress"] = 100
-    record_scan_history(market, top)
-    return top
-
-def run_scan_volatile():
-    market = "volatile"
-    scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
-    items = list(US_STOCKS.items())
-    total = len(items); results = []; lock = threading.Lock(); done = [0]
-
-    def scan_one_vol(code, name):
-        r = analyze_high_volatility(code, name, is_crypto=False)
-        with lock:
-            done[0] += 1; scan_state[market]["progress"] = round(done[0]/total*100)
-            if r: results.append(r)
-
-    with ThreadPoolExecutor(max_workers=3) as ex:
-        futs = [ex.submit(scan_one_vol, c, n) for c, n in items]
-        for f in as_completed(futs): pass
-
-    results.sort(key=lambda x: (-x["score"], -x["vr"], -x["chg"]))
-    top = results[:10]
-    medals = ["🥇","🥈","🥉","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟"]
-    for i, s in enumerate(top): s["medal"] = medals[i] if i < len(medals) else str(i+1)
-    fav_set = set(load_favs().get(market, []))
-    for s in top: s["is_fav"] = s["code"] in fav_set
-    
-    scan_state[market]["data"] = top
-    scan_state[market]["last"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-    scan_state[market]["scanned"] = len(results)
-    scan_state[market]["status"] = "done"; scan_state[market]["progress"] = 100
-    record_scan_history(market, top)
-    return top
-
-def run_scan_sa():
-    market="sa"
-    scan_state[market]["status"]="scanning"; scan_state[market]["progress"]=0
-    items=list(SA_STOCKS.items()); total=len(items)
-    results=[]; lock=threading.Lock(); done=[0]
-
-    def scan_one_sa(code, name):
-        try:
-            live_price=sahmk_price(code); df=sahmk_history(code)
-            if df is None or len(df)<50:
-                try:
-                    ticker=yf.Ticker(code+".SR")
-                    df=ticker.history(period="2y",interval="1d")
-                    df.reset_index(inplace=True)
-                    if df.empty or len(df)<50: return
-                except: return
-            for col in ["Open","High","Low","Close","Volume"]:
-                if col not in df.columns: return
-            price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
-            if price<=0: return
-            r=analyze_symbol_sa(df,code,name,price)
-            with lock:
-                done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
-                if r: results.append(r)
-        except Exception:
-            with lock:
-                done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
-
-    with ThreadPoolExecutor(max_workers=2) as ex:
-        futs=[ex.submit(scan_one_sa,c,n) for c,n in items]
-        for f in as_completed(futs): pass
-
-    buys=[s for s in results if s["verdict"] in ("BUY","BUY_COND")]
-    buys.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
-    top=buys[:5]
-    if len(top)<5:
-        watch=[s for s in results if s["verdict"]=="WATCH"]
-        watch.sort(key=lambda x:(-x["score"],-x["confidence"]))
-        top+=watch[:5-len(top)]
-    medals=["🥇","🥈","🥉","4️⃣","5️⃣"]
-    for i,s in enumerate(top): s["medal"]=medals[i] if i<len(medals) else str(i+1)
-    fav_set=set(load_favs().get(market,[]))
-    for s in top: s["is_fav"]=s["code"] in fav_set
-    scan_state[market]["data"]=top; scan_state[market]["last"]=datetime.now().strftime("%Y-%m-%d %H:%M")
-    scan_state[market]["scanned"]=len(results); scan_state[market]["status"]="done"
-    scan_state[market]["progress"]=100
-    record_scan_history(market, top)
+    record_scan_history(market + ("_vol" if volatile_only else ""), top)
     return top
 
 # ════════════════════════════════════════════════════════════
@@ -552,14 +478,8 @@ def run_scan_sa():
 @app.route("/scan")
 def scan_route():
     market = request.args.get("market","us")
-    if market == "sa":
-        target_fn = run_scan_sa
-    elif market == "volatile":
-        target_fn = run_scan_volatile
-    else:
-        target_fn = lambda: run_scan(market)
-        
-    threading.Thread(target=target_fn, daemon=True).start()
+    volatile_only = request.args.get("volatile","false").lower() == "true"
+    threading.Thread(target=lambda: run_scan(market, volatile_only), daemon=True).start()
     return jsonify({"ok": True})
 
 @app.route("/scan_status")
@@ -599,9 +519,6 @@ def analyze_one():
             return jsonify({"ok":False,"msg":f"تعذّر جلب بيانات {code}"})
         price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
         r = analyze_symbol_sa(df, code, name, price)
-    elif market=="volatile":
-        name = US_STOCKS.get(code, code)
-        r = analyze_high_volatility(code, name, is_crypto=False)
     else:
         name = US_STOCKS.get(code) or CRYPTO.get(code) or code
         r = analyze_symbol(code, name, is_crypto)
@@ -642,11 +559,6 @@ def analyze_favorites():
                 r = analyze_symbol_sa(df, code, name, price)
                 if r: r["is_fav"]=True; out.append(r)
             except: continue
-    elif market == "volatile":
-        for code in favs:
-            name = US_STOCKS.get(code, code)
-            r = analyze_high_volatility(code, name)
-            if r: r["is_fav"]=True; out.append(r)
     else:
         is_crypto = (market=="crypto")
         stocks = US_STOCKS if market=="us" else CRYPTO
@@ -683,7 +595,7 @@ def export_scan_history():
     writer = csv.writer(output)
     writer.writerow(["التاريخ","السوق","الرمز","الاسم","الحكم","السكور","سعر الدخول","هدف 1","هدف 2","وقف الخسارة","السعر الحالي","التغير %","الحالة","أيام منذ الترشيح"])
     status_ar = {"hit_t1":"✅ لمس هدف 1","hit_t2":"✅ لمس هدف 2","hit_sl":"❌ لمس الوقف","open":"⏳ لسه مفتوح","unknown":"؟ تعذر الجلب"}
-    mkt_ar = {"us":"أمريكي","crypto":"كريبتو","sa":"تاسي","volatile":"خشاش وزخم"}
+    mkt_ar = {"us":"أمريكي","crypto":"كريبتو","sa":"تاسي"}
     for r in rows:
         writer.writerow([
             r.get("ts",""), mkt_ar.get(r.get("market"), r.get("market","")),
@@ -722,8 +634,11 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 .hdr { text-align:center; padding:18px 0 10px; }
 .hdr h1 { font-size:19px; font-weight:800; }
 .hdr p { color:var(--ink-3); font-size:12px; margin-top:4px; }
-.dropdown-box { margin-bottom:14px; }
+.dropdown-box { margin-bottom:10px; }
 .dropdown-box select { width:100%; padding:12px 14px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; }
+.filter-box { display:flex; align-items:center; gap:8px; margin-bottom:14px; background:var(--surface); padding:10px 14px; border-radius:var(--r); border:1px solid var(--line); }
+.filter-box input[type="checkbox"] { width:18px; height:18px; accent-color:var(--brand); cursor:pointer; }
+.filter-box label { font-size:13px; font-weight:700; cursor:pointer; color:var(--ink); }
 .q-box { display:flex; gap:8px; margin-bottom:14px; }
 .q-box input { flex:1; padding:10px 12px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; }
 .q-box button { padding:10px 16px; border-radius:var(--r); border:0; background:var(--surface-2); color:var(--ink); font-family:inherit; cursor:pointer; }
@@ -788,8 +703,12 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
       <option value="us">🇺🇸 السوق الأمريكي</option>
       <option value="sa">🇸🇦 السوق السعودي (تاسي)</option>
       <option value="crypto">💰 الكريبتو</option>
-      <option value="volatile">⚡ الأسهم عالية التذبذب (الخشاش/الزخم)</option>
     </select>
+  </div>
+
+  <div class="filter-box">
+    <input type="checkbox" id="volatile-chk">
+    <label for="volatile-chk">⚡ تفعيل مسح الخشاش والزخم العالي لهذا السوق</label>
   </div>
 
   <div class="q-box">
@@ -840,15 +759,16 @@ var scanPoll = null;
 
 function onMarketChange() {
   market = document.getElementById('market-select').value;
-  var lbls={'us':'🔍 مسح السوق الأمريكي','sa':'🔍 مسح السوق السعودي (تاسي)','crypto':'🔍 مسح الكريبتو 💰','volatile':'⚡ مسح الأسهم عالية التذبذب (الخشاش)'};
+  var lbls={'us':'🔍 مسح السوق الأمريكي','sa':'🔍 مسح السوق السعودي (تاسي)','crypto':'🔍 مسح الكريبتو 💰'};
   document.getElementById('scan-btn').innerHTML = lbls[market]||'🔍 مسح';
   loadResults(); loadFavorites();
   if (document.getElementById('vt-perf').classList.contains('on')) loadPerformance();
 }
 
 function startScan() {
+  var isVolatile = document.getElementById('volatile-chk').checked;
   document.getElementById('loader').classList.add('show');
-  fetch('/scan?market='+market).then(function(r){return r.json();}).then(function(){
+  fetch('/scan?market='+market+'&volatile='+(isVolatile?'true':'false')).then(function(r){return r.json();}).then(function(){
     scanPoll = setInterval(pollScan, 1200);
   });
 }
@@ -975,12 +895,12 @@ function renderHistCard(r) {
     unknown:{ico:'❓',lbl:'تعذر جلب السعر',cls:'cond'},
   };
   var st = statusMap[r.status] || statusMap.unknown;
-  var mktLbl = {us:'🇺🇸 أمريكي', sa:'🇸🇦 تاسي', crypto:'💰 كريبتو', volatile:'⚡ الخشاش/الزخم'}[r.market] || r.market;
+  var mktLbl = {us:'🇺🇸 أمريكي', sa:'🇸🇦 تاسي', crypto:'💰 كريبتو'}[r.market] || r.market;
   var pnl = (r.pnl_pct===null || r.pnl_pct===undefined) ? '—' : (r.pnl_pct>=0?'+':'')+r.pnl_pct+'%';
   return '<div class="sig">'+
     '<div class="sig-verdict '+st.cls+'"><div class="verdict-main"><span>'+st.ico+'</span>'+
     '<div><div class="verdict-label">'+st.lbl+'</div><div class="verdict-sub">'+mktLbl+' · '+r.ts+' · قبل '+r.days_elapsed+' يوم</div></div></div>'+
-    '<div class="verdict-score"><div class="verdict-score-num">'+pnl+'</div><div class="verdict-score-lbl">التغيّر</div></div></div>'+
+    '<div class="sig-verdict"><div class="verdict-score-num">'+pnl+'</div></div></div>'+
     '<div class="sig-body"><div class="sig-top"><div class="sig-id"><div class="sig-name">'+(r.name||r.code)+'<span class="sig-code">'+r.code+'</span></div>'+
     '<div class="sig-meta"><span class="mb">'+(r.verdict||'')+'</span><span class="mb">سكور '+(r.score!=null?r.score:'—')+'</span></div></div></div>'+
     '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+r.entry+cur+'</div></div>'+
