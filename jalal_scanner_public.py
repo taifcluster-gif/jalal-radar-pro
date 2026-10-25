@@ -2,11 +2,11 @@
 """
 jalal_scanner_public.py
 ════════════════════════════════════════════════════════════
-نسخة الماسح العامة — النسخة النهائية المستقرة والمحدثة.
+نسخة الماسح العامة — النسخة المباشرة والفورية (Direct Synchronous Scan).
 
 الاعتماديات (requirements.txt): flask, yfinance, pandas, numpy
 """
-import os, json, time, threading, csv, io
+import os, json, time, csv, io
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -311,16 +311,7 @@ def analyze_symbol_sa(df, code, name, price):
         }
     except: return None
 
-# ════════════════════════════════════════════════════════════
-# إدارة الحالة والسجل
-# ════════════════════════════════════════════════════════════
-scan_state = {
-    "us":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
-    "sa":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
-    "crypto":   {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
-}
 FAV_FILE = os.path.join(os.getcwd(), "public_favorites.json")
-
 def load_favs():
     if os.path.exists(FAV_FILE):
         try:
@@ -332,19 +323,17 @@ def save_favs(d):
     with open(FAV_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
 
 SCAN_HISTORY_FILE = os.path.join(os.getcwd(), "public_scan_history.json")
-history_lock = threading.Lock()
+history_lock = threading.Lock() if 'threading' in globals() else None
 
 def load_scan_history():
-    with history_lock:
-        if os.path.exists(SCAN_HISTORY_FILE):
-            try:
-                with open(SCAN_HISTORY_FILE) as f: return json.load(f)
-            except: return []
-        return []
+    if os.path.exists(SCAN_HISTORY_FILE):
+        try:
+            with open(SCAN_HISTORY_FILE) as f: return json.load(f)
+        except: return []
+    return []
 
 def save_scan_history(d):
-    with history_lock:
-        with open(SCAN_HISTORY_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
+    with open(SCAN_HISTORY_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
 
 def record_scan_history(market, picks):
     if not picks: return
@@ -358,26 +347,21 @@ def record_scan_history(market, picks):
                 "verdict": s.get("verdict"), "score": s.get("score"),
                 "entry": s.get("price"), "t1": s.get("t1"), "t2": s.get("t2"), "sl": s.get("sl"),
             })
-        hist = hist[-1200:]
-        save_scan_history(hist)
-    except Exception:
-        pass
+        save_scan_history(hist[-1200:])
+    except Exception: pass
 
 def _current_price_for(market, code):
     try:
         if market == "sa":
             p = sahmk_price(code)
             if p: return float(p)
-            try:
-                df = yf.Ticker(code + ".SR").history(period="5d")
-                if not df.empty: return float(df["Close"].iloc[-1])
-            except Exception: pass
-            return None
+            df = yf.Ticker(code + ".SR").history(period="5d")
+            if not df.empty: return float(df["Close"].iloc[-1])
         else:
             df = get_history(code, "5d", "1d")
             if not df.empty: return float(df["Close"].iloc[-1])
-            return None
-    except Exception: return None
+    except Exception: pass
+    return None
 
 def compute_scan_history_status(market=None, days=10):
     hist = load_scan_history()
@@ -410,8 +394,8 @@ def compute_scan_history_status(market=None, days=10):
     rows.sort(key=lambda r: r["ts"], reverse=True)
     return rows
 
-def run_scan(market="us", volatile_only=False):
-    scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
+# مسح مباشر وفوري (Synchronous Scan)
+def execute_sync_scan(market="us", volatile_only=False):
     stocks = US_STOCKS if market=="us" else (SA_STOCKS if market=="sa" else CRYPTO)
     is_crypto = (market=="crypto")
     items = list(stocks.items())
@@ -419,14 +403,13 @@ def run_scan(market="us", volatile_only=False):
         import random
         random.seed(int(time.time())//1800)
         random.shuffle(items)
-        items = items[:30]  # تقليص العدد قليلا لسرعة الاستجابة
-    total = len(items); results = []; lock = threading.Lock(); done = [0]
+        items = items[:25] # عدد مناسب جداً لسرعة الاستجابة المباشرة
 
+    results = []
     def scan_one(code, name):
-        r = None
         try:
             if volatile_only and market != "sa":
-                r = analyze_high_volatility(code, name, is_crypto)
+                return analyze_high_volatility(code, name, is_crypto)
             elif market == "sa":
                 live_price = sahmk_price(code); df = sahmk_history(code)
                 if df is None or len(df) < 50:
@@ -440,21 +423,19 @@ def run_scan(market="us", volatile_only=False):
                     if volatile_only:
                         if price <= 25.0:
                             res = analyze_symbol_sa(df, code, name, price)
-                            if res and res["vr"] >= 1.1: r = res
+                            if res and res["vr"] >= 1.1: return res
                     else:
-                        r = analyze_symbol_sa(df, code, name, price)
+                        return analyze_symbol_sa(df, code, name, price)
             else:
-                r = analyze_symbol(code, name, is_crypto)
+                return analyze_symbol(code, name, is_crypto)
         except: pass
+        return None
 
-        with lock:
-            done[0] += 1
-            scan_state[market]["progress"] = int(done[0] / total * 100)
-            if r: results.append(r)
-
-    with ThreadPoolExecutor(max_workers=3) as ex:
+    with ThreadPoolExecutor(max_workers=4) as ex:
         futs = [ex.submit(scan_one, c, n) for c, n in items]
-        for f in as_completed(futs): pass
+        for f in as_completed(futs):
+            res = f.result()
+            if res: results.append(res)
 
     results.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
     top = results[:8]
@@ -462,44 +443,38 @@ def run_scan(market="us", volatile_only=False):
     for i,s in enumerate(top): s["medal"] = medals[i] if i<len(medals) else str(i+1)
     fav_set = set(load_favs().get(market, []))
     for s in top: s["is_fav"] = s["code"] in fav_set
-    scan_state[market]["data"] = top
-    scan_state[market]["last"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-    scan_state[market]["scanned"] = len(results)
-    scan_state[market]["status"] = "done"; scan_state[market]["progress"] = 100
-    record_scan_history(market + ("_vol" if volatile_only else ""), top)
-    return top
 
-# ════════════════════════════════════════════════════════════
+    scan_data = {
+        "data": top,
+        "last": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "scanned": len(results),
+        "status": "done"
+    }
+    record_scan_history(market + ("_vol" if volatile_only else ""), top)
+    return scan_data
+
 # مسارات Flask
-# ════════════════════════════════════════════════════════════
 @app.route("/scan", methods=["GET", "POST"])
 def scan_route():
     market = request.args.get("market", "us")
     volatile_only = request.args.get("volatile", "false").lower() == "true"
-    if market not in scan_state: market = "us"
-    threading.Thread(target=lambda: run_scan(market, volatile_only), daemon=True).start()
-    return jsonify({"ok": True})
+    if market not in ["us", "sa", "crypto"]: market = "us"
+    
+    # تنفيذ المسح مباشرة وإرجاع النتائج فورا بدون تعليق
+    data = execute_sync_scan(market, volatile_only)
+    app.config[f"scan_res_{market}"] = data
+    return jsonify({"ok": True, **data})
 
 @app.route("/scan_status", methods=["GET"])
 def scan_status():
-    market = request.args.get("market", "us")
-    if market not in scan_state: market = "us"
-    return jsonify({
-        "status": scan_state[market]["status"],
-        "progress": scan_state[market]["progress"],
-        "scanned": scan_state[market]["scanned"],
-    })
+    return jsonify({"status": "done", "progress": 100, "scanned": 25})
 
 @app.route("/results", methods=["GET"])
 def results_route():
     market = request.args.get("market", "us")
-    if market not in scan_state: market = "us"
-    return jsonify(sanitize_nan({
-        "data": scan_state[market]["data"],
-        "last": scan_state[market]["last"],
-        "scanned": scan_state[market]["scanned"],
-        "status": scan_state[market]["status"]
-    }))
+    if market not in ["us", "sa", "crypto"]: market = "us"
+    data = app.config.get(f"scan_res_{market}", {"data": [], "last": None, "scanned": 0, "status": "done"})
+    return jsonify(sanitize_nan(data))
 
 @app.route("/analyze_one", methods=["POST"])
 def analyze_one():
@@ -611,9 +586,7 @@ def export_scan_history():
         headers={"Content-Disposition": "attachment;filename=jalal_scanner_history.csv"}
     )
 
-# ════════════════════════════════════════════════════════════
-# الواجهة المحسنة بالكامل
-# ════════════════════════════════════════════════════════════
+# الواجهة المباشرة والمضمونة
 PAGE = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -718,9 +691,9 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
   </div>
   <div id="instant"></div>
   
-  <button class="scan-btn" id="scan-btn" onclick="startScan()">🔍 مسح السوق</button>
+  <button class="scan-btn" id="scan-btn" onclick="startScan()">🔍 مسح السوق الآن</button>
   <div class="scan-meta" id="scan-meta"></div>
-  <div class="loader" id="loader"><div id="loader-sub">جاري الفحص...</div></div>
+  <div class="loader" id="loader"><div id="loader-sub">⚡ جارٍ فحص السوق وجلب الأسعار الحية، يرجى الانتظار قليلاً...</div></div>
 
   <div class="mkt-tabs" style="margin-top:4px;">
     <button class="mkt-tab on" id="vt-scan" onclick="setView('scan')">🔍 نتائج المسح</button>
@@ -730,7 +703,7 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
   <div id="view-scan">
     <div id="tally"></div>
     <div id="fav-section"></div>
-    <div id="signals"><div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div></div>
+    <div id="signals"><div class="empty"><div class="empty-ico">📡</div>اضغط مسح السوق الآن لبدء التحليل</div></div>
   </div>
 
   <div id="view-perf" class="hidden-view">
@@ -758,7 +731,6 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 
 <script>
 var market = 'us';
-var scanPoll = null;
 
 function onMarketChange() {
   market = document.getElementById('market-select').value;
@@ -773,55 +745,21 @@ function startScan() {
   var btn = document.getElementById('scan-btn');
   btn.disabled = true;
   document.getElementById('loader').classList.add('show');
-  document.getElementById('loader-sub').textContent = '⚡ جارٍ تهيئة المسح بالخلفية...';
-  
-  // عرض تنبيه مؤقت في خانة النتائج ليبين للمستخدم أن العمل بدأ
-  document.getElementById('signals').innerHTML = '<div class="empty"><div class="empty-ico">⏳</div>جاري فحص وحساب مؤشرات السوق، يرجى الانتظار ثوانٍ معدودة...</div>';
+  document.getElementById('signals').innerHTML = '<div class="empty"><div class="empty-ico">⏳</div>جارٍ فحص الأسهم وحساب المؤشرات الفنية، قد يستغرق ذلك بضع ثوانٍ...</div>';
 
   fetch('/scan?market='+encodeURIComponent(market)+'&volatile='+(isVolatile?'true':'false'))
     .then(function(r){ return r.json(); })
     .then(function(d){
-      if(scanPoll) clearInterval(scanPoll);
-      scanPoll = setInterval(pollScan, 1000);
+      btn.disabled = false;
+      document.getElementById('loader').classList.remove('show');
+      renderResultsData(d);
+      loadFavorites();
+      toast('تم مسح السوق وعرض النتائج بنجاح! 🎉');
     })
     .catch(function(err){
       btn.disabled = false;
       document.getElementById('loader').classList.remove('show');
-      toast('تعذر بدء المسح، تحقق من الاتصال');
-    });
-}
-
-function pollScan() {
-  fetch('/scan_status?market='+encodeURIComponent(market))
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      var prog = d.progress || 0;
-      document.getElementById('loader-sub').textContent = '⏳ جارٍ الفحص... تم ' + prog + '% (' + (d.scanned||0) + ' سهم تم فحصه)';
-      
-      // جلب النتائج المبدئية أو النهائية مباشرة لتحديث الشاشة أولاً بأول
-      if(prog > 10 || d.status === 'done') {
-        loadResultsQuietly();
-      }
-
-      if(d.status === 'done'){
-        clearInterval(scanPoll);
-        document.getElementById('loader').classList.remove('show');
-        document.getElementById('scan-btn').disabled = false;
-        loadResults();
-        loadFavorites();
-        toast('تم الانتهاء من مسح السوق بنجاح! 🎉');
-      }
-    })
-    .catch(function(err){});
-}
-
-function loadResultsQuietly() {
-  fetch('/results?market='+encodeURIComponent(market))
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      if(d.data && d.data.length > 0) {
-        renderResultsData(d);
-      }
+      toast('حدث خطأ أثناء المسح، حاول مجدداً');
     });
 }
 
@@ -844,7 +782,7 @@ function renderResultsData(d) {
     '<div class="tally-cell"><div class="tally-num">'+data.length+'</div><div class="tally-lbl">مرشّح</div></div></div>' : '';
   document.getElementById('signals').innerHTML = data.length ?
     data.map(renderSig).join('') :
-    '<div class="empty"><div class="empty-ico">📡</div>لا توجد فرص مطابقة للشروط في هذا المسح، جرب تفعيل الخشاش أو تغيير السوق</div>';
+    '<div class="empty"><div class="empty-ico">📡</div>لا توجد نتائج مطابقة، اضغط مسح السوق الآن</div>';
 }
 
 function renderSig(s) {
@@ -951,7 +889,7 @@ function renderHistCard(r) {
   return '<div class="sig">'+
     '<div class="sig-verdict '+st.cls+'"><div class="verdict-main"><span>'+st.ico+'</span>'+
     '<div><div class="verdict-label">'+st.lbl+'</div><div class="verdict-sub">'+mktLbl+' · '+r.ts+' · قبل '+r.days_elapsed+' يوم</div></div></div>'+
-    '<div class="sig-score"><div class="verdict-score-num">'+pnl+'</div><div class="verdict-score-lbl">التغيّر</div></div></div>'+
+    '<div class="verdict-score"><div class="verdict-score-num">'+pnl+'</div><div class="verdict-score-lbl">التغيّر</div></div></div>'+
     '<div class="sig-body"><div class="sig-top"><div class="sig-id"><div class="sig-name">'+(r.name||r.code)+'<span class="sig-code">'+r.code+'</span></div>'+
     '<div class="sig-meta"><span class="mb">'+(r.verdict||'')+'</span><span class="mb">سكور '+(r.score!=null?r.score:'—')+'</span></div></div></div>'+
     '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+r.entry+cur+'</div></div>'+
