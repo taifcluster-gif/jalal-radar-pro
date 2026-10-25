@@ -208,6 +208,40 @@ def analyze_symbol(code, name, is_crypto=False):
             else: return None
 
         c = df.copy()
-        e20,e50,e200 = _ema(c["Close"],20),_ema(c["Close"],50),_ema(c["Close"],200)
-        rv = _rsi(c["Close"]); ml,sg,mh = _macd(c["Close"])
-        adv = _adx(c["High"],c["Low"],
+        e20, e50, e200 = _ema(c["Close"], 20), _ema(c["Close"], 50), _ema(c["Close"], 200)
+        rv = _rsi(c["Close"])
+        ml, sg, mh = _macd(c["Close"])
+        adv = _adx(c["High"], c["Low"], c["Close"])
+        sk, sd = _stoch(c["High"], c["Low"], c["Close"])
+        va = _sma(c["Volume"], 20)
+        av = _atr(c["High"], c["Low"], c["Close"])
+
+        avg_vol = float(va.iloc[-1]) if not pd.isna(va.iloc[-1]) else 0
+        last = -1
+        vr_now = float(c["Volume"].iloc[last]) / float(va.iloc[last]) if float(va.iloc[last]) > 0 else 1.0
+
+        c1 = price > float(e20.iloc[last])
+        c2 = float(e20.iloc[last]) > float(e50.iloc[last])
+        c3 = price > float(e200.iloc[last])
+        c4 = float(ml.iloc[last]) > float(sg.iloc[last])
+        c5 = float(mh.iloc[last]) > float(mh.iloc[last-1])
+        c6 = 35 <= float(rv.iloc[last]) <= 75
+        c7 = float(rv.iloc[last]) > float(rv.iloc[last-1])
+        c8 = float(adv.iloc[last]) > 15
+        c9 = float(sk.iloc[last]) > 15 and float(sk.iloc[last]) > float(sd.iloc[last])
+        c10 = vr_now > 1.0
+        c11 = float(adv.iloc[last]) > float(adv.iloc[last-1])
+        score = (2*c1+2*c2+2*c3+2*c4+1*c5+2*c6+1*c7+2*c8+2*c9+2*c10+2*c11)
+
+        atr_v = float(av.iloc[-1]) if not pd.isna(float(av.iloc[-1])) else price * 0.02
+        lb = round(price * 0.998, 2)
+        t1 = round(price + atr_v*2.0, 2)
+        t2 = round(price + atr_v*4.0, 2)
+        sl = round(price - atr_v*1.0, 2)
+        rr = round((t1-price)/max(price-sl,0.01), 2)
+        ptp = round((t1-price)/price*100, 2)
+        psl = round((price-sl)/price*100, 2)
+
+        rsi_v = round(float(rv.iloc[last]),1)
+        adx_v = round(float(adv.iloc[last]),1)
+        if pd.isna(adx_v) or
