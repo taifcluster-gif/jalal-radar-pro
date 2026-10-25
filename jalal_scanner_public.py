@@ -242,6 +242,764 @@ def analyze_symbol(code, name, is_crypto=False):
         ptp = round((t1-price)/price*100, 2)
         psl = round((price-sl)/price*100, 2)
 
-        rsi_v = round(float(rv.iloc[last]),1)
-        adx_v = round(float(adv.iloc[last]),1)
-        if pd.isna(adx_v) or
+        rsi_v = round(float(rv.iloc[last]), 1)
+        adx_v = round(float(adv.iloc[last]), 1)
+        if pd.isna(adx_v) or adx_v != adx_v:
+            adx_v = 0
+        vr = round(vr_now, 1)
+
+        e100 = float(_ema(c["Close"],100).iloc[last])
+        ad = price > float(e20.iloc[last])
+        aw = price > e100
+        if score>=14 and ad and aw: trend="استثمار"
+        elif score>=11 and ad: trend="سوينج"
+        elif ad: trend="مضاربة"
+        else: trend="ضعيف"
+
+        if score>=14 and rr>=1.2: verdict="BUY"
+        elif score>=10 and rr>=0.9 and ad: verdict="BUY_COND"
+        elif score>=7: verdict="WATCH"
+        else: verdict="AVOID"
+
+        confidence = min(100, round(score/20*80 + min(rr,3)/3*20))
+        prev = float(df["Close"].iloc[last-1])
+        chg = round((price-prev)/prev*100, 2)
+
+        daily_move = atr_v if atr_v > 0 else price*0.015
+        high20 = float(c["High"].iloc[-20:].max())
+        dist = (high20-price) if high20>price else abs(t1-price)
+        raw_days = max(1, round(dist/daily_move))
+        est_days = max(1, round(raw_days))
+        eta = f"{est_days}-{est_days+2} أيام"
+
+        return {
+            "code":code, "name":name, "is_crypto":is_crypto,
+            "price":round(price,2), "price_sar":round(price*USD_TO_SAR,2),
+            "live":False, "score":score, "verdict":verdict,
+            "trend":trend, "confidence":confidence,
+            "lb":lb, "t1":t1, "t2":t2, "sl":sl, "rr":rr, "ptp":ptp, "psl":psl,
+            "rsi":rsi_v, "adx":adx_v, "vr":vr, "chg":chg,
+            "eta":eta, "price_tier":price_tier, "is_sa": False,
+        }
+    except Exception:
+        return None
+
+def analyze_symbol_sa(df, code, name, price):
+    try:
+        c = df.copy()
+        e20=_ema(c["Close"],20); e50=_ema(c["Close"],50); e200=_ema(c["Close"],200)
+        rv=_rsi(c["Close"]); ml,sg,_=_macd(c["Close"])
+        rsi=float(rv.iloc[-1]); macd_val=float(ml.iloc[-1]); macd_sig=float(sg.iloc[-1])
+        ema20=float(e20.iloc[-1]); ema50=float(e50.iloc[-1])
+        vol_now=float(c["Volume"].iloc[-1]); vol_avg=float(c["Volume"].rolling(20).mean().iloc[-1]) or 1
+        vr=round(vol_now/vol_avg,2)
+        score=5
+        if price>ema20: score+=3
+        if price>ema50: score+=3
+        if 35<rsi<75: score+=2
+        if macd_val>macd_sig: score+=3
+        if vr>1.0: score+=2
+        
+        if score>=13: verdict="BUY"
+        elif score>=9: verdict="BUY_COND"
+        elif score>=6: verdict="WATCH"
+        else: verdict="AVOID"
+        
+        confidence=min(99,int(score/20*100))
+        atr=float(c["High"].sub(c["Low"]).rolling(14).mean().iloc[-1])
+        if pd.isna(atr): atr = price * 0.02
+        t1=round(price+atr*1.5,2); t2=round(price+atr*3.0,2); sl=round(price-atr*1.0,2)
+        rr=round((t1-price)/(price-sl),2) if price>sl else 0
+        ptp=round((t1-price)/price*100,1) if price>0 else 0
+        psl=round((price-sl)/price*100,1) if price>0 else 0
+        trend="صاعد" if price>ema20 else "محايد"
+        eta="2-4 أيام"
+        return {
+            "code":code,"name":name,"price":round(price,2),"currency":"SAR",
+            "score":score,"confidence":confidence,"verdict":verdict,"rr":rr,
+            "t1":t1,"t2":t2,"sl":sl,"lb":round(price*0.99,2),
+            "ptp":ptp,"psl":psl,"rsi":round(rsi,1),"adx":20,
+            "trend":trend,"eta":eta,"vr":vr,
+            "is_crypto":False,"is_sa":True,"live":False,
+        }
+    except: return None
+
+# ════════════════════════════════════════════════════════════
+# حالة المسح والمفضلة
+# ════════════════════════════════════════════════════════════
+scan_state = {
+    "us":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
+    "sa":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
+    "crypto":   {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
+    "volatile": {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
+}
+FAV_FILE = os.path.join(os.getcwd(), "public_favorites.json")
+
+def load_favs():
+    if os.path.exists(FAV_FILE):
+        try:
+            with open(FAV_FILE) as f: return json.load(f)
+        except: return {"us": [], "sa": [], "crypto": [], "volatile": []}
+    return {"us": [], "sa": [], "crypto": [], "volatile": []}
+
+def save_favs(d):
+    with open(FAV_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
+
+SCAN_HISTORY_FILE = os.path.join(os.getcwd(), "public_scan_history.json")
+history_lock = threading.Lock()
+
+def load_scan_history():
+    with history_lock:
+        if os.path.exists(SCAN_HISTORY_FILE):
+            try:
+                with open(SCAN_HISTORY_FILE) as f: return json.load(f)
+            except: return []
+        return []
+
+def save_scan_history(d):
+    with history_lock:
+        with open(SCAN_HISTORY_FILE, "w") as f: json.dump(d, f, ensure_ascii=False, indent=2)
+
+def record_scan_history(market, picks):
+    if not picks: return
+    try:
+        hist = load_scan_history()
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M")
+        for s in picks:
+            if not s.get("code"): continue
+            hist.append({
+                "ts": ts, "market": market, "code": s.get("code"), "name": s.get("name"),
+                "verdict": s.get("verdict"), "score": s.get("score"),
+                "entry": s.get("price"), "t1": s.get("t1"), "t2": s.get("t2"), "sl": s.get("sl"),
+            })
+        hist = hist[-1200:]
+        save_scan_history(hist)
+    except Exception:
+        pass
+
+def _current_price_for(market, code):
+    try:
+        if market == "sa":
+            p = sahmk_price(code)
+            if p: return float(p)
+            try:
+                df = yf.Ticker(code + ".SR").history(period="5d")
+                if not df.empty: return float(df["Close"].iloc[-1])
+            except Exception: pass
+            return None
+        else:
+            df = get_history(code, "5d", "1d")
+            if not df.empty: return float(df["Close"].iloc[-1])
+            return None
+    except Exception: return None
+
+def compute_scan_history_status(market=None, days=10):
+    hist = load_scan_history()
+    cutoff = datetime.now() - timedelta(days=days)
+    rows = []
+    price_cache = {}
+    for rec in hist:
+        if market and rec.get("market") != market: continue
+        try: rec_dt = datetime.strptime(rec["ts"], "%Y-%m-%d %H:%M")
+        except Exception: continue
+        if rec_dt < cutoff: continue
+        key = (rec.get("market"), rec.get("code"))
+        if key not in price_cache:
+            price_cache[key] = _current_price_for(rec.get("market"), rec.get("code"))
+        cur = price_cache[key]
+        row = dict(rec)
+        row["current"] = cur
+        row["days_elapsed"] = (datetime.now() - rec_dt).days
+        if cur is None:
+            row["status"] = "unknown"; row["pnl_pct"] = None
+        else:
+            entry = rec.get("entry") or 0
+            row["pnl_pct"] = round((cur - entry) / entry * 100, 2) if entry else 0
+            t1, t2, sl = rec.get("t1"), rec.get("t2"), rec.get("sl")
+            if t2 and cur >= t2: row["status"] = "hit_t2"
+            elif t1 and cur >= t1: row["status"] = "hit_t1"
+            elif sl and cur <= sl: row["status"] = "hit_sl"
+            else: row["status"] = "open"
+        rows.append(row)
+    rows.sort(key=lambda r: r["ts"], reverse=True)
+    return rows
+
+# ════════════════════════════════════════════════════════════
+# تشغيل عمليات المسح
+# ════════════════════════════════════════════════════════════
+def run_scan(market="us"):
+    scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
+    stocks = US_STOCKS if market=="us" else CRYPTO
+    is_crypto = (market=="crypto")
+    items = list(stocks.items())
+    if market=="us":
+        import random
+        random.seed(int(time.time())//1800)
+        random.shuffle(items)
+        items = items[:40]
+    total = len(items); results = []; lock = threading.Lock(); done = [0]
+
+    def scan_one(code, name):
+        r = analyze_symbol(code, name, is_crypto)
+        with lock:
+            done[0] += 1; scan_state[market]["progress"] = round(done[0]/total*100)
+            if r: results.append(r)
+
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        futs = [ex.submit(scan_one, c, n) for c, n in items]
+        for f in as_completed(futs): pass
+
+    buys = [s for s in results if s["verdict"] in ("BUY","BUY_COND")]
+    buys.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
+    top = buys[:5]
+    if len(top) < 5:
+        watch = [s for s in results if s["verdict"]=="WATCH"]
+        watch.sort(key=lambda x:(-x["score"],-x["confidence"]))
+        top += watch[:5-len(top)]
+    medals = ["🥇","🥈","🥉","4️⃣","5️⃣"]
+    for i,s in enumerate(top): s["medal"] = medals[i] if i<len(medals) else str(i+1)
+    fav_set = set(load_favs().get(market, []))
+    for s in top: s["is_fav"] = s["code"] in fav_set
+    scan_state[market]["data"] = top
+    scan_state[market]["last"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+    scan_state[market]["scanned"] = len(results)
+    scan_state[market]["status"] = "done"; scan_state[market]["progress"] = 100
+    record_scan_history(market, top)
+    return top
+
+def run_scan_volatile():
+    market = "volatile"
+    scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
+    items = list(US_STOCKS.items())
+    total = len(items); results = []; lock = threading.Lock(); done = [0]
+
+    def scan_one_vol(code, name):
+        r = analyze_high_volatility(code, name, is_crypto=False)
+        with lock:
+            done[0] += 1; scan_state[market]["progress"] = round(done[0]/total*100)
+            if r: results.append(r)
+
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        futs = [ex.submit(scan_one_vol, c, n) for c, n in items]
+        for f in as_completed(futs): pass
+
+    results.sort(key=lambda x: (-x["score"], -x["vr"], -x["chg"]))
+    top = results[:10]
+    medals = ["🥇","🥈","🥉","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟"]
+    for i, s in enumerate(top): s["medal"] = medals[i] if i < len(medals) else str(i+1)
+    fav_set = set(load_favs().get(market, []))
+    for s in top: s["is_fav"] = s["code"] in fav_set
+    
+    scan_state[market]["data"] = top
+    scan_state[market]["last"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+    scan_state[market]["scanned"] = len(results)
+    scan_state[market]["status"] = "done"; scan_state[market]["progress"] = 100
+    record_scan_history(market, top)
+    return top
+
+def run_scan_sa():
+    market="sa"
+    scan_state[market]["status"]="scanning"; scan_state[market]["progress"]=0
+    items=list(SA_STOCKS.items()); total=len(items)
+    results=[]; lock=threading.Lock(); done=[0]
+
+    def scan_one_sa(code, name):
+        try:
+            live_price=sahmk_price(code); df=sahmk_history(code)
+            if df is None or len(df)<50:
+                try:
+                    ticker=yf.Ticker(code+".SR")
+                    df=ticker.history(period="2y",interval="1d")
+                    df.reset_index(inplace=True)
+                    if df.empty or len(df)<50: return
+                except: return
+            for col in ["Open","High","Low","Close","Volume"]:
+                if col not in df.columns: return
+            price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
+            if price<=0: return
+            r=analyze_symbol_sa(df,code,name,price)
+            with lock:
+                done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
+                if r: results.append(r)
+        except Exception:
+            with lock:
+                done[0]+=1; scan_state[market]["progress"]=round(done[0]/total*100)
+
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        futs=[ex.submit(scan_one_sa,c,n) for c,n in items]
+        for f in as_completed(futs): pass
+
+    buys=[s for s in results if s["verdict"] in ("BUY","BUY_COND")]
+    buys.sort(key=lambda x:(-x["score"],-x["confidence"],-x["rr"]))
+    top=buys[:5]
+    if len(top)<5:
+        watch=[s for s in results if s["verdict"]=="WATCH"]
+        watch.sort(key=lambda x:(-x["score"],-x["confidence"]))
+        top+=watch[:5-len(top)]
+    medals=["🥇","🥈","🥉","4️⃣","5️⃣"]
+    for i,s in enumerate(top): s["medal"]=medals[i] if i<len(medals) else str(i+1)
+    fav_set=set(load_favs().get(market,[]))
+    for s in top: s["is_fav"]=s["code"] in fav_set
+    scan_state[market]["data"]=top; scan_state[market]["last"]=datetime.now().strftime("%Y-%m-%d %H:%M")
+    scan_state[market]["scanned"]=len(results); scan_state[market]["status"]="done"
+    scan_state[market]["progress"]=100
+    record_scan_history(market, top)
+    return top
+
+# ════════════════════════════════════════════════════════════
+# مسارات Flask
+# ════════════════════════════════════════════════════════════
+@app.route("/scan")
+def scan_route():
+    market = request.args.get("market","us")
+    if market == "sa":
+        target_fn = run_scan_sa
+    elif market == "volatile":
+        target_fn = run_scan_volatile
+    else:
+        target_fn = lambda: run_scan(market)
+        
+    threading.Thread(target=target_fn, daemon=True).start()
+    return jsonify({"ok": True})
+
+@app.route("/scan_status")
+def scan_status():
+    market = request.args.get("market","us")
+    return jsonify({
+        "status": scan_state[market]["status"],
+        "progress": scan_state[market]["progress"],
+        "scanned": scan_state[market]["scanned"],
+    })
+
+@app.route("/results")
+def results_route():
+    market = request.args.get("market","us")
+    return jsonify(sanitize_nan({
+        "data": scan_state[market]["data"],
+        "last": scan_state[market]["last"],
+        "scanned": scan_state[market]["scanned"],
+    }))
+
+@app.route("/analyze_one", methods=["POST"])
+def analyze_one():
+    d = request.get_json()
+    code = d.get("code","").strip().upper()
+    is_crypto = d.get("is_crypto", False)
+    market = d.get("market","us")
+    if not code: return jsonify({"ok":False,"msg":"أدخل رمز"})
+    if market=="sa" or code in SA_STOCKS:
+        name = SA_STOCKS.get(code, code)
+        live_price=sahmk_price(code); df=sahmk_history(code)
+        if df is None or len(df)<50:
+            try:
+                ticker=yf.Ticker(code+".SR")
+                df=ticker.history(period="2y",interval="1d"); df.reset_index(inplace=True)
+            except: df=None
+        if df is None or df.empty or len(df)<50:
+            return jsonify({"ok":False,"msg":f"تعذّر جلب بيانات {code}"})
+        price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
+        r = analyze_symbol_sa(df, code, name, price)
+    elif market=="volatile":
+        name = US_STOCKS.get(code, code)
+        r = analyze_high_volatility(code, name, is_crypto=False)
+    else:
+        name = US_STOCKS.get(code) or CRYPTO.get(code) or code
+        r = analyze_symbol(code, name, is_crypto)
+    if not r: return jsonify({"ok":False,"msg":f"تعذّر تحليل {code}"})
+    return jsonify(sanitize_nan({"ok":True,"result":r}))
+
+@app.route("/api/favorites", methods=["GET"])
+def get_favorites():
+    return jsonify(load_favs())
+
+@app.route("/api/favorites/toggle", methods=["POST"])
+def toggle_favorite():
+    d = request.get_json()
+    code = d.get("code","").strip().upper()
+    market = d.get("market","us")
+    favs = load_favs(); lst = favs.get(market, [])
+    if code in lst: lst.remove(code); added=False
+    else: lst.append(code); added=True
+    favs[market] = lst; save_favs(favs)
+    return jsonify({"ok":True,"added":added})
+
+@app.route("/api/favorites/analyze")
+def analyze_favorites():
+    market = request.args.get("market","us")
+    favs = load_favs().get(market, [])
+    if not favs: return jsonify({"data":[]})
+    out = []
+    if market == "sa":
+        for code in favs:
+            name = SA_STOCKS.get(code, code)
+            try:
+                live_price=sahmk_price(code); df=sahmk_history(code)
+                if df is None or len(df)<50:
+                    ticker=yf.Ticker(code+".SR")
+                    df=ticker.history(period="2y",interval="1d"); df.reset_index(inplace=True)
+                    if df.empty or len(df)<50: continue
+                price=live_price if live_price and live_price>0 else float(df["Close"].iloc[-1])
+                r = analyze_symbol_sa(df, code, name, price)
+                if r: r["is_fav"]=True; out.append(r)
+            except: continue
+    elif market == "volatile":
+        for code in favs:
+            name = US_STOCKS.get(code, code)
+            r = analyze_high_volatility(code, name)
+            if r: r["is_fav"]=True; out.append(r)
+    else:
+        is_crypto = (market=="crypto")
+        stocks = US_STOCKS if market=="us" else CRYPTO
+        for code in favs:
+            name = stocks.get(code, code)
+            r = analyze_symbol(code, name, is_crypto)
+            if r: r["is_fav"]=True; out.append(r)
+    out.sort(key=lambda x:(-x["score"],-x["confidence"]))
+    return jsonify(sanitize_nan({"data":out}))
+
+@app.route("/api/scan_history")
+def api_scan_history():
+    market = request.args.get("market", "").strip()
+    try: days = int(request.args.get("days", 10))
+    except Exception: days = 10
+    days = max(1, min(days, 90))
+    rows = compute_scan_history_status(market or None, days)
+    buy_rows = [r for r in rows if r.get("verdict") in ("BUY", "BUY_COND", "HIGH_MOMENTUM")]
+    total = len(buy_rows)
+    hit = len([r for r in buy_rows if r.get("status") in ("hit_t1", "hit_t2")])
+    stopped = len([r for r in buy_rows if r.get("status") == "hit_sl"])
+    summary = {
+        "total": total, "hit_target": hit, "hit_stop": stopped,
+        "still_open": max(0, total - hit - stopped),
+        "win_rate": round(hit / total * 100, 1) if total else 0,
+    }
+    return jsonify(sanitize_nan({"rows": rows, "summary": summary}))
+
+@app.route("/api/export_scan_history")
+def export_scan_history():
+    market = request.args.get("market", "").strip()
+    rows = compute_scan_history_status(market or None, days=365)
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow(["التاريخ","السوق","الرمز","الاسم","الحكم","السكور","سعر الدخول","هدف 1","هدف 2","وقف الخسارة","السعر الحالي","التغير %","الحالة","أيام منذ الترشيح"])
+    status_ar = {"hit_t1":"✅ لمس هدف 1","hit_t2":"✅ لمس هدف 2","hit_sl":"❌ لمس الوقف","open":"⏳ لسه مفتوح","unknown":"؟ تعذر الجلب"}
+    mkt_ar = {"us":"أمريكي","crypto":"كريبتو","sa":"تاسي","volatile":"خشاش وزخم"}
+    for r in rows:
+        writer.writerow([
+            r.get("ts",""), mkt_ar.get(r.get("market"), r.get("market","")),
+            r.get("code",""), r.get("name",""), r.get("verdict",""), r.get("score",""),
+            r.get("entry",""), r.get("t1",""), r.get("t2",""), r.get("sl",""),
+            r.get("current",""), r.get("pnl_pct",""),
+            status_ar.get(r.get("status"), r.get("status","")), r.get("days_elapsed",""),
+        ])
+    csv_bytes = output.getvalue().encode("utf-8-sig")
+    return Response(
+        csv_bytes,
+        mimetype="text/csv",
+        headers={"Content-Disposition": "attachment;filename=jalal_scanner_history.csv"}
+    )
+
+# ════════════════════════════════════════════════════════════
+# الواجهة
+# ════════════════════════════════════════════════════════════
+PAGE = """<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ماسح جلال رادار — عام</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0e1015; --surface:#16181d; --surface-2:#1c1f26;
+  --ink:#e8e8e6; --ink-2:#a8a8a4; --ink-3:#6b6f76; --line:#2a2d34;
+  --brand:#ef9f27; --green:#1d9e75; --green-soft:#10251e;
+  --red:#e2504a; --amber:#ef9f27; --amber-soft:#2a2010;
+  --r:14px; --r-lg:20px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:var(--ink); direction:rtl; line-height:1.6; }
+.shell { max-width:760px; margin:0 auto; padding:16px 16px 64px; }
+.hdr { text-align:center; padding:18px 0 10px; }
+.hdr h1 { font-size:19px; font-weight:800; }
+.hdr p { color:var(--ink-3); font-size:12px; margin-top:4px; }
+.dropdown-box { margin-bottom:14px; }
+.dropdown-box select { width:100%; padding:12px 14px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; }
+.q-box { display:flex; gap:8px; margin-bottom:14px; }
+.q-box input { flex:1; padding:10px 12px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; }
+.q-box button { padding:10px 16px; border-radius:var(--r); border:0; background:var(--surface-2); color:var(--ink); font-family:inherit; cursor:pointer; }
+.scan-btn { width:100%; padding:13px; border-radius:var(--r); border:0; background:var(--brand); color:#2a1a00; font-size:14px; font-weight:800; cursor:pointer; margin-bottom:8px; }
+.scan-meta { text-align:center; color:var(--ink-3); font-size:11px; margin-bottom:12px; }
+.tally { display:flex; gap:8px; margin-bottom:12px; }
+.tally-cell { flex:1; background:var(--surface); border-radius:var(--r); padding:10px; text-align:center; }
+.tally-num { font-size:19px; font-weight:800; } .tally-lbl { font-size:11px; color:var(--ink-3); }
+.empty { text-align:center; color:var(--ink-3); padding:40px 0; font-size:13px; }
+.empty-ico { font-size:32px; margin-bottom:8px; }
+.sig { background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); margin-top:12px; overflow:hidden; }
+.sig-verdict { padding:11px 16px; display:flex; align-items:center; justify-content:space-between; }
+.sig-verdict.buy { background:var(--green-soft); border-bottom:1px solid #1a4a3a; }
+.sig-verdict.cond { background:var(--amber-soft); border-bottom:1px solid #4a3818; }
+.sig-verdict.watch { background:var(--surface-2); border-bottom:1px solid var(--line); }
+.verdict-main { display:flex; align-items:center; gap:9px; }
+.verdict-label { font-weight:800; font-size:15px; }
+.verdict-sub { font-size:11px; color:var(--ink-3); margin-top:1px; }
+.verdict-score { text-align:left; } .verdict-score-num { font-size:19px; font-weight:800; }
+.verdict-score-lbl { font-size:10px; color:var(--ink-3); }
+.sig-body { padding:14px 16px; }
+.sig-top { display:flex; align-items:flex-start; gap:11px; }
+.sig-medal { font-size:22px; }
+.sig-id { flex:1; min-width:0; }
+.sig-name { font-weight:700; font-size:14px; display:flex; align-items:center; gap:6px; }
+.sig-code { color:var(--ink-3); font-size:12px; font-weight:400; }
+.fav-star { cursor:pointer; color:var(--ink-3); font-size:16px; }
+.fav-star.on { color:var(--brand); }
+.sig-meta { display:flex; gap:8px; margin-top:4px; }
+.mb { font-size:11px; color:var(--ink-3); background:var(--surface-2); padding:2px 6px; border-radius:6px; }
+.sig-px { text-align:left; }
+.sig-px-main { font-size:17px; font-weight:800; }
+.sig-px-sar { font-size:11px; color:var(--ink-3); }
+.sig-bar { height:3px; background:var(--surface-2); margin:10px 0; border-radius:3px; overflow:hidden; }
+.sig-bar-fill { height:100%; background:var(--brand); }
+.sig-tags { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:10px; }
+.tag { font-size:11px; background:var(--surface-2); padding:5px 9px; border-radius:8px; color:var(--ink-2); }
+.sig-trade-btn { margin-right:auto; background:var(--green); color:#fff; border:0; border-radius:9px; padding:6px 14px; font-family:inherit; font-size:12px; font-weight:700; text-decoration:none; }
+.sig-levels { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; background:var(--surface-2); border-radius:var(--r); padding:8px; }
+.lvl { text-align:center; } .lvl-lbl { font-size:10px; color:var(--ink-3); }
+.lvl-val { font-size:12px; font-weight:700; margin-top:2px; }
+.lvl-pct { font-size:10px; color:var(--ink-3); }
+.fav-header { color:var(--brand); font-size:12px; font-weight:700; margin:16px 0 4px; }
+.loader { display:none; text-align:center; padding:20px; color:var(--ink-3); font-size:13px; }
+.loader.show { display:block; }
+.footer-note { text-align:center; color:var(--ink-3); font-size:11px; margin-top:24px; padding-top:14px; border-top:1px solid var(--line); }
+.hidden-view { display:none; }
+.mkt-tabs { display:flex; gap:6px; margin-bottom:16px; }
+.mkt-tab { flex:1; padding:10px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink-2); text-align:center; font-size:12px; cursor:pointer; }
+.mkt-tab.on { background:var(--brand); color:#2a1a00; border-color:var(--brand); font-weight:700; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="hdr">
+    <h1>⚡ ماسح جلال رادار</h1>
+    <p>تحليل فني آلي (JRF & Volatility Filter) — عرض فقط، بدون تنفيذ صفقات</p>
+  </div>
+  
+  <div class="dropdown-box">
+    <select id="market-select" onchange="onMarketChange()">
+      <option value="us">🇺🇸 السوق الأمريكي</option>
+      <option value="sa">🇸🇦 السوق السعودي (تاسي)</option>
+      <option value="crypto">💰 الكريبتو</option>
+      <option value="volatile">⚡ الأسهم عالية التذبذب (الخشاش/الزخم)</option>
+    </select>
+  </div>
+
+  <div class="q-box">
+    <input id="q-code" placeholder="الرمز (AAPL أو BTC-USD)">
+    <button onclick="analyzeOne()">تحليل فوري</button>
+  </div>
+  <div id="instant"></div>
+  <button class="scan-btn" id="scan-btn" onclick="startScan()">🔍 مسح السوق</button>
+  <div class="scan-meta" id="scan-meta"></div>
+  <div class="loader" id="loader"><div id="loader-sub">جاري الفحص...</div></div>
+
+  <div class="mkt-tabs" style="margin-top:4px;">
+    <button class="mkt-tab on" id="vt-scan" onclick="setView('scan')">🔍 نتائج المسح</button>
+    <button class="mkt-tab" id="vt-perf" onclick="setView('perf')">📜 أداء الترشيحات</button>
+  </div>
+
+  <div id="view-scan">
+    <div id="tally"></div>
+    <div id="fav-section"></div>
+    <div id="signals"><div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div></div>
+  </div>
+
+  <div id="view-perf" class="hidden-view">
+    <div style="color:var(--ink-3);font-size:12px;margin-bottom:10px;line-height:1.7;">
+      كل مسح تسويه يُحفظ تلقائياً هنا — ارجع بعد كم يوم تشوف هل الترشيح وصل هدفه أو لمس وقفه.
+    </div>
+    <div class="q-box">
+      <select id="ph-days" class="input" style="flex:1;padding:10px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:inherit;" onchange="loadPerformance()">
+        <option value="3">آخر 3 أيام</option>
+        <option value="5">آخر 5 أيام</option>
+        <option value="10" selected>آخر 10 أيام</option>
+        <option value="30">آخر 30 يوم</option>
+        <option value="90">آخر 90 يوم</option>
+      </select>
+      <button onclick="loadPerformance()">🔄 تحديث</button>
+    </div>
+    <a id="ph-export" href="/api/export_scan_history" style="display:inline-block;margin-bottom:12px;padding:8px 14px;border-radius:10px;background:var(--surface-2);color:var(--ink);font-size:12px;text-decoration:none;">📥 تصدير Excel (CSV)</a>
+    <div id="ph-summary"></div>
+    <div id="ph-list"><div class="empty"><div class="empty-ico">📜</div>اضغط تحديث لعرض سجل الأداء</div></div>
+  </div>
+
+  <div class="footer-note">أداة تحليل فني تعليمية — ليست توصية استثمارية. راجع TradingView وتحقق بنفسك قبل أي قرار.</div>
+</div>
+<div id="toast" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--surface-2);color:var(--ink);padding:10px 18px;border-radius:10px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:99;"></div>
+<script>
+var market = 'us';
+var scanPoll = null;
+
+function onMarketChange() {
+  market = document.getElementById('market-select').value;
+  var lbls={'us':'🔍 مسح السوق الأمريكي','sa':'🔍 مسح السوق السعودي (تاسي)','crypto':'🔍 مسح الكريبتو 💰','volatile':'⚡ مسح الأسهم عالية التذبذب (الخشاش)'};
+  document.getElementById('scan-btn').innerHTML = lbls[market]||'🔍 مسح';
+  loadResults(); loadFavorites();
+  if (document.getElementById('vt-perf').classList.contains('on')) loadPerformance();
+}
+
+function startScan() {
+  document.getElementById('loader').classList.add('show');
+  fetch('/scan?market='+market).then(function(r){return r.json();}).then(function(){
+    scanPoll = setInterval(pollScan, 1200);
+  });
+}
+function pollScan() {
+  fetch('/scan_status?market='+market).then(function(r){return r.json();}).then(function(d){
+    document.getElementById('loader-sub').textContent = 'تم '+(d.progress||0)+'%';
+    if(d.status==='done'){
+      clearInterval(scanPoll);
+      document.getElementById('loader').classList.remove('show');
+      loadResults();
+    }
+  });
+}
+
+function loadResults() {
+  fetch('/results?market='+market).then(function(r){return r.json();}).then(function(d){
+    var data = d.data||[];
+    document.getElementById('scan-meta').textContent = d.last ? ('آخر مسح: '+d.last+' · رُشّح من '+d.scanned) : '';
+    var buys = data.filter(function(s){return s.verdict==='BUY' || s.verdict==='HIGH_MOMENTUM';}).length;
+    var conds = data.filter(function(s){return s.verdict==='BUY_COND' || s.verdict==='VOLATILE_WATCH';}).length;
+    document.getElementById('tally').innerHTML = data.length ?
+      '<div class="tally"><div class="tally-cell"><div class="tally-num">'+buys+'</div><div class="tally-lbl">زخم/شراء</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+conds+'</div><div class="tally-lbl">مراقبة</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+data.length+'</div><div class="tally-lbl">مرشّح</div></div></div>' : '';
+    document.getElementById('signals').innerHTML = data.length ?
+      data.map(renderSig).join('') :
+      '<div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div>';
+  });
+}
+
+function renderSig(s) {
+  var isMom = s.verdict==='HIGH_MOMENTUM';
+  var vClass = (s.verdict==='BUY' || isMom)?'buy':(s.verdict==='BUY_COND'?'cond':'watch');
+  var vIco = (s.verdict==='BUY' || isMom)?'🟢':(s.verdict==='BUY_COND'?'🟡':'⏳');
+  var vLabel = isMom?'زخم عالي جداً':(s.verdict==='BUY'?'شراء':(s.verdict==='BUY_COND'?'شراء مشروط':'مراقبة'));
+  var isSA = s.is_sa === true;
+  var cur = isSA ? ' ر.س' : '$'; var curPre = isSA ? '' : '$';
+  var ptp = s.ptp||0, psl = s.psl||0, trend = s.trend||'', eta = s.eta||'—';
+  var priceDisp = isSA
+    ? '<div class="sig-px-main">'+s.price+' ر.س</div>'
+    : '<div class="sig-px-main">$'+s.price+'</div>'+(s.price_sar?'<div class="sig-px-sar">'+s.price_sar+' ر.س</div>':'');
+  var tvSym = isSA ? ('TADAWUL-'+s.code) : s.code;
+  var tvBtn = '<a class="sig-trade-btn" href="https://www.tradingview.com/symbols/'+tvSym+'/" target="_blank" rel="noopener">📈 TradingView</a>';
+  return '<div class="sig">'+
+    '<div class="sig-verdict '+vClass+'"><div class="verdict-main"><span>'+vIco+'</span>'+
+    '<div><div class="verdict-label">'+vLabel+'</div><div class="verdict-sub">ثقة '+s.confidence+'% · '+trend+'</div></div></div>'+
+    '<div class="verdict-score"><div class="verdict-score-num">'+s.score+'</div><div class="verdict-score-lbl">JRF/Vol</div></div></div>'+
+    '<div class="sig-body"><div class="sig-top"><span class="sig-medal">'+(s.medal||'')+'</span>'+
+    '<div class="sig-id"><div class="sig-name">'+s.name+'<span class="sig-code">'+s.code+'</span>'+
+    '<span class="fav-star'+(s.is_fav?' on':'')+'" onclick="event.stopPropagation();toggleFav(\''+s.code+'\')">'+(s.is_fav?'★':'☆')+'</span></div>'+
+    '<div class="sig-meta"><span class="mb">RSI '+s.rsi+'</span><span class="mb">Volume Surge x'+s.vr+'</span><span class="mb">⏱ '+eta+'</span></div></div>'+
+    '<div class="sig-px">'+priceDisp+'</div></div>'+
+    '<div class="sig-bar"><div class="sig-bar-fill" style="width:'+s.confidence+'%"></div></div>'+
+    '<div class="sig-tags"><span class="tag">R:R <b>'+s.rr+'</b></span>'+
+    '<span class="tag">🎯 <b>'+curPre+s.t1+cur+'</b> +'+ptp+'%</span>'+
+    '<span class="tag">🛡 <b>'+curPre+s.sl+cur+'</b> -'+psl+'%</span>'+tvBtn+'</div>'+
+    '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+s.lb+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 1</div><div class="lvl-val">'+curPre+s.t1+cur+'</div><div class="lvl-pct">+'+ptp+'%</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 2</div><div class="lvl-val">'+curPre+s.t2+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">وقف</div><div class="lvl-val">'+curPre+s.sl+cur+'</div><div class="lvl-pct">-'+psl+'%</div></div></div></div></div>';
+}
+
+function toggleFav(code) {
+  fetch('/api/favorites/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,market:market})})
+    .then(function(r){return r.json();}).then(function(d){
+      if(d.ok){ toast(d.added?'⭐ أُضيف للمفضلة':'تمت الإزالة'); loadResults(); loadFavorites(); }
+    });
+}
+function loadFavorites() {
+  fetch('/api/favorites/analyze?market='+market).then(function(r){return r.json();}).then(function(d){
+    var box = document.getElementById('fav-section');
+    if(!d.data || !d.data.length){ box.innerHTML=''; return; }
+    box.innerHTML = '<div class="fav-header">⭐ مفضلتك ('+d.data.length+')</div>' + d.data.map(renderSig).join('');
+  });
+}
+function analyzeOne() {
+  var code = document.getElementById('q-code').value.trim().toUpperCase();
+  if(!code){ toast('أدخل الرمز'); return; }
+  var box = document.getElementById('instant');
+  box.innerHTML = '<div style="text-align:center;color:var(--ink-3);padding:14px;">جاري تحليل '+code+'…</div>';
+  fetch('/analyze_one',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,is_crypto:market==='crypto',market:market})})
+    .then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){ box.innerHTML='<div style="color:var(--red);padding:10px;">❌ '+(d.msg||'تعذّر')+'</div>'; return; }
+      box.innerHTML = renderSig(d.result);
+    });
+}
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(function(){ t.style.opacity = '0'; }, 2400);
+}
+
+function setView(v) {
+  document.getElementById('vt-scan').classList.toggle('on', v==='scan');
+  document.getElementById('vt-perf').classList.toggle('on', v==='perf');
+  document.getElementById('view-scan').classList.toggle('hidden-view', v!=='scan');
+  document.getElementById('view-perf').classList.toggle('hidden-view', v!=='perf');
+  if (v==='perf') loadPerformance();
+}
+
+function loadPerformance() {
+  var days = document.getElementById('ph-days').value;
+  document.getElementById('ph-export').href = '/api/export_scan_history?market='+market+'&days='+days;
+  document.getElementById('ph-list').innerHTML = '<div class="empty"><div class="empty-ico">⏳</div>جاري الجلب…</div>';
+  fetch('/api/scan_history?market='+market+'&days='+days).then(function(r){return r.json();}).then(function(d){
+    var rows = d.rows||[]; var sum = d.summary||{};
+    document.getElementById('ph-summary').innerHTML = sum.total ?
+      '<div class="tally"><div class="tally-cell"><div class="tally-num">'+sum.hit_target+'</div><div class="tally-lbl">حقق هدف</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.hit_stop+'</div><div class="tally-lbl">لمس وقف</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.still_open+'</div><div class="tally-lbl">لسه مفتوح</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.win_rate+'%</div><div class="tally-lbl">نسبة النجاح</div></div></div>' : '';
+    document.getElementById('ph-list').innerHTML = rows.length ?
+      rows.map(renderHistCard).join('') :
+      '<div class="empty"><div class="empty-ico">📜</div>ما فيه ترشيحات محفوظة بهالفترة بعد لسوق '+market+'</div>';
+  });
+}
+
+function renderHistCard(r) {
+  var isSA = r.market==='sa';
+  var cur = isSA ? ' ر.س' : '$'; var curPre = isSA ? '' : '$';
+  var statusMap = {
+    hit_t1:{ico:'✅',lbl:'لمس هدف 1',cls:'buy'}, hit_t2:{ico:'✅',lbl:'لمس هدف 2',cls:'buy'},
+    hit_sl:{ico:'❌',lbl:'لمس الوقف',cls:'watch'}, open:{ico:'⏳',lbl:'لسه مفتوح',cls:'cond'},
+    unknown:{ico:'❓',lbl:'تعذر جلب السعر',cls:'cond'},
+  };
+  var st = statusMap[r.status] || statusMap.unknown;
+  var mktLbl = {us:'🇺🇸 أمريكي', sa:'🇸🇦 تاسي', crypto:'💰 كريبتو', volatile:'⚡ الخشاش/الزخم'}[r.market] || r.market;
+  var pnl = (r.pnl_pct===null || r.pnl_pct===undefined) ? '—' : (r.pnl_pct>=0?'+':'')+r.pnl_pct+'%';
+  return '<div class="sig">'+
+    '<div class="sig-verdict '+st.cls+'"><div class="verdict-main"><span>'+st.ico+'</span>'+
+    '<div><div class="verdict-label">'+st.lbl+'</div><div class="verdict-sub">'+mktLbl+' · '+r.ts+' · قبل '+r.days_elapsed+' يوم</div></div></div>'+
+    '<div class="verdict-score"><div class="verdict-score-num">'+pnl+'</div><div class="verdict-score-lbl">التغيّر</div></div></div>'+
+    '<div class="sig-body"><div class="sig-top"><div class="sig-id"><div class="sig-name">'+(r.name||r.code)+'<span class="sig-code">'+r.code+'</span></div>'+
+    '<div class="sig-meta"><span class="mb">'+(r.verdict||'')+'</span><span class="mb">سكور '+(r.score!=null?r.score:'—')+'</span></div></div></div>'+
+    '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+r.entry+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 1</div><div class="lvl-val">'+curPre+r.t1+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 2</div><div class="lvl-val">'+curPre+r.t2+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">وقف</div><div class="lvl-val">'+curPre+r.sl+cur+'</div></div></div>'+
+    '<div class="sig-tags" style="margin-top:8px;"><span class="tag">السعر الحالي <b>'+(r.current!=null?(curPre+r.current+cur):'—')+'</b></span></div>'+
+    '</div></div>';
+}
+
+loadResults(); loadFavorites();
+</script>
+</body>
+</html>"""
+
+@app.route("/")
+def index():
+    return Response(PAGE, mimetype="text/html")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5050))
+    app.run(host="0.0.0.0", port=port, debug=False)
