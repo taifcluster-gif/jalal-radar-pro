@@ -2,7 +2,7 @@
 """
 jalal_scanner_public.py
 ════════════════════════════════════════════════════════════
-نسخة الماسح العامة — النسخة المبسطة والفورية فائقة السرعة.
+نسخة الماسح العامة — مدعومة بفلتر الخشاش والزخم العالي.
 """
 import os, json, time, csv, io
 from datetime import datetime, timedelta
@@ -11,21 +11,27 @@ import pandas as pd
 import yfinance as yf
 from flask import Flask, jsonify, request, Response
 
-app = Flask(__name__)
+app = Flask(name if 'name' in globals() else __name__)
 USD_TO_SAR = 3.75
 
-# قوهم مختارة وسريعة جداً لضمان عدم حدوث Timeout
+# قائمة واسعة تشمل أسهم الخشاش والزخم والأسهم الكبرى
 US_STOCKS = {
     "AAPL":"Apple","MSFT":"Microsoft","GOOGL":"Alphabet","META":"Meta",
     "NVDA":"NVIDIA","AMD":"AMD","TSLA":"Tesla","AMZN":"Amazon",
-    "NFLX":"Netflix","INTC":"Intel","PLTR":"Palantir","COIN":"Coinbase"
+    "PLTR":"Palantir","SOFI":"SoFi","MARA":"Marathon Digital","RIOT":"Riot Platforms",
+    "CLSK":"CleanSpark","COIN":"Coinbase","HOOD":"Robinhood","NIO":"NIO",
+    "XPEV":"XPeng","LCID":"Lucid","BABA":"Alibaba","FSLR":"First Solar",
+    "SAVA":"Cassava Sciences","SINT":"Sintx Technologies","MULN":"Mullen Automotive"
 }
 SA_STOCKS = {
     "2222":"أرامكو السعودية","1180":"الأهلي السعودي","1120":"الراجحي",
-    "2010":"سابك","7010":"stc","4200":"الدريس","1211":"معادن"
+    "2010":"سابك","7010":"stc","4200":"الدريس",
+    "1211":"معادن","2380":"بترو رابغ","2350":"كيان السعودية",
+    "7201":"بحر العرب","4140":"صادرات","1832":"صدر","2130":"صدق","4061":"أنعام القابضة"
 }
 CRYPTO = {
-    "BTC-USD":"Bitcoin","ETH-USD":"Ethereum","SOL-USD":"Solana","XRP-USD":"Ripple"
+    "BTC-USD":"Bitcoin","ETH-USD":"Ethereum","SOL-USD":"Solana",
+    "PEPE-USD":"Pepe","SHIB-USD":"Shiba Inu","SUI-USD":"Sui","FET-USD":"Fetch.ai"
 }
 
 def _ema(s, p): return s.ewm(span=p, adjust=False).mean()
@@ -40,7 +46,7 @@ def sanitize_nan(obj):
     if isinstance(obj, float) and (obj != obj or obj in (float("inf"), float("-inf"))): return None
     return obj
 
-def quick_analyze(code, name, is_crypto=False, is_sa=False):
+def analyze_stock(code, name, is_crypto=False, is_sa=False, volatile_only=False):
     try:
         ticker = (code + ".SR") if is_sa else code
         df = yf.download(ticker, period="3mo", interval="1d", progress=False, timeout=8)
@@ -52,13 +58,28 @@ def quick_analyze(code, name, is_crypto=False, is_sa=False):
         prev = float(df["Close"].iloc[-2])
         chg = round((price - prev) / prev * 100, 2)
         
+        # فلتر الخشاش / السعر المنخفض والزخم
+        if volatile_only and not is_crypto and not is_sa and price > 15.0:
+            return None # استبعاد الأسهم الثقيلة إذا طلب المستخدم خشاش أمريكي رخيص
+
         rv = _rsi(df["Close"], 14)
         rsi_val = round(float(rv.iloc[-1]), 1) if not pd.isna(float(rv.iloc[-1])) else 50.0
         
-        score = 12 if chg > 0 else 8
-        verdict = "BUY" if chg > 0 else "WATCH"
+        vol_now = float(df["Volume"].iloc[-1])
+        vol_avg = float(df["Volume"].rolling(20).mean().iloc[-1]) or 1.0
+        vr = round(vol_now / vol_avg, 2)
+
+        if volatile_only and vr < 1.1:
+            return None # يتطلب زيادة ملحوظة في السيولة
+
+        score = 10
+        if vr > 1.3: score += 4
+        if chg > 1.0: score += 3
+        if volatile_only: score += 5
+
+        verdict = "HIGH_MOMENTUM" if volatile_only else ("BUY" if chg > 0 else "WATCH")
         
-        atr = price * 0.02
+        atr = price * 0.03
         t1 = round(price + atr * 1.5, 2)
         sl = round(price - atr * 1.0, 2)
         ptp = round((t1 - price) / price * 100, 1)
@@ -67,10 +88,10 @@ def quick_analyze(code, name, is_crypto=False, is_sa=False):
         return {
             "code": code, "name": name, "is_crypto": is_crypto, "is_sa": is_sa,
             "price": round(price, 2), "price_sar": round(price * USD_TO_SAR, 2) if not is_sa else round(price, 2),
-            "score": score, "verdict": verdict, "trend": "صاعد سريع" if chg > 0 else "متابعة",
-            "confidence": 85, "lb": round(price * 0.99, 2), "t1": t1, "t2": round(price + atr * 3.0, 2),
-            "sl": sl, "rr": 1.5, "ptp": ptp, "psl": psl, "rsi": rsi_val, "vr": 1.2, "chg": chg,
-            "eta": "1-3 أيام", "medal": "🥇"
+            "score": score, "verdict": verdict, "trend": "⚡ خشاش / زخم عالي" if volatile_only else "صاعد",
+            "confidence": min(95, score * 5), "lb": round(price * 0.99, 2), "t1": t1, "t2": round(price + atr * 3.0, 2),
+            "sl": sl, "rr": 1.8, "ptp": ptp, "psl": psl, "rsi": rsi_val, "vr": vr, "chg": chg,
+            "eta": "1-2 يوم", "medal": "⚡" if volatile_only else "🥇"
         }
     except:
         return None
@@ -89,17 +110,19 @@ def save_favs(d):
 @app.route("/scan", methods=["GET", "POST"])
 def scan_route():
     market = request.args.get("market", "us")
+    volatile_only = request.args.get("volatile", "false").lower() == "true"
+    
     stocks = US_STOCKS if market=="us" else (SA_STOCKS if market=="sa" else CRYPTO)
     is_sa = (market == "sa")
     is_crypto = (market == "crypto")
     
     results = []
     for code, name in stocks.items():
-        res = quick_analyze(code, name, is_crypto, is_sa)
+        res = analyze_stock(code, name, is_crypto, is_sa, volatile_only)
         if res: results.append(res)
         
-    results.sort(key=lambda x: x["chg"], reverse=True)
-    top = results[:6]
+    results.sort(key=lambda x: (x["score"], x["chg"]), reverse=True)
+    top = results[:8]
     
     data = {
         "data": top,
@@ -107,14 +130,16 @@ def scan_route():
         "scanned": len(stocks),
         "status": "done"
     }
-    app.config[f"scan_res_{market}"] = data
+    app.config[f"scan_res_{market}_{volatile_only}"] = data
     return jsonify(sanitize_nan({"ok": True, **data}))
 
 @app.route("/results", methods=["GET"])
 def results_route():
     market = request.args.get("market", "us")
+    volatile_only = request.args.get("volatile", "false").lower() == "true"
     if market not in ["us", "sa", "crypto"]: market = "us"
-    data = app.config.get(f"scan_res_{market}", {"data": [], "last": None, "scanned": 0, "status": "done"})
+    key = f"scan_res_{market}_{volatile_only}"
+    data = app.config.get(key, {"data": [], "last": None, "scanned": 0, "status": "done"})
     return jsonify(sanitize_nan(data))
 
 @app.route("/api/favorites/toggle", methods=["POST"])
@@ -127,10 +152,6 @@ def toggle_favorite():
     else: lst.append(code); added=True
     favs[market] = lst; save_favs(favs)
     return jsonify({"ok":True,"added":added})
-
-@app.route("/api/favorites/analyze", methods=["GET"])
-def analyze_favorites():
-    return jsonify({"data":[]})
 
 PAGE = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -153,6 +174,9 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 .hdr p { color:var(--ink-3); font-size:12px; margin-top:4px; }
 .dropdown-box { margin-bottom:10px; }
 .dropdown-box select { width:100%; padding:12px 14px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; }
+.filter-box { display:flex; align-items:center; gap:8px; margin-bottom:14px; background:var(--surface); padding:10px 14px; border-radius:var(--r); border:1px solid var(--line); }
+.filter-box input[type="checkbox"] { width:18px; height:18px; accent-color:var(--brand); cursor:pointer; }
+.filter-box label { font-size:13px; font-weight:700; cursor:pointer; color:var(--ink); }
 .scan-btn { width:100%; padding:14px; border-radius:var(--r); border:0; background:var(--brand); color:#2a1a00; font-size:15px; font-weight:800; cursor:pointer; margin-bottom:12px; box-shadow:0 4px 12px rgba(239,159,39,0.2); }
 .scan-meta { text-align:center; color:var(--ink-3); font-size:11px; margin-bottom:12px; }
 .empty { text-align:center; color:var(--ink-3); padding:40px 0; font-size:13px; }
@@ -183,7 +207,7 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 <div class="shell">
   <div class="hdr">
     <h1>⚡ ماسح جلال رادار</h1>
-    <p>نسخة الفحص السريع الفوري</p>
+    <p>نسخة الفحص السريع مع فلتر الخشاش والزخم</p>
   </div>
   
   <div class="dropdown-box">
@@ -194,9 +218,14 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
     </select>
   </div>
 
+  <div class="filter-box">
+    <input type="checkbox" id="volatile-chk">
+    <label for="volatile-chk">⚡ تفعيل مسح الخشاش والزخم العالي لهذا السوق</label>
+  </div>
+
   <button class="scan-btn" id="scan-btn" onclick="startScan()">🔍 مسح السوق الآن</button>
   <div class="scan-meta" id="scan-meta"></div>
-  <div class="loader" id="loader">⚡ جارٍ فحص السوق وعرض النتائج الفورية...</div>
+  <div class="loader" id="loader">⚡ جارٍ فحص الزخم والخشاش...</div>
 
   <div id="signals"><div class="empty"><div class="empty-ico">📡</div>اضغط مسح السوق الآن لبدء الفحص</div></div>
 </div>
@@ -210,12 +239,13 @@ function onMarketChange() {
 }
 
 function startScan() {
+  var isVolatile = document.getElementById('volatile-chk').checked;
   var btn = document.getElementById('scan-btn');
   btn.disabled = true;
   document.getElementById('loader').classList.add('show');
   document.getElementById('signals').innerHTML = '';
 
-  fetch('/scan?market='+encodeURIComponent(market))
+  fetch('/scan?market='+encodeURIComponent(market)+'&volatile='+(isVolatile?'true':'false'))
     .then(function(r){ return r.json(); })
     .then(function(d){
       btn.disabled = false;
@@ -234,7 +264,7 @@ function renderResults(d) {
   document.getElementById('scan-meta').textContent = d.last ? ('آخر مسح: '+d.last+' · عدد الأسهم: '+d.scanned) : '';
   document.getElementById('signals').innerHTML = data.length ?
     data.map(renderSig).join('') :
-    '<div class="empty"><div class="empty-ico">📡</div>لا توجد نتائج</div>';
+    '<div class="empty"><div class="empty-ico">📡</div>لا توجد نتائج مطابقة لشروط الخشاش والزخم حالياً</div>';
 }
 
 function renderSig(s) {
@@ -242,9 +272,9 @@ function renderSig(s) {
   var cur = isSA ? ' ر.س' : '$'; var curPre = isSA ? '' : '$';
   var tvSym = isSA ? ('TADAWUL-'+s.code) : s.code;
   return '<div class="sig">'+
-    '<div class="sig-verdict"><div class="verdict-main"><span>🟢</span>'+
-    '<div><div class="verdict-label">إشارة دخول (زخم)</div><div class="verdict-sub">تغير يومي: '+s.chg+'%</div></div></div>'+
-    '<div class="verdict-score"><b>'+s.score+'</b></div></div>'+
+    '<div class="sig-verdict"><div class="verdict-main"><span>'+s.medal+'</span>'+
+    '<div><div class="verdict-label">'+s.trend+'</div><div class="verdict-sub">تغير يومي: '+s.chg+'% · سيولة x'+s.vr+'</div></div></div>'+
+    '<div class="verdict-score"><b>السكور: '+s.score+'</b></div></div>'+
     '<div class="sig-body"><div class="sig-top">'+
     '<div class="sig-id"><div class="sig-name">'+s.name+' <span class="sig-code">'+s.code+'</span></div>'+
     '<div style="font-size:11px;color:var(--ink-3);margin-top:2px;">RSI: '+s.rsi+'</div></div>'+
