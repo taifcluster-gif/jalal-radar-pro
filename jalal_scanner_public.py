@@ -143,7 +143,6 @@ def analyze_high_volatility(code, name, is_crypto=False):
         prev_close = float(df["Close"].iloc[-2])
         chg = round((price - prev_close) / prev_close * 100, 2)
 
-        # الشرط 1: السعر تحت 10$ للأسهم (أو تحت 5$) للتركيز على أسهم التذبذب السريع
         if not is_crypto and price > 10.0:
             return None
 
@@ -156,13 +155,11 @@ def analyze_high_volatility(code, name, is_crypto=False):
         last = -1
         vol_now = float(c["Volume"].iloc[last])
         vol_avg = float(va.iloc[last]) if float(va.iloc[last]) > 0 else 1.0
-        vr_now = vol_now / vol_avg  # Volume Surge
+        vr_now = vol_now / vol_avg
 
-        # الشرط 2: اندفاع في حجم التداول (Volume Surge > 1.5 على الأقل)
         if vr_now < 1.5:
             return None
 
-        # الشرط 3: تقاطع متوسطات قصيرة جداً (EMA 5 > EMA 13) أو زخم RSI صاعد
         rsi_v = float(rv.iloc[last])
         fast_cross = float(e5.iloc[last]) > float(e13.iloc[last])
         
@@ -174,7 +171,7 @@ def analyze_high_volatility(code, name, is_crypto=False):
         if fast_cross: score += 4
         if 50 <= rsi_v <= 80: score += 4
         if chg > 3.0: score += 4
-        if (float(av.iloc[last]) / price) > 0.04: score += 3 # نسب زلاق عالية (High ATR/Price)
+        if (float(av.iloc[last]) / price) > 0.04: score += 3
 
         if score < 10: return None
 
@@ -355,7 +352,7 @@ scan_state = {
     "us":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
     "crypto":   {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
     "sa":       {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
-    "volatile": {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0}, # التبويب الجديد
+    "volatile": {"data": [], "last": None, "status": "idle", "progress": 0, "scanned": 0},
 }
 FAV_FILE = os.path.join(os.getcwd(), "public_favorites.json")
 
@@ -492,7 +489,6 @@ def run_scan(market="us"):
     return top
 
 def run_scan_volatile():
-    """مسح الأسهم ذات التذبذب العالي والخشاش السريع (High Volatility)"""
     market = "volatile"
     scan_state[market]["status"] = "scanning"; scan_state[market]["progress"] = 0
     items = list(US_STOCKS.items())
@@ -802,3 +798,227 @@ body { font-family:'Tajawal',system-ui,sans-serif; background:var(--bg); color:v
 <body>
 <div class="shell">
   <div class="hdr">
+    <h1>⚡ ماسح جلال رادار</h1>
+    <p>تحليل فني آلي (JRF & Volatility Filter) — عرض فقط، بدون تنفيذ صفقات</p>
+  </div>
+  <div class="mkt-tabs">
+    <button class="mkt-tab on" id="mt-us" onclick="setMarket('us')">🇺🇸 أمريكي</button>
+    <button class="mkt-tab" id="mt-volatile" onclick="setMarket('volatile')">🔥 الخشاش/الزخم</button>
+    <button class="mkt-tab" id="mt-sa" onclick="setMarket('sa')">🇸🇦 تاسي</button>
+    <button class="mkt-tab" id="mt-crypto" onclick="setMarket('crypto')">💰 الكريبتو</button>
+  </div>
+  <div class="q-box">
+    <input id="q-code" placeholder="الرمز (AAPL أو BTC-USD)">
+    <button onclick="analyzeOne()">تحليل فوري</button>
+  </div>
+  <div id="instant"></div>
+  <button class="scan-btn" id="scan-btn" onclick="startScan()">🔍 مسح السوق الأمريكي</button>
+  <div class="scan-meta" id="scan-meta"></div>
+  <div class="loader" id="loader"><div id="loader-sub">جاري الفحص...</div></div>
+
+  <div class="mkt-tabs" style="margin-top:4px;">
+    <button class="mkt-tab on" id="vt-scan" onclick="setView('scan')">🔍 نتائج المسح</button>
+    <button class="mkt-tab" id="vt-perf" onclick="setView('perf')">📜 أداء الترشيحات</button>
+  </div>
+
+  <div id="view-scan">
+    <div id="tally"></div>
+    <div id="fav-section"></div>
+    <div id="signals"><div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div></div>
+  </div>
+
+  <div id="view-perf" class="hidden-view">
+    <div style="color:var(--ink-3);font-size:12px;margin-bottom:10px;line-height:1.7;">
+      كل مسح تسويه يُحفظ تلقائياً هنا — ارجع بعد كم يوم تشوف هل الترشيح وصل هدفه أو لمس وقفه.
+    </div>
+    <div class="q-box">
+      <select id="ph-days" class="input" style="flex:1;padding:10px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:inherit;" onchange="loadPerformance()">
+        <option value="3">آخر 3 أيام</option>
+        <option value="5">آخر 5 أيام</option>
+        <option value="10" selected>آخر 10 أيام</option>
+        <option value="30">آخر 30 يوم</option>
+        <option value="90">آخر 90 يوم</option>
+      </select>
+      <button onclick="loadPerformance()">🔄 تحديث</button>
+    </div>
+    <a id="ph-export" href="/api/export_scan_history" style="display:inline-block;margin-bottom:12px;padding:8px 14px;border-radius:10px;background:var(--surface-2);color:var(--ink);font-size:12px;text-decoration:none;">📥 تصدير Excel (CSV)</a>
+    <div id="ph-summary"></div>
+    <div id="ph-list"><div class="empty"><div class="empty-ico">📜</div>اضغط تحديث لعرض سجل الأداء</div></div>
+  </div>
+
+  <div class="footer-note">أداة تحليل فني تعليمية — ليست توصية استثمارية. راجع TradingView وتحقق بنفسك قبل أي قرار.</div>
+</div>
+<div id="toast" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--surface-2);color:var(--ink);padding:10px 18px;border-radius:10px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:99;"></div>
+<script>
+var market = 'us';
+var scanPoll = null;
+
+function setMarket(m) {
+  market = m;
+  document.getElementById('mt-us').classList.toggle('on', m==='us');
+  document.getElementById('mt-volatile').classList.toggle('on', m==='volatile');
+  document.getElementById('mt-sa').classList.toggle('on', m==='sa');
+  document.getElementById('mt-crypto').classList.toggle('on', m==='crypto');
+  var lbls={'us':'🔍 مسح السوق الأمريكي','volatile':'⚡ مسح الأسهم عالية التذبذب (الخشاش)','crypto':'🔍 مسح الكريبتو 💰','sa':'🔍 مسح تاسي 🇸🇦'};
+  document.getElementById('scan-btn').innerHTML = lbls[m]||'🔍 مسح';
+  loadResults(); loadFavorites();
+  if (document.getElementById('vt-perf').classList.contains('on')) loadPerformance();
+}
+
+function startScan() {
+  document.getElementById('loader').classList.add('show');
+  fetch('/scan?market='+market).then(function(r){return r.json();}).then(function(){
+    scanPoll = setInterval(pollScan, 1200);
+  });
+}
+function pollScan() {
+  fetch('/scan_status?market='+market).then(function(r){return r.json();}).then(function(d){
+    document.getElementById('loader-sub').textContent = 'تم '+(d.progress||0)+'%';
+    if(d.status==='done'){
+      clearInterval(scanPoll);
+      document.getElementById('loader').classList.remove('show');
+      loadResults();
+    }
+  });
+}
+
+function loadResults() {
+  fetch('/results?market='+market).then(function(r){return r.json();}).then(function(d){
+    var data = d.data||[];
+    document.getElementById('scan-meta').textContent = d.last ? ('آخر مسح: '+d.last+' · رُشّح من '+d.scanned) : '';
+    var buys = data.filter(function(s){return s.verdict==='BUY' || s.verdict==='HIGH_MOMENTUM';}).length;
+    var conds = data.filter(function(s){return s.verdict==='BUY_COND' || s.verdict==='VOLATILE_WATCH';}).length;
+    document.getElementById('tally').innerHTML = data.length ?
+      '<div class="tally"><div class="tally-cell"><div class="tally-num">'+buys+'</div><div class="tally-lbl">زخم/شراء</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+conds+'</div><div class="tally-lbl">مراقبة</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+data.length+'</div><div class="tally-lbl">مرشّح</div></div></div>' : '';
+    document.getElementById('signals').innerHTML = data.length ?
+      data.map(renderSig).join('') :
+      '<div class="empty"><div class="empty-ico">📡</div>اضغط مسح لتحليل السوق</div>';
+  });
+}
+
+function renderSig(s) {
+  var isMom = s.verdict==='HIGH_MOMENTUM';
+  var vClass = (s.verdict==='BUY' || isMom)?'buy':(s.verdict==='BUY_COND'?'cond':'watch');
+  var vIco = (s.verdict==='BUY' || isMom)?'🟢':(s.verdict==='BUY_COND'?'🟡':'⏳');
+  var vLabel = isMom?'زخم عالي جداً':(s.verdict==='BUY'?'شراء':(s.verdict==='BUY_COND'?'شراء مشروط':'مراقبة'));
+  var isSA = s.is_sa === true;
+  var cur = isSA ? ' ر.س' : '$'; var curPre = isSA ? '' : '$';
+  var ptp = s.ptp||0, psl = s.psl||0, trend = s.trend||'', adx = s.adx||'—', eta = s.eta||'—';
+  var priceDisp = isSA
+    ? '<div class="sig-px-main">'+s.price+' ر.س</div>'
+    : '<div class="sig-px-main">$'+s.price+'</div>'+(s.price_sar?'<div class="sig-px-sar">'+s.price_sar+' ر.س</div>':'');
+  var tvSym = isSA ? ('TADAWUL-'+s.code) : s.code;
+  var tvBtn = '<a class="sig-trade-btn" href="https://www.tradingview.com/symbols/'+tvSym+'/" target="_blank" rel="noopener">📈 TradingView</a>';
+  return '<div class="sig">'+
+    '<div class="sig-verdict '+vClass+'"><div class="verdict-main"><span>'+vIco+'</span>'+
+    '<div><div class="verdict-label">'+vLabel+'</div><div class="verdict-sub">ثقة '+s.confidence+'% · '+trend+'</div></div></div>'+
+    '<div class="verdict-score"><div class="verdict-score-num">'+s.score+'</div><div class="verdict-score-lbl">JRF/Vol</div></div></div>'+
+    '<div class="sig-body"><div class="sig-top"><span class="sig-medal">'+(s.medal||'')+'</span>'+
+    '<div class="sig-id"><div class="sig-name">'+s.name+'<span class="sig-code">'+s.code+'</span>'+
+    '<span class="fav-star'+(s.is_fav?' on':'')+'" onclick="event.stopPropagation();toggleFav(\\''+s.code+'\\')">'+(s.is_fav?'★':'☆')+'</span></div>'+
+    '<div class="sig-meta"><span class="mb">RSI '+s.rsi+'</span><span class="mb">Volume Surge x'+s.vr+'</span><span class="mb">⏱ '+eta+'</span></div></div>'+
+    '<div class="sig-px">'+priceDisp+'</div></div>'+
+    '<div class="sig-bar"><div class="sig-bar-fill" style="width:'+s.confidence+'%"></div></div>'+
+    '<div class="sig-tags"><span class="tag">R:R <b>'+s.rr+'</b></span>'+
+    '<span class="tag">🎯 <b>'+curPre+s.t1+cur+'</b> +'+ptp+'%</span>'+
+    '<span class="tag">🛡 <b>'+curPre+s.sl+cur+'</b> -'+psl+'%</span>'+tvBtn+'</div>'+
+    '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+s.lb+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 1</div><div class="lvl-val">'+curPre+s.t1+cur+'</div><div class="lvl-pct">+'+ptp+'%</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 2</div><div class="lvl-val">'+curPre+s.t2+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">وقف</div><div class="lvl-val">'+curPre+s.sl+cur+'</div><div class="lvl-pct">-'+psl+'%</div></div></div></div></div>';
+}
+
+function toggleFav(code) {
+  fetch('/api/favorites/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,market:market})})
+    .then(function(r){return r.json();}).then(function(d){
+      if(d.ok){ toast(d.added?'⭐ أُضيف للمفضلة':'تمت الإزالة'); loadResults(); loadFavorites(); }
+    });
+}
+function loadFavorites() {
+  fetch('/api/favorites/analyze?market='+market).then(function(r){return r.json();}).then(function(d){
+    var box = document.getElementById('fav-section');
+    if(!d.data || !d.data.length){ box.innerHTML=''; return; }
+    box.innerHTML = '<div class="fav-header">⭐ مفضلتك ('+d.data.length+')</div>' + d.data.map(renderSig).join('');
+  });
+}
+function analyzeOne() {
+  var code = document.getElementById('q-code').value.trim().toUpperCase();
+  if(!code){ toast('أدخل الرمز'); return; }
+  var box = document.getElementById('instant');
+  box.innerHTML = '<div style="text-align:center;color:var(--ink-3);padding:14px;">جاري تحليل '+code+'…</div>';
+  fetch('/analyze_one',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,is_crypto:market==='crypto',market:market})})
+    .then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){ box.innerHTML='<div style="color:var(--red);padding:10px;">❌ '+(d.msg||'تعذّر')+'</div>'; return; }
+      box.innerHTML = renderSig(d.result);
+    });
+}
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(function(){ t.style.opacity = '0'; }, 2400);
+}
+
+function setView(v) {
+  document.getElementById('vt-scan').classList.toggle('on', v==='scan');
+  document.getElementById('vt-perf').classList.toggle('on', v==='perf');
+  document.getElementById('view-scan').classList.toggle('hidden-view', v!=='scan');
+  document.getElementById('view-perf').classList.toggle('hidden-view', v!=='perf');
+  if (v==='perf') loadPerformance();
+}
+
+function loadPerformance() {
+  var days = document.getElementById('ph-days').value;
+  document.getElementById('ph-export').href = '/api/export_scan_history?market='+market+'&days='+days;
+  document.getElementById('ph-list').innerHTML = '<div class="empty"><div class="empty-ico">⏳</div>جاري الجلب…</div>';
+  fetch('/api/scan_history?market='+market+'&days='+days).then(function(r){return r.json();}).then(function(d){
+    var rows = d.rows||[]; var sum = d.summary||{};
+    document.getElementById('ph-summary').innerHTML = sum.total ?
+      '<div class="tally"><div class="tally-cell"><div class="tally-num">'+sum.hit_target+'</div><div class="tally-lbl">حقق هدف</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.hit_stop+'</div><div class="tally-lbl">لمس وقف</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.still_open+'</div><div class="tally-lbl">لسه مفتوح</div></div>'+
+      '<div class="tally-cell"><div class="tally-num">'+sum.win_rate+'%</div><div class="tally-lbl">نسبة النجاح</div></div></div>' : '';
+    document.getElementById('ph-list').innerHTML = rows.length ?
+      rows.map(renderHistCard).join('') :
+      '<div class="empty"><div class="empty-ico">📜</div>ما فيه ترشيحات محفوظة بهالفترة بعد لسوق '+market+'</div>';
+  });
+}
+
+function renderHistCard(r) {
+  var isSA = r.market==='sa';
+  var cur = isSA ? ' ر.س' : '$'; var curPre = isSA ? '' : '$';
+  var statusMap = {
+    hit_t1:{ico:'✅',lbl:'لمس هدف 1',cls:'buy'}, hit_t2:{ico:'✅',lbl:'لمس هدف 2',cls:'buy'},
+    hit_sl:{ico:'❌',lbl:'لمس الوقف',cls:'watch'}, open:{ico:'⏳',lbl:'لسه مفتوح',cls:'cond'},
+    unknown:{ico:'❓',lbl:'تعذر جلب السعر',cls:'cond'},
+  };
+  var st = statusMap[r.status] || statusMap.unknown;
+  var mktLbl = {us:'🇺🇸 أمريكي', crypto:'💰 كريبتو', sa:'🇸🇦 تاسي', volatile:'⚡ الخشاش/الزخم'}[r.market] || r.market;
+  var pnl = (r.pnl_pct===null || r.pnl_pct===undefined) ? '—' : (r.pnl_pct>=0?'+':'')+r.pnl_pct+'%';
+  return '<div class="sig">'+
+    '<div class="sig-verdict '+st.cls+'"><div class="verdict-main"><span>'+st.ico+'</span>'+
+    '<div><div class="verdict-label">'+st.lbl+'</div><div class="verdict-sub">'+mktLbl+' · '+r.ts+' · قبل '+r.days_elapsed+' يوم</div></div></div>'+
+    '<div class="verdict-score"><div class="verdict-score-num">'+pnl+'</div><div class="verdict-score-lbl">التغيّر</div></div></div>'+
+    '<div class="sig-body"><div class="sig-top"><div class="sig-id"><div class="sig-name">'+(r.name||r.code)+'<span class="sig-code">'+r.code+'</span></div>'+
+    '<div class="sig-meta"><span class="mb">'+(r.verdict||'')+'</span><span class="mb">سكور '+(r.score!=null?r.score:'—')+'</span></div></div></div>'+
+    '<div class="sig-levels"><div class="lvl"><div class="lvl-lbl">دخول</div><div class="lvl-val">'+curPre+r.entry+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 1</div><div class="lvl-val">'+curPre+r.t1+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">هدف 2</div><div class="lvl-val">'+curPre+r.t2+cur+'</div></div>'+
+    '<div class="lvl"><div class="lvl-lbl">وقف</div><div class="lvl-val">'+curPre+r.sl+cur+'</div></div></div>'+
+    '<div class="sig-tags" style="margin-top:8px;"><span class="tag">السعر الحالي <b>'+(r.current!=null?(curPre+r.current+cur):'—')+'</b></span></div>'+
+    '</div></div>';
+}
+
+loadResults(); loadFavorites();
+</script>
+</body>
+</html>"""
+
+@app.route("/")
+def index():
+    return Response(PAGE, mimetype="text/html")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5050))
+    app.run(host="0.0.0.0", port=port, debug=False)
